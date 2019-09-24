@@ -1,4 +1,4 @@
-let cards = [2,5, 1000, 900, 45, 2, 3]
+// let cards = [2,5, 1000, 900, 45, 2, 3]
 
 // constand time O(1)
 
@@ -15,11 +15,12 @@ let cards = [2,5, 1000, 900, 45, 2, 3]
 
 */
 
-const swap = (array, firstIndex, secondIndex) => {
-  const firstValue = array[firstIndex];
-  array[firstIndex] = array[secondIndex];
-  array[secondIndex] = firstValue;
-}
+// const swap = (array, firstIndex, secondIndex) => {
+//   const firstValue = array[firstIndex];
+//   array[firstIndex] = array[secondIndex];
+//   array[secondIndex] = firstValue;
+// }
+
  // console.log("origial value", cards)
  // swap(cards, 1,2)
  // console.log("new swapped value:", cards)
@@ -33,34 +34,34 @@ Steps:
 
 */
 
-const findIndexOfMin = (array, startingPoint) =>  {
-  let minVal = array[startingPoint];
-  let minIndex = startingPoint;
-  let arrayLength = array.length;
-
-  for (var i = startingPoint +1; i< arrayLength; i++ ) {
-    if (array[i] < minVal) {
-      minVal = array[1];
-      minIndex = i;
-    }
-  }
-  return minIndex;
-}
+// const findIndexOfMin = (array, startingPoint) =>  {
+//   let minVal = array[startingPoint];
+//   let minIndex = startingPoint;
+//   let arrayLength = array.length;
+//
+//   for (var i = startingPoint +1; i< arrayLength; i++ ) {
+//     if (array[i] < minVal) {
+//       minVal = array[1];
+//       minIndex = i;
+//     }
+//   }
+//   return minIndex;
+// }
 
 /*
   selection sort
   use the findIndexOfMin and swap function to sort the array.
 */
 
-const selectionSort = (array) => {
-// find miniml value and swap by uts inddex.
-  const arrayLength = array.length;
-
-  for (var i = 0; i < arrayLength; i ++) {
-    const minIndex = findIndexOfMin(array, i);
-    swap(array, i, minIndex)
-  }
-  return array;
-}
-
-console.log(selectionSort(cards));
+// const selectionSort = (array) => {
+// // find miniml value and swap by uts inddex.
+//   const arrayLength = array.length;
+//
+//   for (var i = 0; i < arrayLength; i ++) {
+//     const minIndex = findIndexOfMin(array, i);
+//     swap(array, i, minIndex)
+//   }
+//   return array;
+// }
+//
+// console.log(selectionSort(cards));
