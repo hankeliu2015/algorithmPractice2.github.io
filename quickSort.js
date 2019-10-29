@@ -20,4 +20,4 @@
 //   return array
 // }
 //
-// console.log(quickSort([4,3,2,1,5,6,7]))
+// console.log(quickSort([4,3,2,1]))
