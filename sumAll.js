@@ -13,12 +13,17 @@ function sumAll(arr) {
     //   sum = sum + (a + i)
     // }
 
-  let newArr = arr.sort(el => a-b)
-  // console.log(newArr)
+  // let newArr = arr.sort(el => a-b)
+  // let sum = 0
+  // for (var i = 0; i <= newArr[1] - newArr[0]; i++) {
+  //   sum = sum + (newArr[0] + i)
+  // }
+
   let sum = 0
-  for (var i = 0; i <= newArr[1] - newArr[0]; i++) {
-    sum = sum + (newArr[0] + i)
+  for (var i = Math.min(...arr); i <= Math.max(...arr); i++) {
+    sum += i;
   }
+
   return sum;
 }
 
