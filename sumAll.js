@@ -9,9 +9,9 @@ function sumAll(arr) {
     b = arr[0]
   }
 
-  let sum = a
+  let sum = 0
   for (var i = 0; i <= b - a; i++) {
-    sum = sum + a + 1
+    sum = sum + (a + i)
   }
   return sum;
 }
