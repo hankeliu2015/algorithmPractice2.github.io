@@ -12,8 +12,11 @@ function diffTwoArrays(arr1, arr2) {
     console.log(arr1, arr2, newArr)
   }
 
-  console.log(arr1, arr2, newArr)
-  return newArr.concat(arr2)
+  if (arr2) {
+    return newArr.concat(arr2)
+  } else {
+    return newArr
+  }
 
 }
 
