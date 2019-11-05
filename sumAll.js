@@ -9,6 +9,8 @@ function sumAll(arr) {
     b = arr[0]
   }
 
+  let newArr = arr.sort(a-b)
+console.log(newArr)
   let sum = 0
   for (var i = 0; i <= b - a; i++) {
     sum = sum + (a + i)
