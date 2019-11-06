@@ -19,12 +19,13 @@ function sumAll(arr) {
   //   sum = sum + (newArr[0] + i)
   // }
 
-  let sum = 0
-  for (var i = Math.min(...arr); i <= Math.max(...arr); i++) {
-    sum += i;
-  }
-
-  return sum;
+  // best solution
+  // let sum = 0
+  // for (var i = Math.min(...arr); i <= Math.max(...arr); i++) {
+  //   sum += i;
+  // }
+  //
+  // return sum;
 }
 
-console.log(sumAll([10,5]))
+// console.log(sumAll([10,5]))
