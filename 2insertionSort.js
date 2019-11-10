@@ -20,4 +20,4 @@ function insertionSort(array) {
 
 let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8]
 insertionSort(array)
-console.log(array)
+// console.log(array)

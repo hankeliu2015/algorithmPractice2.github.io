@@ -14,7 +14,7 @@ function reverseString(myString) {
 
 // let newString = reverseString('pizza')
 // console.log(newString)
-console.log(reverseString('pizza'))
+// console.log(reverseString('pizza'))
 
 
 //reverse string - easy solution.

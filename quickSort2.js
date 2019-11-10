@@ -37,7 +37,7 @@ function quickSort(arr) {
 
 }
 
-console.log(quickSort([4,3,2,1,5,6,7,10, 100, 500,-1001]))
+// console.log(quickSort([4,3,2,1,5,6,7,10, 100, 500,-1001]))
 
 // // 3rd option for quick sort:
 //

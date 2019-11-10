@@ -29,7 +29,7 @@ function getPermutations(string) {
       return results;
     }
 
-console.log(getPermutations('123'));
+// console.log(getPermutations('123'));
 
 //     // var permutation = getPermutations('1234').filter((el, idx, self) => (self.indexOf(el) === idx));
 //     var permutation1 = getPermutations('123')

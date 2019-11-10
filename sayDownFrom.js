@@ -13,4 +13,4 @@ function sayDownFrom(n){
   return arr      // the process won't reach here before n > 0
 }
 
-console.log(sayDownFrom(10))
+// console.log(sayDownFrom(10))

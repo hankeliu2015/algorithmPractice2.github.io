@@ -24,5 +24,5 @@ isAPalindrome = (str) => {				//check for empty string
   return isAPalindrome(chopString(str))  		// recursuive function take in the string, which removed 1st and last char
 }
 
-console.log(isAPalindrome("cattac"))
-isAPalindrome("cattac")
+// console.log(isAPalindrome("cattac"))
+// isAPalindrome("cattac")
