@@ -17,13 +17,11 @@ function plusMinus(arr) {
       sumPos ++ ;
     }
   }
-debugger
-  console.log(typeof((sumPos/n).toFixed(6)), sumPos/n)
-  console.log(Number((sumPos/n).toFixed(6)));
-  console.log(parseFloat((sumNeg/n).toFixed(6)));
-  console.log(parseFloat((sumZ/n).toFixed(6)));
-  return [(sumPos/n).toFixed(6), (sumNeg/n).toFixed(6), (sumZ/n).toFixed(6)]
 
+  // console.log(Number((sumPos/n).toFixed(6)));
+  // console.log(parseFloat((sumNeg/n).toFixed(6)));
+  // console.log((sumZ/n).toFixed(6));
 
 }
-console.log(plusMinus([-4, 3, -9, 0, 4, 1]))
+
+// plusMinus([-4, 3, -9, 0, 4, 1])
