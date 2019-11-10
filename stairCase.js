@@ -7,19 +7,21 @@ function stairCase(n) {
   let arr = new Array();
 
   for (let i = 0; i < n ; i++) {
-    debugger
-    arr.push(' ')
 
-    for (let j = 0; j < n-1; j++) {
-      arr[i] = arr[i].concat(' ');
-
+    for (let j = 0; j < n-i-1; j++) {
+      // arr[i].push('');
+      // arr[i] = arr[i].concat(' ');
+      process.stdout.write(" ");
     }
 
-    arr[i] = arr[i].concat("#");
-    console.log(arr[i]);
+    for (let k = 0; k < i+1; k++) {
+      // arr[i] = arr[i].concat("#");
+      process.stdout.write("#");
+    }
+    process.stdout.write("\n");
+    // console.log(arr[i]);
   }
-
 
 }
 
-stairCase(5);
+stairCase(10);
