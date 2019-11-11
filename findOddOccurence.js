@@ -1,3 +1,5 @@
+// mock up tech interview code challange. 
+
 // function findOddOccurence(arr) {
 //   var arrHash = {};
 //   for (var i = 0; i < arr.lengthl; i++) {
