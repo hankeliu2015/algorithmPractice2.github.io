@@ -1,5 +1,6 @@
 // the array inside array methods has some issue, even it worked on my node.
 // hackerRank testing environment might have issue on that.
+// repeat method also worked.
 
 function stairCase(n) {
 
@@ -13,9 +14,14 @@ function stairCase(n) {
       process.stdout.write("#");
     }
 
+    // process.stdout.write(" ".repeat(n-i-1));
+    // process.stdout.write("#".repeat(i+1));
+
     process.stdout.write("\n");
+
+
   }
 
 }
 
-// stairCase(10);
+ // stairCase(10);
