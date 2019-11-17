@@ -8,7 +8,7 @@ function translatePigLatin(str) {
   console.log(str);
   if (str.match(/^[aeiouAEIOU]\w+/)) {
     return str.toLowerCase().concat('way')
-  }else {
+  } else {
     strArray = str.split(/(?=[aeiouAEIOU])/)
   }
 

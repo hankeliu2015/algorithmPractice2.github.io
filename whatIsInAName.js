@@ -7,24 +7,24 @@
 
 // follow by a condition, if the 1st and 2nd has the same key, and value are the same, also 2nd argument has less keys than the 1st argument, return true.
 
-// function whatIsInAName(collection, source) {
-//   let matchedArray = collection.filter(obj => {
-//     for (const key in obj ) {
-//
-//       for (const k in source) {
-//         if ( !obj.hasOwnProperty(k) || source[k] !== obj[k]) {
-//           return false;
-//         }
-//       }
-//
-//       if (obj[key] === source[key] && Object.keys(obj).length >= Object.keys(source).length ) {
-//         return true;
-//       }
-//     }
-//   })
-//   console.log(matchedArray);
-//   return matchedArray;
-// }
+function whatIsInAName(collection, source) {
+  let matchedArray = collection.filter(obj => {
+    for (const key in obj ) {
+
+      for (const k in source) {
+        if ( !obj.hasOwnProperty(k) || source[k] !== obj[k]) {
+          return false;
+        }
+      }
+
+      if (obj[key] === source[key] && Object.keys(obj).length >= Object.keys(source).length ) {
+        return true;
+      }
+    }
+  })
+  console.log(matchedArray);
+  return matchedArray;
+}
 
 // whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
@@ -37,19 +37,19 @@
 
 // solution:
 
+// the reduce method will verify if all the source objects are included in teh source objects.
+
+
 // function whatIsInAName(collection, source) {
 //
 //   var srcKeys = Object.keys(source);
-//
 //   let data =  collection.filter(function(obj) {
 //
 //     return srcKeys
 //       .map(function(key) {
-//
 //         return obj.hasOwnProperty(key) && obj[key] === source[key];
 //       })
 //       .reduce(function(a, b) {
-//
 //         return a && b;
 //       }
 //     );
