@@ -3,11 +3,11 @@
 
 
 function spinalCase(str) {
-  let strArray = str.split(/(?=[A-Z])|\s/);
+  let strArray = str.split(/(?=[A-Z])|\s|[_]/);
   let spinalStr = '';
 
   strArray.forEach(el => {
-    spinalStr = spinalStr.concat(`-${el}`)
+    spinalStr = spinalStr.concat(`-${el.toLowerCase()}`)
     // console.log(el, spinalStr)
   })
 
