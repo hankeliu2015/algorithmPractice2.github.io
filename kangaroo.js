@@ -16,15 +16,16 @@ function kangaroo(x1, v1, x2, v2) {
   while ( x1 + vX1 !== x2 + vX2 ) {
     vX1 = vX1 + v1;
     vX2 = vX2 + v2;
-    console.log(x1+vX1, x2+vX2)
+    // console.log(x1+vX1, x2+vX2)
     // the slower left behind faster one, return false
     // faster on ahead of slower one, return false
-    if (vX1 <= vX2 && x1 + vX1 < x2 + vX2  ) {
+    if (v1 <= v2 && x1 + vX1 < x2 + vX2  ) {
       console.log("NO");
       return false;
-    } else if (vX1 >= vX2 && x1 + vX1 > x2 + vX2 )
+    } else if (v1 >= v2 && x1 + vX1 > x2 + vX2 ) {
       console.log("NO");
       return false;
+    }
   }
 
   if (x1 + vX1 === x2 + vX2) {
