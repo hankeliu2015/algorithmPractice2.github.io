@@ -3,7 +3,7 @@
 // seperate the conso chars with the rest of string.
 
 function translatePigLatin(str) {
-  console.log(str);
+  console.log("original String:", str);
 
   let str1, str2;
 
@@ -19,12 +19,12 @@ function translatePigLatin(str) {
 
   return newStr;
 }
-
-console.log(translatePigLatin("algorithm"));
-console.log(translatePigLatin("consonant"));
-console.log(translatePigLatin("glove"));
-console.log(translatePigLatin("california"));
-console.log(translatePigLatin("paragraphs"));
-console.log(translatePigLatin("glove"));
-console.log(translatePigLatin("algorithm"));
-console.log(translatePigLatin("schwartz"));
+// 
+// console.log(translatePigLatin("algorithm"));
+// console.log(translatePigLatin("consonant"));
+// console.log(translatePigLatin("glove"));
+// console.log(translatePigLatin("california"));
+// console.log(translatePigLatin("paragraphs"));
+// console.log(translatePigLatin("glove"));
+// console.log(translatePigLatin("algorithm"));
+// console.log(translatePigLatin("schwartz"));

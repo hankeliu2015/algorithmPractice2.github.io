@@ -18,6 +18,8 @@
 //     process.stdout.write(`${grades[i]} \n`)
 //   }
 //
+//   return grades;
+//
 // }
 
 // function gradingStudents(grades) {
