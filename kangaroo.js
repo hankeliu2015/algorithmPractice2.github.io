@@ -5,25 +5,34 @@
 
 function kangaroo(x1, v1, x2, v2) {
   if ( x1 >= x2 && v1 < v2) {
-    return false;
+    console.log("NO");
   } else if ( x1 === x2 || x1 + v1 === x2 + v2) {
-    return true;
+    console.log("YES");
   }
 
-  let vX1=0;
-  let vX2=0;
+  let vX1=v1;
+  let vX2=v2;
 
   while ( x1 + vX1 !== x2 + vX2 ) {
     vX1 = vX1 + v1;
     vX2 = vX2 + v2;
-    console.log(vX1, vX2)
-
+    console.log(x1+vX1, x2+vX2)
+    // the slower left behind faster one, return false
+    // faster on ahead of slower one, return false
+    if (vX1 <= vX2 && x1 + vX1 < x2 + vX2  ) {
+      console.log("NO");
+      return false;
+    } else if (vX1 >= vX2 && x1 + vX1 > x2 + vX2 )
+      console.log("NO");
+      return false;
   }
 
   if (x1 + vX1 === x2 + vX2) {
+    console.log("YES");
     return true;
   }
 
 }
 
 console.log(kangaroo(0,3,4,2))
+console.log(kangaroo(0,2,5,3))
