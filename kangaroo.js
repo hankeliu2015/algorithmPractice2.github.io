@@ -30,7 +30,7 @@ function kangaroo(x1, v1, x2, v2) {
 
   if (x1 + vX1 === x2 + vX2) {
     console.log("YES");
-    return true;
+    return 'YES';
   }
 
 }
