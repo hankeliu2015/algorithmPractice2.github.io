@@ -6,26 +6,28 @@
 // the single digit minus 8 less than 3 or minus 5 greater than 3.
 // make a condition for grade 100.
 
-function gradingStudents(grades) {
-
-
-  for (let i = 1; i < grades.length; i ++) {
-
-    if (grades[i] < 38){
-      grades[i] = grades[i];
-    } else if (grades[i] % 5 >= 3)  {
-      grades[i] = grades[i] + 5 - grades[i] % 5
-    }
-  }
-
-  for (let i = 1; i < grades.length; i ++) {
-    process.stdout.write(`${grades[i]} \n`)
-  }
-
-  return grades;
-
-}
-
+// function gradingStudents(grades) {
+//
+//
+//   for (let i = 1; i < grades.length; i ++) {
+//
+//     if (grades[i] < 38){
+//       grades[i] = grades[i];
+//     } else if (grades[i] % 5 >= 3)  {
+//       grades[i] = grades[i] + 5 - grades[i] % 5
+//     }
+//   }
+//
+//   for (let i = 1; i < grades.length; i ++) {
+//     process.stdout.write(`${grades[i]} \n`)
+//
+//   }
+//
+//   return grades;
+//
+// }
+//
+// console.log(gradingStudents([4,73,67,38,33]));
 // console.log(gradingStudents([73, 67, 38, 33]))
 
 // function gradingStudents(grades) {
@@ -62,5 +64,3 @@ function gradingStudents(grades) {
 //         return n;
 //     })
 // }
-
-console.log(gradingStudents([4,73,67,38,33]));
