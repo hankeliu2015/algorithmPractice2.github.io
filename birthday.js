@@ -13,7 +13,8 @@ function birthday(s, d, m) {
 
       // if the sum of the elements equal to d, counter add one.
       // use reduce for the sum.
-      segment = s.slice(i, m)
+      // m in slice need to be the range, not the end.
+      segment = s.slice(i, m+i)
       if (segment.reduce((acc,el)=> acc+el, 0) === d) {
         counter++;
       }
