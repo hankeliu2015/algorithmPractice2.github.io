@@ -29,9 +29,9 @@ function breakingRecords(scores) {
     }
 
   }
-  console.log(maxCounter, minCounter)
-  return [maxCounter, minCounter];
+  // console.log(maxCounter, minCounter)
+  // return [maxCounter, minCounter];
 }
-
-console.log(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]))
-console.log(breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]))
+//
+// console.log(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]))
+// console.log(breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]))

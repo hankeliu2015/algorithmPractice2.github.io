@@ -40,21 +40,21 @@ function whatIsInAName(collection, source) {
 // the reduce method will verify if all the source objects are included in teh source objects.
 
 
-// function whatIsInAName(collection, source) {
-//
-//   var srcKeys = Object.keys(source);
-//   let data =  collection.filter(function(obj) {
-//
-//     return srcKeys
-//       .map(function(key) {
-//         return obj.hasOwnProperty(key) && obj[key] === source[key];
-//       })
-//       .reduce(function(a, b) {
-//         return a && b;
-//       }
-//     );
-//
-//     });
-//
-//     return data;
-// }
+function whatIsInAName(collection, source) {
+
+  var srcKeys = Object.keys(source);
+  let data =  collection.filter(function(obj) {
+
+    return srcKeys
+      .map(function(key) {
+        return obj.hasOwnProperty(key) && obj[key] === source[key];
+      })      // if this return 2 true in an array, the reduce will make it one true. if there one false, all array will return false.
+      .reduce(function(a, b) {
+        return a && b;
+      }
+    );
+
+    });
+
+    return data;
+}
