@@ -2,25 +2,31 @@
 // grade greater or equal 38.
 // remainder is 0, stay the same.
 // greater or equal than 3, plus the remainder.
-
+//
 // the single digit minus 8 less than 3 or minus 5 greater than 3.
 // make a condition for grade 100.
 
-// function gradingStudents(grades) {
-//   for (let i = 1; i < grades.length; i ++) {
-//
-//     if (grades[i] % 5 >= 3)  {
-//       grades[i] = grades[i] + 5 - grades[i] % 5
-//     }
-//   }
-//
-//   for (let i = 1; i < grades.length; i ++) {
-//     process.stdout.write(`${grades[i]} \n`)
-//   }
-//
-//   return grades;
-//
-// }
+function gradingStudents(grades) {
+
+
+  for (let i = 1; i < grades.length; i ++) {
+
+    if (grades[i] < 38){
+      grades[i] = grades[i];
+    } else if (grades[i] % 5 >= 3)  {
+      grades[i] = grades[i] + 5 - grades[i] % 5
+    }
+  }
+
+  for (let i = 1; i < grades.length; i ++) {
+    process.stdout.write(`${grades[i]} \n`)
+  }
+
+  return grades;
+
+}
+
+// console.log(gradingStudents([73, 67, 38, 33]))
 
 // function gradingStudents(grades) {
 // 	let finalMarks = [];
@@ -45,7 +51,7 @@
 //
 //     return finalGrades;
 // }
-
+//
 // function gradingStudents(grades){
 //     return grades.map((n) => {
 //         let diff = 5 - (n % 5);
@@ -56,5 +62,5 @@
 //         return n;
 //     })
 // }
-//
-// console.log(gradingStudents([4,73,67,38,33]));
+
+console.log(gradingStudents([4,73,67,38,33]));
