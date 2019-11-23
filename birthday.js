@@ -10,7 +10,6 @@ function birthday(s, d, m) {
   let segment = [];
   for (let i = 0; i < s.length; i ++) {
 
-
       // if the sum of the elements equal to d, counter add one.
       // use reduce for the sum.
       // m in slice need to be the range, not the end.
@@ -18,10 +17,11 @@ function birthday(s, d, m) {
       if (segment.reduce((acc,el)=> acc+el, 0) === d) {
         counter++;
       }
-
   }
 
   console.log(counter)
+  return counter
 }
 
 console.log(birthday([1,2,1,3,2],3,2))
+console.log(birthday([2,2,1,3,2],4,2))
