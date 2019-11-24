@@ -2,7 +2,7 @@
 
 function findOddOccurence(arr) {
   var arrHash = {};
-  for (var i = 0; i < arr.lengthl; i++) {
+  for (var i = 0; i < arr.length; i++) {
     if (arrHash[arr[i]] !== undefined) {
       arrHash[arr[i]] ++
     } else {
@@ -11,7 +11,7 @@ function findOddOccurence(arr) {
   }
   for ( var key in arrHash) {
     if (arrHash[key] % 2 !== 0) {
-      debugger
+      // debugger
       return key;
     }
   }
