@@ -21,22 +21,54 @@ function dayOfProgrammer(year) {
   let days = 256;
   let month = 0;
   // georgian year
-  //leap year
+
   if (year > 1918) {
+      //leap year
     if (year % 400 ===0 || (year%4 ===0 && year%100 !==0) ){
       days = days - 31 - 29;
 
       for (let i = 3; i <= 12; i++) {
+
         if (days >= 31 && (i <=7 && i % 2 !== 0)) {
           days -= 31;
+          month = i + 1;
         } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
           days -= 30;
+          month = i + 1;
         } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
           days -= 31;
-          month = i;
+          month = i + 1;
         } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
           days -= 30;
-          month = i;
+          month = i + 1;
+          // need to decide the month is 31 or 30 to reset the days from 0 of previous month
+        } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
+          days = 30;
+          month = i - 1;
+        } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
+          days = 31;
+          month = i - 1;
+        }
+        console.log(days, month, year);
+      }
+    // normal year
+    } else {
+      days = days - 31 - 28;
+
+      for (let i = 3; i <= 12; i++) {
+
+        if (days >= 31 && (i <=7 && i % 2 !== 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
+          days -= 30;
+          month = i + 1;
+        } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
+          days -= 30;
+          month = i + 1;
           // need to decide the month is 31 or 30 to reset the days from 0 of previous month
         } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
           days = 30;
@@ -46,23 +78,24 @@ function dayOfProgrammer(year) {
           month = i - 1;
         }
       }
-    // normal year
-    }else {
-      days = days - 31 - 28;
-      // more conditions here...
     }
   }
+    else if (year = 1918) {
+      //the year julian calendar changed to georgian calendar
 
-  //the year julian calendar changed to georgian calendar
-  else if (year = 1918) {
+      }
+    // the years in Julian calendar
+        else if (year < 1918) {
 
+          }
+
+  if (month < 10) {
+    month = '0' + `${month}`;
   }
-  // the years in Julian calendar
-  else if (year < 1918) {
 
-  }
-
-  console.log(days, month, year)
-}
+  console.log(`${days}.${month}.${year}`)
+  return `${days}.${month}.${year}`
+} //end of function
 
 console.log(dayOfProgrammer(1984))
+console.log(dayOfProgrammer(2017))
