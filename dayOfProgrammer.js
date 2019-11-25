@@ -79,67 +79,96 @@ function dayOfProgrammer(year) {
         }
       }
     }
-  } else if (year = 1918) {   //the year julian calendar changed to georgian calendar
+  }
 
-    } else if (year < 1918) { // the years in Julian calendar
-          //leap year
-        if (year % 4 ===0){
-          days = days - 31 - 29;
+  if (year === 1918) {   //the year julian calendar changed to georgian calendar
+    days = days - 31 - 15;    //not sure why need to minus 15. 
+      for (let i = 3; i <= 12; i++) {
 
-          for (let i = 3; i <= 12; i++) {
-
-            if (days >= 31 && (i <=7 && i % 2 !== 0)) {
-              days -= 31;
-              month = i + 1;
-            } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
-              days -= 30;
-              month = i + 1;
-            } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
-              days -= 31;
-              month = i + 1;
-            } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
-              days -= 30;
-              month = i + 1;
-              // need to decide the month is 31 or 30 to reset the days from 0 of previous month
-            } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
-              days = 30;
-              month = i - 1;
-            } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
-              days = 31;
-              month = i - 1;
-            }
-            console.log(days, month, year);
-          }
-        // normal year
-        } else {
-          days = days - 31 - 28;
-
-          for (let i = 3; i <= 12; i++) {
-
-            if (days >= 31 && (i <=7 && i % 2 !== 0)) {
-              days -= 31;
-              month = i + 1;
-            } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
-              days -= 30;
-              month = i + 1;
-            } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
-              days -= 31;
-              month = i + 1;
-            } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
-              days -= 30;
-              month = i + 1;
-              // need to decide the month is 31 or 30 to reset the days from 0 of previous month
-            } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
-              days = 30;
-              month = i - 1;
-            } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
-              days = 31;
-              month = i - 1;
-            }
-          }
+        if (days >= 31 && (i <=7 && i % 2 !== 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
+          days -= 30;
+          month = i + 1;
+        } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
+          days -= 30;
+          month = i + 1;
+          // need to decide the month is 31 or 30 to reset the days from 0 of previous month
+        } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
+          days = 30;
+          month = i - 1;
+        } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
+          days = 31;
+          month = i - 1;
         }
-
+      // console.log(days, month, year);
     }
+  }
+
+
+  if (year < 1918) { // the years in Julian calendar
+        //leap year
+    if (year % 4 ===0){
+      days = days - 31 - 29;
+
+      for (let i = 3; i <= 12; i++) {
+
+        if (days >= 31 && (i <=7 && i % 2 !== 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
+          days -= 30;
+          month = i + 1;
+        } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
+          days -= 30;
+          month = i + 1;
+          // need to decide the month is 31 or 30 to reset the days from 0 of previous month
+        } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
+          days = 30;
+          month = i - 1;
+        } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
+          days = 31;
+          month = i - 1;
+        }
+        console.log(days, month, year);
+      }
+    // normal year
+    } else {
+      days = days - 31 - 28;
+
+      for (let i = 3; i <= 12; i++) {
+
+        if (days >= 31 && (i <=7 && i % 2 !== 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i <=7 && i % 2 === 0)) {
+          days -= 30;
+          month = i + 1;
+        } else if (days >= 31 && (i >= 8 && i % 2 === 0)) {
+          days -= 31;
+          month = i + 1;
+        } else if (days >= 30 && (i >= 8 && i % 2 !== 0)) {
+          days -= 30;
+          month = i + 1;
+          // need to decide the month is 31 or 30 to reset the days from 0 of previous month
+        } else if (days === 0 && (i >= 8 && i % 2 === 0) ) {
+          days = 30;
+          month = i - 1;
+        } else if (days === 0 && (i >= 8 && i % 2 !== 0) ) {
+          days = 31;
+          month = i - 1;
+        }
+      }
+    }
+
+  }
 
   if (month < 10) {
     month = '0' + `${month}`;
@@ -149,5 +178,6 @@ function dayOfProgrammer(year) {
   return `${days}.${month}.${year}`
 } //end of function
 
-console.log(dayOfProgrammer(1600))
-console.log(dayOfProgrammer(1920))
+console.log(dayOfProgrammer(1919))
+console.log(dayOfProgrammer(1918))
+console.log(dayOfProgrammer(1917))
