@@ -22,3 +22,27 @@ let rootNode = {data: 6,
                 };
 
 inOrder(rootNode);
+/*
+  6
+ / \
+1   8
+ \
+  4
+ / \
+2   5
+
+
+
+
+
+console output:
+1
+2
+4
+5
+6
+8
+
+
+
+*/
