@@ -21,4 +21,4 @@ let rootNode = {data: 6,
                   left: null}
                 };
 
-// inOrder(rootNode);
+inOrder(rootNode);
