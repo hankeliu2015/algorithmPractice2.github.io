@@ -6,8 +6,8 @@
 function bonAppetit(bill, k, b) {
   let refund = bill[k]/2;
   bill.splice(k, 1)
-  let annaPay = parseInt(bill.reduce((acc, el) => acc + el, 0)) / 2
-  console.log(annaPay)
+  let annaPay = bill.reduce((acc, el) => acc + el, 0) / 2
+  // console.log(annaPay)
   if (b !== annaPay ) {
     return refund;
   } else {
