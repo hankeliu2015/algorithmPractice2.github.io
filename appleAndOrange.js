@@ -47,9 +47,9 @@
 
 //Solutions by reduce:			??
 
-Array.prototype.sum = function(f) {
-    return this.reduce((s, v) => s + f(v), 0);
-}
-
-console.log( apple.sum(d => s - a <= d && d <= t - a));
-console.log(orange.sum(d => s - b <= d && d <= t - b));
+// Array.prototype.sum = function(f) {
+//     return this.reduce((s, v) => s + f(v), 0);
+// }
+//
+// console.log( apple.sum(d => s - a <= d && d <= t - a));
+// console.log(orange.sum(d => s - b <= d && d <= t - b));

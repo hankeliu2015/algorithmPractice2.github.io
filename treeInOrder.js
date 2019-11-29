@@ -3,33 +3,34 @@
 // const inOrder = inOrder(Right branch), root node, inOrder(left branch)
 
 
-function inOrder(currentNode){
-  if(currentNode.left){
-    inOrder(currentNode.left)
-  }
-  console.log(currentNode.data)   // when there is no left node, root node will show.
-
-  if(currentNode.right){
-    inOrder(currentNode.right)
-  }
-}
-
-let rootNode = {data: 6,
-                right: {data: 8, left: null, right: null},
-                left: {data: 1,
-                  right: {data: 4, right: { data: 5, left: null, right: null}, left: {data: 2, left: null, right: null}},
-                  left: null}
-                };
-
-inOrder(rootNode);
+// function printNodeWithoutLeft(currentNode){
+//   if(currentNode.left){
+//     printNodeWithoutLeft(currentNode.left)
+//   }
+//   console.log(currentNode.data)
+//   if(currentNode.right){
+//     printNodeWithoutLeft(currentNode.right)
+//   // }
+// }
+//
+//
+// let rootNode = {data: 6,
+//                   right: {data: 8, left: null, right: null},
+//                   left:  {data: 1,
+//                     right: {data: 4, right: { data: 5, left: null, right: null}, left: {data: 2, left: null, right: null}},
+//                     left: null}
+//                 };
+//
+// printNodeWithoutLeft(rootNode);
 /*
+
   6
  / \
-1   8
+1   8   // printNodeWithoutLeft(1),  frist consolelog output will be 1
  \
-  4
+  4   // after printing 1, call printNodeWithoutLeft(4) again with argument as right child
  / \
-2   5
+2   5 // printNodeWithoutLeft(2) will print out 2 right after 1
 
 
 
