@@ -44,6 +44,27 @@ console output:
 6
 8
 
-
-
 */
+
+                                                    // stack
+
+// function add(a, b) {return a + b;}                //  sum(1, 2)
+//
+// function sum(a,b) {return sum(a,b);}             //  square(1, 2)
+//
+// function printSum(a,b) {console.log(sum(a,b));} //  print(1, 2)
+//
+//                                                   //  main()
+// printSum(1, 2)
+
+
+// console.log("time out!")
+//
+// setTimeout(function() {
+//   console.log("Time out is over")
+// }, 5000)
+//
+// console.log("Let's get started")
+
+
+ //  main()
