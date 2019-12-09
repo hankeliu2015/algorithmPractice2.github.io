@@ -6,7 +6,6 @@
 
 // return the max length of the array inside matchedElArray.
 
-
 function pickingNumbers(a) {
 
   let matchedElArray = [];
@@ -24,7 +23,6 @@ function pickingNumbers(a) {
               return true;
             }
           })
-
           let reducedArray = trueFalseArray.reduce((acc, cur) => acc && cur )
           if (reducedArray) {
             matchedElArray[i].push(a[j])
@@ -43,9 +41,7 @@ function pickingNumbers(a) {
   })
 
   return maxLength;
-
 }
-
 console.log(pickingNumbers([1, 2, 2, 3, 1, 2]))
 console.log(pickingNumbers([1, 2, 2, 4, 4, 5, 5, 5]))
 console.log(pickingNumbers([4, 6, 5, 3, 3, 1]))
