@@ -4,23 +4,19 @@
 // create a method to get ride of the duplicate.
 
 
-// function climbingLeaderboard(scores, alice) {
-//   let uniqueScores = scores.filter((el, index) => {
-//     return scores.indexOf(el) === index;
-//   });
-//
-//
-//   let rankArray = alice.map((el, index) => {
-//     let scoresWithAlice = uniqueScores
-//     scoresWithAlice.push(el)
-//     let sortedScores = scoresWithAlice.sort((a, b) => b-a)
-//
-//     return (sortedScores.indexOf(el) + 1);
-//
-//   })
-//
-//   return rankArray
-// }
+function climbingLeaderboard(scores, alice) {
+  let uniqueScores = scores.filter((el, index) => {
+    return scores.indexOf(el) === index;
+  });
+
+  let rankArray = alice.map((el, index) => {
+    let scoresWithAlice = uniqueScores
+    scoresWithAlice.push(el)
+    let sortedScores = scoresWithAlice.sort((a, b) => b-a)
+    return (sortedScores.indexOf(el) + 1);
+  })
+  return rankArray
+}
 
 // solution 2:
 // compare the score with the array. As long as matched, return the index value.
