@@ -1,21 +1,32 @@
+// create an button element with a uniqe id
+// bind the event listen click action to the unique button.
+
 
 function yieldmo() {
 
   const n = 5;
+
   for (var i = 0; i < n; i++) {
     let btn = document.createElement('button');
-
-    btn.appendChild(document.createTextNode('Button' + 1));
-
-    btn.addEventListener('click', function(){
-      console.log(i);
-    });
-
+    btn.setAttribute("class", `btn`)
+    btn.appendChild(document.createTextNode('Button' + i));
 
     document.body.appendChild(btn);
+
+    btn.addEventListener('click', function(e){
+      // debugger
+      let j = e.currentTarget.innerText;
+      console.log(j);
+    });
   }
 
+  // need a variable to store buttoneClicked.
+  // let btn = document.createElement('button');
+  // debugger
+
 }
+
+
 
 yieldmo();
 
