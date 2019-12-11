@@ -8,25 +8,18 @@ function yieldmo() {
 
   for (var i = 0; i < n; i++) {
     let btn = document.createElement('button');
-    btn.setAttribute("class", `btn`)
+    // btn.setAttribute("id", `i`);
     btn.appendChild(document.createTextNode('Button' + i));
 
     document.body.appendChild(btn);
 
     btn.addEventListener('click', function(e){
-      // debugger
-      let j = e.currentTarget.innerText;
-      console.log(j);
+      e.preventDefault(); 
+      let buttonText = e.currentTarget.innerText;
+      console.log(buttonText);
     });
   }
-
-  // need a variable to store buttoneClicked.
-  // let btn = document.createElement('button');
-  // debugger
-
 }
-
-
 
 yieldmo();
 
