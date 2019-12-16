@@ -26,7 +26,7 @@
 // }
 
 // solution 2:
-// declare a max value as -1, only need return Max when condition met.  
+// declare a max value as -1, only need return Max when condition met.
 
 
 // function getMoneySpent(keyboards, drives, b) {
@@ -37,8 +37,8 @@
 //     drives.forEach(drive => {
 //       // console.log(keyboard + drive)
 //       if ( (sum = keyboard + drive) === b) {
-//         return sum;
-//       }else if ( (sum = keyboard + drive) < b) {
+//         max = sum
+//       }else if ( (sum = keyboard + drive) < b && keyboard && drive) {
 //         if (sum > max) {
 //           max = sum;
 //         }

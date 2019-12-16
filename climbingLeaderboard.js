@@ -36,4 +36,4 @@ function climbingLeaderboard(scores, alice) {
   return rankArray
 }
 //
-// console.log(climbingLeaderboard([100,100,50,40,40,20,10], [2,25,50,120]))
+console.log(climbingLeaderboard([100,100,50,40,40,20,10], [2,25,50,120]))

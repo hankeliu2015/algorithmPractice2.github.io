@@ -65,23 +65,23 @@
 // when 2 condition meet, seaLevel equal to 0 and s[i] = 'U'. counter ++
 
 
-function countingValleys(n, s) {
-
-  let seaLevel = 0;
-  let counter = 0;
-  for  (let i = 0; i < s.length; i++) {
-    if (s[i] === "U") {
-      seaLevel++;
-    } else if ( s[i] === 'D') {
-      seaLevel--;
-    }
-    if (seaLevel === 0 && s[i] === 'U') {
-      counter++;
-    }
-  }
-  return counter;
-
-}
+// function countingValleys(n, s) {
+//
+//   let seaLevel = 0;
+//   let counter = 0;
+//   for  (let i = 0; i < s.length; i++) {
+//     if (s[i] === "U") {
+//       seaLevel++;
+//     } else if ( s[i] === 'D') {
+//       seaLevel--;
+//     }
+//     if (seaLevel === 0 && s[i] === 'U') {
+//       counter++;
+//     }
+//   }
+//   return counter;
+//
+// }
 //
 //
 // console.log(countingValleys(8, 'UDDDUDUU'))
