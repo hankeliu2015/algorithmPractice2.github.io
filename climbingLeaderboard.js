@@ -85,3 +85,24 @@
 // }
 //
 // console.log(climbingLeaderboard([100,100,50,40,40,20,10], [2,25,50,120]))
+
+function climbingLeaderboard(scores, alice) {
+    const results = Array(alice.length);
+    let rank = 1;
+    // Scores are sorted high to low but Alice is sorted low to high.
+    // And so results are also going to be in sorted order (rank lowest/worst to highest)
+    // Loops is going from Alice's highest score (last entry) to her lowest score
+    for (let i = 0, j = alice.length - 1; j >= 0; j--) {
+        console.log(`ranking alice's score ${alice[j]}`)
+        // because scores are sorted, we can pick up where we left off.  That
+        // is why i is not re-initialized here (just using previous value from where
+        // the last alice score was ranked)
+        for (; scores[i] > alice[j]; i++) {
+            console.log(`--- comparing to ${scores[i]}`)
+            if (scores[i] > scores[i + 1] ||
+                i === scores.length - 1) rank++;
+        }
+        results[j] = rank;
+    }
+    return results;
+}
