@@ -10,7 +10,7 @@
 //   console.log(currentNode.data)
 //   if(currentNode.right){
 //     printNodeWithoutLeft(currentNode.right)
-//   // }
+//   }
 // }
 //
 //
@@ -24,18 +24,6 @@
 // printNodeWithoutLeft(rootNode);
 /*
 
-  6
- / \
-1   8   // printNodeWithoutLeft(1),  frist consolelog output will be 1
- \
-  4   // after printing 1, call printNodeWithoutLeft(4) again with argument as right child
- / \
-2   5 // printNodeWithoutLeft(2) will print out 2 right after 1
-
-
-
-
-
 console output:
 1
 2
@@ -45,26 +33,3 @@ console output:
 8
 
 */
-
-                                                    // stack
-
-// function add(a, b) {return a + b;}                //  sum(1, 2)
-//
-// function sum(a,b) {return sum(a,b);}             //  square(1, 2)
-//
-// function printSum(a,b) {console.log(sum(a,b));} //  print(1, 2)
-//
-//                                                   //  main()
-// printSum(1, 2)
-
-
-// console.log("time out!")
-//
-// setTimeout(function() {
-//   console.log("Time out is over")
-// }, 5000)
-//
-// console.log("Let's get started")
-
-
- //  main()
