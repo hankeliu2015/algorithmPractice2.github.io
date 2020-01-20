@@ -26,8 +26,59 @@ body {
 .box-1 {
   background-color:  #333333;
   color: #ffffff;
-  padding: 15px;
+  padding: 20px;
   border-bottom-width: 10px;
   border-top-style: dotted;
   border: 5px red solid;
+
+  margin: 20px;
+}
+
+.box-1 h1 {
+  font-family: Tahoma;
+  font-weight: 800;
+  font-style: italic;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  word-spacing: 0.25em;
+}
+
+.box-2 {
+  border: 3px #ccc dotted;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.categories {
+  border: 1px #ccc solid;
+  padding: 10px;
+  border-radius: 15px;
+}
+.categories h2 {
+  text-align: center;
+}
+
+.categories ul {
+  padding: 0;
+  list-style: square;
+  list-style: none;
+  /* text-align: center; */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active {
+  color: green;
+}
+
+a:visited {
+  color: orange; 
 }
