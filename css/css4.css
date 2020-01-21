@@ -1,0 +1,162 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+/* reset all the maring and padding */
+
+h3 {
+  color: green;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #55555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  /* font: normal 16px Arial, Helvetica, sans-serif; */
+  /* line-height: 1.6em; */
+}
+
+.container {
+  width: 80%;
+  margin: auto; /* center the container */
+}
+
+.box-1 {
+  background-color:  #333333;
+  color: #ffffff;
+  padding: 20px;
+  border-bottom-width: 10px;
+  border-top-style: dotted;
+  border: 5px red solid;
+
+  margin: 20px;
+}
+
+.box-1 h1 {
+  font-family: Tahoma;
+  font-weight: 800;
+  font-style: italic;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  word-spacing: 0.25em;
+}
+
+.box-2 {
+  border: 3px #ccc dotted;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.categories {
+  border: 1px #ccc solid;
+  padding: 10px;
+  border-radius: 15px;
+}
+.categories h2 {
+  text-align: center;
+}
+
+.categories ul {
+  padding: 0;
+  padding-left: 25px;
+  list-style: square;
+  /* list-style: none; */
+  /* text-align: center; */
+}
+
+.categories li {
+  padding-bottom: 6px;
+  border-bottom: dotted 1px #333;
+  list-style-image: url("../img/checkMark.png");
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active {
+  color: orange;
+}
+
+a:visited {
+  color: green;
+}
+
+.my-form {
+  margin-top: 15px;
+  padding: 20px;
+  border: 1px #ccc solid;
+  border-radius: 15px;
+}
+
+.my-form .form-group {
+  padding-bottom: 15px;
+}
+
+.my-form label {
+  display: block;
+}
+
+.my-form input[type="text"], .my-form textarea {
+  padding: 8px;
+  width: 95%;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: 1px yellow dotted;
+
+}
+
+.button:hover {
+  background-color: red;
+}
+/* .my-form input[type="button"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: 1px red dotted;
+
+} */
+
+.block {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 33.3%;
+  box-sizing: border-box;
+}
+
+.clr {
+  clear: both;
+}
+#main-block {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  float: right;
+  width: 30%;
+  background-color: #333;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 15px;
+    border: 1px #ccc solid;
+  border-radius: 15px;
+}
