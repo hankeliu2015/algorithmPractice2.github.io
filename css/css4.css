@@ -107,7 +107,7 @@ a:visited {
 
 .my-form input[type="text"], .my-form textarea {
   padding: 8px;
-  width: 100%;
+  width: 95%;
 }
 
 .button {
@@ -128,3 +128,35 @@ a:visited {
   border: 1px red dotted;
 
 } */
+
+.block {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 33.3%;
+  box-sizing: border-box;
+}
+
+.clr {
+  clear: both;
+}
+#main-block {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  float: right;
+  width: 30%;
+  background-color: #333;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 15px;
+    border: 1px #ccc solid;
+  border-radius: 15px;
+}
