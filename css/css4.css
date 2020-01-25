@@ -54,6 +54,7 @@ body {
   border: 1px #ccc solid;
   padding: 10px;
   border-radius: 15px;
+  margin-bottom: 15px;
 }
 .categories h2 {
   text-align: center;
