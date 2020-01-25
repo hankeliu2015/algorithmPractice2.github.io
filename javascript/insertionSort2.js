@@ -62,5 +62,5 @@ function insertionSort2(n, arr) {
 }
 
 // console.log(insertionSort2(7, [3,4,7,5,6,2,1]))
-console.log(insertionSort2(6, [1,4,3,5,6,2]))
+// console.log(insertionSort2(6, [1,4,3,5,6,2]))
 // console.log(insertionSort2(3, [4,3,1]))   // the 3rd element can not compare with previous 2.

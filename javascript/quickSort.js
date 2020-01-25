@@ -21,5 +21,5 @@ function quickSort(arr) {
   return `Sorted array: ${array}`
 }
 
-console.log(quickSort([4,3,2,1]))
-console.log(quickSort([4, 3, 5, 7, 8]))
+// console.log(quickSort([4,3,2,1]))
+// console.log(quickSort([4, 3, 5, 7, 8]))

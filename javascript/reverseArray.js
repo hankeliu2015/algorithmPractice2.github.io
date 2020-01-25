@@ -19,7 +19,7 @@
 
   // console.log(array.reverse().join(' '));
   // return array.reverse(); //
-}
+// }
 
 // console.log(reverseArray([1,2,3,4,5,6]))
 // console.log(reverseArray([1,4,3,2]))
