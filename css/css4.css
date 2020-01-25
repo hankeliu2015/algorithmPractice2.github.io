@@ -54,6 +54,7 @@ body {
   border: 1px #ccc solid;
   padding: 10px;
   border-radius: 15px;
+  margin-bottom: 15px;
 }
 .categories h2 {
   text-align: center;
@@ -182,9 +183,9 @@ a:visited {
 
 .fix-me {
   position: fixed;
-  top: 400px;
+  top: 250px;
 }
 
 .testclass {
-  
+
 }
