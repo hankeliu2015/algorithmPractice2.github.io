@@ -50,3 +50,24 @@ f.prototype.c = 4;
 //
 // console.log(person.greet())
 // console.log(person.greet() === person)
+
+this.character = 'Daisy'
+
+const game = {
+  character: 'Mario',
+
+  details: {
+    	character: 'Yoshi',
+   	 characterName: function() {
+      		return this.character
+    	},
+    	arrowCharacterName: () => this.character
+  	}
+}
+console.log(game.details.characterName())
+// 'Yoshi'
+
+console.log(game.details.characterName.call(game))
+// "Mario"
+console.log(game.details.characterName.bind(game)())
+// "Mario"
