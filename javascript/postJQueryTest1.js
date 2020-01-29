@@ -16,6 +16,8 @@ const bindClickHandlers = () => {
       })
     )
   })
+
+
 }
 
 function Post(post) {
@@ -28,8 +30,6 @@ function Post(post) {
 
 Post.prototype.formatIndex = function(){
   let postHtml = `
-    <h1>${this.title}<h1>
+    <a href="/posts/${this.id}" class="show_link"><h1>${this.title}<h1></a>
   `
-
-
 }
