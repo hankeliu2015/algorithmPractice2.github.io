@@ -68,3 +68,15 @@ $(() => {
 // FAQ test jQuery
 $('#myDivId').val("test")
 $('#myDivId').val()
+$('#myHiddenDiv').show()
+
+let isVisible = $( "#myAnimatedDiv" ).is( ":visible" );
+
+let isHidden = $( "#myAnimatedDiv" ).is( ":hidden" );
+$( "#myAnimatedDiv:visible" ).animate({
+    left: "+=1000px"
+}, "slow" );
+
+$( "#myAnimatedDiv" ).text()
+
+$( "#myselect option:selected" ).text()
