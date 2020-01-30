@@ -34,3 +34,37 @@ for (let i = 0 ; i < 3 ; i ++) {
   ul.appendChild(ol);
 }
 divForUl.appendChild(ul);
+
+// DOM
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+
+$(() => {
+  console.log( "ready again!" );
+})
+
+// how jQuery works intro
+// window.onload = function () {
+//   alert('welcome!')
+// }
+
+// $(document).ready(function() {
+//   $("a").click(function(e) {
+//     event.preventDefault();
+//     alert("Thanks for visiting")
+//   })
+// })
+
+// $("a").addClass("test");
+// $("a").removeClass("test")
+
+// $("a").click(function(event) {
+//   event.preventDefault();
+//   $(this).hide("slow");
+// })
+
+// FAQ test jQuery
+$('#myDivId').val("test")
+$('#myDivId').val()
