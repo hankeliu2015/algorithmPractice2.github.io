@@ -21,10 +21,16 @@ $(() => {
 // $("a").addClass("test");
 // $("a").removeClass("test")
 
-$("a").click(function(event) {
-  event.preventDefault();
-  $(this).hide("slow");
-})
+// $("a").click(function(event) {
+//   event.preventDefault();
+//   $(this).hide("slow");
+// })
+
+$('#myDivId').val("test")
+$('#myDivId').val()
+
+
+
 
 // -----------
 // $(() => {
