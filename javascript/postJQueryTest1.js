@@ -1,30 +1,4 @@
-// A $( document ).ready() block.
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
 
-$(() => {
-  console.log( "ready again!" );
-})
-
-// window.onload = function () {
-//   alert('welcome!')
-// }
-
-// $(document).ready(function() {
-//   $("a").click(function(e) {
-//     event.preventDefault();
-//     alert("Thanks for visiting")
-//   })
-// })
-
-// $("a").addClass("test");
-// $("a").removeClass("test")
-
-$("a").click(function(event) {
-  event.preventDefault();
-  $(this).hide("slow");
-})
 
 // -----------
 // $(() => {
