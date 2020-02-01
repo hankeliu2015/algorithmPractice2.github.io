@@ -20,5 +20,5 @@ function findOddOccurence(arr) {
   return counter;
 }
 
-const input = [1,2,4,2,2,4,1,4,3,3,3];
-console.log(findOddOccurence(input))
+// const input = [1,2,4,2,2,4,1,4,3,3,3];
+// console.log(findOddOccurence(input))
