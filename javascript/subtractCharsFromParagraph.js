@@ -1,19 +1,31 @@
-//
-// Split paragraph by space and combine chars into a string.
-// How to set a limit number, the characters might be duplicated in the paragraph ??
-//
-// Create a new set
-// Store the unique characters inside the new set.
-// Combine the new set into a string and print it out under certain format.
 
-// let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
+// Split paragraph by space and combine chars into a string.
+// Set the limit by string lenght minus 50.
+// set the new string with first 50 chars.
 //
-// function convertToString(paragraph) {
-//   return paragraph.split(' ').join();
-// }
+// Create a new set for new string by convert the string chars into object key value pairs.
 //
-// // set a limit number
-// let limitNum = convertToString().length - 50;
+// print it out under certain format.
+
+let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
+
+let charsString = paragraph.split(' ').join();
+
+console.log(charsString.length);
+
+let charsObj = {};
+
+for (let i = 0; i < charsString.length; i++) {
+  if ( charsObj[charsString.charAt(i)] !== undefined ) {
+    charsObj[charsString.charAt(i)] ++
+  } else {
+    charsObj[charsString.charAt(i)] = 1
+  }
+
+}
+
+console.log(charsObj)
+
 
 
 
