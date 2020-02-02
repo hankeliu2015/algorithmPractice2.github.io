@@ -11,7 +11,7 @@ let paragraph = 'If you want to jumpstart the process of talking to us about thi
 
 let charsString = paragraph.split(' ').join();
 
-console.log(charsString.length);
+// console.log(charsString.length);
 
 let charsObj = {};
 
@@ -26,11 +26,31 @@ for (let i = 0; i < charsString.length; i++) {
 
 console.log(charsObj)
 
+let charsObjKeys = Object.keys(charsObj)
+let charsDescending = charsObjKeys.sort( (key1, key2) => {
+  // console.log(key1, key2)
+  return charsObj[key2] - charsObj[key1]
+})
+
+console.log(charsDescending)
+
+// iterate the charsDescending, put the chars to be removed into a new array while the chars string greater than 50.
+
+//
+let limitLength = charsString.length;
+let subtractChars = [];
+while ( limitLength >= 50 ) {
+  let currentChar = charsDescending.pop();
+  let currentCount = charsObj[currentChar];
+  limitLength -= currentCount;
+  if (limitLength >= 50) { subtractChars.push(currentChar)}
+}
+// debugger
+console.log(subtractChars)
 
 
 
-
-// solution 1:
+// testing solution 1:
 //Exception based on paragraph length
 // function ParagraphLengthException(message){
 //     this.name = "ParagraphLengthException"
