@@ -4,7 +4,7 @@
 //  the largest unique set of characters
 // x is the all charactors and y is the unique charactors, w is the unique chararctors you can remove. x - y >= 50 is the condition. need to find out w.
 
-// add condition when to output x and when outout why. when there is no unique set at all. 
+// add condition when to output x and when outout why. when there is no unique set at all.
 
 let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
 
@@ -55,9 +55,7 @@ function subtractCharsFromParagraph(text) {
   //   charsLength -= currentCount;
   //   if (charsLength >= 50) { subtractChars.push(currentChar)}
   // }
-
   console.log(subtractChars)
-
 }
 
 subtractCharsFromParagraph(paragraph)
