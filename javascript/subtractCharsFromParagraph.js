@@ -1,4 +1,4 @@
-// 
+//
 // Split paragraph by space and combine chars into a string.
 // How to set a limit number, the characters might be duplicated in the paragraph ??
 //
@@ -6,14 +6,14 @@
 // Store the unique characters inside the new set.
 // Combine the new set into a string and print it out under certain format.
 
-let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
-
-function convertToString(paragraph) {
-  return paragraph.split(' ').join();
-}
-
-// set a limit number
-let limitNum = convertToString().length - 50;
+// let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
+//
+// function convertToString(paragraph) {
+//   return paragraph.split(' ').join();
+// }
+//
+// // set a limit number
+// let limitNum = convertToString().length - 50;
 
 
 
