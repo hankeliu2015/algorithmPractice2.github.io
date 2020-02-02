@@ -9,46 +9,44 @@
 
 let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
 
-let charsString = paragraph.split(' ').join();
+function subtractCharsFromParagraph(text) {
 
-// console.log(charsString.length);
+  let charsString = paragraph.split(' ').join();
 
-let charsObj = {};
+  console.log("charString's Length:", charsString.length);
 
-for (let i = 0; i < charsString.length; i++) {
-  if ( charsObj[charsString.charAt(i)] !== undefined ) {
-    charsObj[charsString.charAt(i)] ++
-  } else {
-    charsObj[charsString.charAt(i)] = 1
+  let charsObj = {};
+
+  for (let i = 0; i < charsString.length; i++) {
+    if ( charsObj[charsString.charAt(i)] !== undefined ) {
+      charsObj[charsString.charAt(i)] ++
+    } else {
+      charsObj[charsString.charAt(i)] = 1
+    }
   }
 
+  console.log(charsObj)
+
+  let charsObjKeys = Object.keys(charsObj)
+  let charsDescendingArray = charsObjKeys.sort( (key1, key2) => {charsObj[key2] - charsObj[key1]})
+
+  console.log(charsDescendingArray)
+
+  // iterate charsDescendingArray, put the chars to be removed into a new array while the chars string greater than 50.
+
+  let charsLength = charsString.length;
+  let subtractChars = [];
+  while ( charsLength >= 50 ) {
+    let currentChar = charsDescendingArray.pop();
+    let currentCount = charsObj[currentChar];
+    charsLength -= currentCount;
+    if (charsLength >= 50) { subtractChars.push(currentChar)}
+  }
+  // debugger
+  console.log(subtractChars)
 }
 
-console.log(charsObj)
-
-let charsObjKeys = Object.keys(charsObj)
-let charsDescending = charsObjKeys.sort( (key1, key2) => {
-  // console.log(key1, key2)
-  return charsObj[key2] - charsObj[key1]
-})
-
-console.log(charsDescending)
-
-// iterate the charsDescending, put the chars to be removed into a new array while the chars string greater than 50.
-
-//
-let limitLength = charsString.length;
-let subtractChars = [];
-while ( limitLength >= 50 ) {
-  let currentChar = charsDescending.pop();
-  let currentCount = charsObj[currentChar];
-  limitLength -= currentCount;
-  if (limitLength >= 50) { subtractChars.push(currentChar)}
-}
-// debugger
-console.log(subtractChars)
-
-
+subtractCharsFromParagraph(paragraph)
 
 // testing solution 1:
 //Exception based on paragraph length
