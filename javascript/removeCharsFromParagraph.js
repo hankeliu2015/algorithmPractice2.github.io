@@ -1,16 +1,15 @@
 
-// assuming space is not count as charactors.
-// choose console log array as output format
+// space is not count as charactors.
+// choose console log as output format
 
 // Split paragraph by space and combine chars into a string.
 // seperate the unique charactors and store them into an array
+
 // apply conditions total characters length and unique chars array length on the output.
 
 // x is the all charactors and y is the unique charactors, w is the larget unique set of chararctors can be removed.
 //when x - y >= 50, all elements of w can be removed
 // when x - y < 50, x - 50 elements of w can be removed
-
-// add condition when to output x and when outout why. when there is no unique set at all.
 
 
 let p1 = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
