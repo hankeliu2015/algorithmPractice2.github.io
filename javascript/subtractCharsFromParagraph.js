@@ -7,13 +7,15 @@
 // add condition when to output x and when outout why. when there is no unique set at all.
 // assuing space is not included as charactors.
 
-let paragraph = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
-let paragraph2 = " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-let paragraph3 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum + - ) ( ! @ # $ % ^ & , . / ? > <"
+let p1 = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
+
+let p2 = " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+let p3 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum + - ) ( ! @ # $ % ^ & / ? > < . "
 
 function subtractCharsFromParagraph(paragraph) {
 
-  let totalChars = paragraph.split(' ').join();
+  let totalChars = paragraph.split(' ').join('');
   console.log("totalChars's Length:", totalChars.length);
 
   if (totalChars.length < 50) {
@@ -41,7 +43,7 @@ function subtractCharsFromParagraph(paragraph) {
     return charsObj[key] === 1
   })
 
-  console.log("uniqueChars:", uniqueCharsArray )
+  console.log("uniqueChars:", uniqueCharsArray.length )
 
   // console.log(charsDescendingArray)
 
@@ -70,10 +72,11 @@ function subtractCharsFromParagraph(paragraph) {
   //   if (charsLength >= 50) { subtractChars.push(currentChar)}
   // }
   // console.log(subtractChars)
+  debugger
 }
 
 // subtractCharsFromParagraph(paragraph)
-subtractCharsFromParagraph(paragraph3)
+subtractCharsFromParagraph(p3)
 // subtractCharsFromParagraph(paragraph2)
 
 
