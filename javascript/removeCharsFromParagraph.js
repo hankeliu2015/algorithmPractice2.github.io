@@ -1,11 +1,17 @@
 
+// assuming space is not count as charactors.
+// choose console log array as output format
+
 // Split paragraph by space and combine chars into a string.
-// assueming space is not count as charactors.
-//  the largest unique set of characters
-// x is the all charactors and y is the unique charactors, w is the unique chararctors you can remove. x - y >= 50 is the condition. need to find out w.
+// seperate the unique charactors and store them into an array
+// apply conditions total characters length and unique chars array length on the output.
+
+// x is the all charactors and y is the unique charactors, w is the larget unique set of chararctors can be removed.
+//when x - y >= 50, all elements of w can be removed
+// when x - y < 50, x - 50 elements of w can be removed
 
 // add condition when to output x and when outout why. when there is no unique set at all.
-// assuing space is not included as charactors.
+
 
 let p1 = 'If you want to jumpstart the process of talking to us about this role, here’s a little challenge: write a program that outputs the largest unique set of characters that can be removed from this paragraph without letting its length drop below 50.'
 
@@ -13,71 +19,46 @@ let p2 = " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius
 
 let p3 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum + - ) ( ! @ # $ % ^ & / ? > < . "
 
-function subtractCharsFromParagraph(paragraph) {
+let p4 = " dolor Lorem ipsum + - ) ( ! @ # $ . "
+
+let p5 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum Lorem ipsum"
+
+function removeCharsFromParagraoh(paragraph) {
 
   let totalChars = paragraph.split(' ').join('');
-  console.log("totalChars's Length:", totalChars.length);
 
   if (totalChars.length < 50) {
     console.log("Paragraph charactors Length is less than 50 charractors. Can not proceed.")
-  }
+  } else {
+    let charsObj = {};
+    for (let i = 0; i < totalChars.length; i++) {
+      if ( charsObj[totalChars.charAt(i)] !== undefined ) {
+        charsObj[totalChars.charAt(i)] ++
+      } else {
+        charsObj[totalChars.charAt(i)] = 1
+      }
+    }
 
-  let charsObj = {};
+    let charsObjKeys = Object.keys(charsObj)
 
-  for (let i = 0; i < totalChars.length; i++) {
-    if ( charsObj[totalChars.charAt(i)] !== undefined ) {
-      charsObj[totalChars.charAt(i)] ++
+    let uniqueCharsArray = charsObjKeys.filter(key => charsObj[key] === 1 )
+
+    if (uniqueCharsArray.length === 0) {
+      console.log("There is no unique charactors in the paragraph.")
     } else {
-      charsObj[totalChars.charAt(i)] = 1
+      if (totalChars.length - uniqueCharsArray.length >= 50) {
+        console.log("Here is the larget unique Charactors can be removed:", uniqueCharsArray)
+      } else if (totalChars.length - uniqueCharsArray.length < 50) {
+        let removeCharsCount = totalChars.length - 50;
+        console.log("Here is the larget unique Charactors can be removed:", uniqueCharsArray.slice(removeCharsCount))
+      }
     }
   }
-
-  console.log("charsObj:",charsObj)
-
-
-  let charsObjKeys = Object.keys(charsObj)
-  let charsDescendingArray = charsObjKeys.sort( (key1, key2) => {charsObj[key2] - charsObj[key1]})
-
-  //sort out the unique set of charactors from chars string.
-  let uniqueCharsArray = charsObjKeys.filter(key => {
-    return charsObj[key] === 1
-  })
-
-  console.log("uniqueChars:", uniqueCharsArray.length )
-
-  // console.log(charsDescendingArray)
-
-
-  if (totalChars.length - uniqueCharsArray.length >= 50) {
-    console.log("Here is the unique Charactors can be subtracted:", uniqueCharsArray)
-  } else if (totalChars.length - uniqueCharsArray.length < 50) {
-    let removeCharsCount = totalChars.length - 50;
-    console.log("less than 50:", uniqueCharsArray.slice(removeCharsCount))
-  }
-
-  let charsLength = totalChars.length;
-  let subtractChars = [];
-  // subtract the unique set of charactors.
-
-  while ( charsLength >= 50 && uniqueCharsArray.length ) {
-    let currentChar = uniqueCharsArray.pop();
-    charsLength --
-    if (charsLength >= 50) { subtractChars.push(currentChar)}
-  }
-
-  // while ( charsLength >= 50 ) {
-  //   let currentChar = charsDescendingArray.pop();
-  //   let currentCount = charsObj[currentChar];
-  //   charsLength -= currentCount;
-  //   if (charsLength >= 50) { subtractChars.push(currentChar)}
-  // }
-  // console.log(subtractChars)
-  debugger
 }
 
-// subtractCharsFromParagraph(paragraph)
-subtractCharsFromParagraph(p3)
-// subtractCharsFromParagraph(paragraph2)
+removeCharsFromParagraoh(p5)
+// removeCharsFromParagraoh(paragraph)
+// removeCharsFromParagraoh(paragraph2)
 
 
 
