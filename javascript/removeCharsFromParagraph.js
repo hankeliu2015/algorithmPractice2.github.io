@@ -56,7 +56,7 @@ function removeCharsFromParagraoh(paragraph) {
   }
 }
 
-removeCharsFromParagraoh(p1)
+// removeCharsFromParagraoh(p1)
 // removeCharsFromParagraoh(p2)
 // removeCharsFromParagraoh(p3)
 // removeCharsFromParagraoh(p4)
