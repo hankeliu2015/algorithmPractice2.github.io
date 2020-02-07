@@ -7,30 +7,30 @@
 
 // follow by a condition, if the 1st and 2nd has the same key, and value are the same, also 2nd argument has less keys than the 1st argument, return true.
 
-function whatIsInAName(collection, source) {
-  let matchedArray = collection.filter(obj => {
-    for (const key in obj ) {
+// function whatIsInAName(collection, source) {
+//   let matchedArray = collection.filter(obj => {
+//     for (const key in obj ) {
+//
+//       for (const k in source) {
+//         if ( !obj.hasOwnProperty(k) || source[k] !== obj[k]) {
+//           return false;
+//         }
+//       }
+//
+//       if (obj[key] === source[key] && Object.keys(obj).length >= Object.keys(source).length ) {
+//         return true;
+//       }
+//     }
+//   })
+//   // console.log(matchedArray);
+//   return matchedArray;
+// }
 
-      for (const k in source) {
-        if ( !obj.hasOwnProperty(k) || source[k] !== obj[k]) {
-          return false;
-        }
-      }
-
-      if (obj[key] === source[key] && Object.keys(obj).length >= Object.keys(source).length ) {
-        return true;
-      }
-    }
-  })
-  console.log(matchedArray);
-  // return matchedArray;
-}
-
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
-
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })
-
-console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }))
+// console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+// 
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
+//
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }))
 
 // console.log(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}))
 
