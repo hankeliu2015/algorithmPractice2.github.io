@@ -27,7 +27,7 @@
 // }
 
 // console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
-// 
+//
 // console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
 //
 // console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }))
@@ -45,10 +45,10 @@ function whatIsInAName(collection, source) {
   var srcKeys = Object.keys(source);
   let data =  collection.filter(function(obj) {
 
-    return srcKeys
+    return srcKeys      //filters function will filter all element when return srcKeys
       .map(function(key) {
         return obj.hasOwnProperty(key) && obj[key] === source[key];
-      })      // if this return 2 true in an array, the reduce will make it one true. if there one false, all array will return false.
+      })      // if this return 2 true element in an array, the reduce will make it one true (accumulator). if there one element is false, all array will return false.
       .reduce(function(a, b) {
         return a && b;
       }
@@ -56,5 +56,5 @@ function whatIsInAName(collection, source) {
 
     });
 
-    return data;
+  return data;
 }
