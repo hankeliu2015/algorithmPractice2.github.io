@@ -10,13 +10,13 @@
 //
 //   let matchedElArray = [];
 //   for (let i = 0; i < a.length; i++) {
-//       matchedElArray[i] = [a[i]];
+//       matchedElArray[i] = [a[i]];         //to get array inside array
 //     for (let j = 0; j < a.length; j++) {
 //       if ( (Math.abs(a[i] - a[j]) <= 1) && (i !== j) ) {
 //         if (!matchedElArray[i]) {
 //           matchedElArray[i].push(a[j]);
 //         } else {
-//           let trueFalseArray = matchedElArray[i].map(el => {
+//           let trueFalseArray = matchedElArray[i].map(el => {  // newly matched element compare with already matched elements
 //             if (Math.abs(el-a[j]) > 1) {
 //               return false;
 //             } else {
