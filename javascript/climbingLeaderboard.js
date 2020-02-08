@@ -69,15 +69,15 @@
 //
 // } //end of function
 // console.log(climbingLeaderboard([100,100,50,40,40,20,10], [2,25,50,120]))
+// //
+// // //solution from suggestions:
 //
-// solution from suggestions:
-
 // function climbingLeaderboard(scores, alice) {
 //     // const results = Array(alice.length);  // creating array with empty elements.
 //     const results = [];  // creating array with empty elements.
 //     let rank = 1;
 //     // Scores are sorted high to low but Alice is sorted low to high.
-//     // And so results are also going to be in sorted order (rank lowest/worst to highest)
+//     // And so results are also going to be in sorted order (rank lowest to highest)
 //     // Loops is going from Alice's highest score (last entry) to her lowest score
 //     for (let i = 0, j = alice.length - 1; j >= 0; j--) {
 //         console.log(`ranking alice's score ${alice[j]}`)
