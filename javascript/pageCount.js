@@ -27,7 +27,7 @@
 // }
 
 //solution 2:
-// page count is the same for page 6 and 7. Math floor will work for the both. page one will always be zero.
+// page count is the same for page 6 and 7. Math.floor will work for the both. page one will always be zero.
 // function pageCount(n, p) {
 //   let pageTurns = Math.floor(p/2)
 //   let bookTurns = Math.floor(n/2)
