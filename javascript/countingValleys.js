@@ -68,18 +68,19 @@
 // function countingValleys(n, s) {
 //
 //   let seaLevel = 0;
-//   let counter = 0;
+//   let valleyCounter = 0;
+//
 //   for  (let i = 0; i < s.length; i++) {
 //     if (s[i] === "U") {
 //       seaLevel++;
 //     } else if ( s[i] === 'D') {
 //       seaLevel--;
 //     }
-//     if (seaLevel === 0 && s[i] === 'U') {
-//       counter++;
+//     if (seaLevel === 0 && s[i] === 'U') {   //when sealevel is 0 and step is up at the same time, it is a valley.
+//       valleyCounter++;
 //     }
 //   }
-//   return counter;
+//   return valleyCounter;
 //
 // }
 //

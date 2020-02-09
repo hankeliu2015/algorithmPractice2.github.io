@@ -5,21 +5,21 @@
 // if there is a tie, the least id number will be returned. Use greater or equal in reduce callback.
 
 // function migratoryBirds(arr) {
-//   let objArr = {};
+//   let objOccurence = {};
 //
 //   arr.forEach(el => {
-//     if (!objArr[el]) {
-//       objArr[el] = 1;
+//     if (!objOccurence[el]) {
+//       objOccurence[el] = 1;
 //     }else {
-//       objArr[el]++;
+//       objOccurence[el]++;
 //     }
 //   })
 //   // not quite how following reduce worked
-//   let maxBird = Object.keys(objArr).reduce((a,b) => objArr[a] >= objArr[b] ? a : b)
-//   // console.log(objArr);
+//   let maxBird = Object.keys(objOccurence).reduce((a,b) => objOccurence[a] >= objOccurence[b] ? a : b)
+//   // console.log(objOccurence);
 //   return maxBird;
 // }
-
+//
 // console.log(migratoryBirds([1,1,2,2,3]));
 // console.log(migratoryBirds([1,4,4,4,5,3]));
 // console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));
