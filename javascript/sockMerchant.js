@@ -1,7 +1,6 @@
 // // first element equal to another element, splice them and add counter.
 // // need to break for for loop when conditin matches.
-//
-//
+// 
 // function sockMerchant(n, ar) {
 //   let counter = 0
 //   let arrayLength = ar.length;
@@ -10,7 +9,7 @@
 //       if (el === ar[i]) {
 //         counter++;
 //         ar.splice(i,1);
-//         arrayLength--;
+//         arrayLength--;  //make sure arrayLength correct after take the matched element out.
 //         break;
 //       }
 //     }
