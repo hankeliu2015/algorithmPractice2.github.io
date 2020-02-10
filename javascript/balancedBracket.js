@@ -25,3 +25,84 @@
 //
 //     return true;
 // }
+
+// balacing parentheis
+// if ( , add it to the stack .
+// if ) , pop it out of the stack,
+// counting the stack length and return the value
+
+// isMatchingBrackets(s) {
+//     let stack = [];
+//     let bCounter = 0;
+//     let cCounter = 0;
+//
+//     for (let i = 0; i < s.length; i++) {
+//
+//         if (s[i] === '(' ) {
+//             bCounter ++
+//         } else if (s[i] === ')') {
+//           cCounter ++
+//         }
+//     }
+//
+//     console.log(Math.abs(bCounter-cCounter))
+// }
+
+// function isMatchingBrackets(s) {
+//     let finalS = s;
+//
+//     for (let i = 0; i < s.length; i++) {
+//
+//       if (s[i] === '(' ) {
+//
+//         // compare with the rest of the string. if there is another ) take then both out the finalS string.
+//         // can not take the char out of the string and keep comparing the rest.
+//
+//         for (let j = i+1; j < s.length; j ++) {
+//           if (s[j] === ')') {
+//             // console.log("test")
+//           }
+//         }
+//       }
+//     }
+//     console.log(finalS.length)
+// }
+//
+// function getMin(s) {
+//   let stack = [];
+//       let bCounter = 0;
+//       let cCounter = 0;
+//
+//       for (let i = 0; i < s.length; i++) {
+//
+//           if (s[i] === '(' ) {
+//               bCounter ++
+//           } else if (s[i] === ')') {
+//             cCounter ++
+//           }
+//       }
+//
+//       return Math.abs(bCounter-cCounter)
+//   }
+
+// function isMatchingBrackets(s) {
+//     let stack = [];
+//     let counter = 0;
+//     let ops = 0;
+//
+//     for (let i = 0; i < s.length; i++) {
+//       if (s[i] === '(') {
+//         stack.push(s[i]);
+//       } else if (s[i] === ')' && stack.length > 0) {
+//         stack.pop();
+//         counter ++;
+//       }
+//     }
+//
+//     ops = s.length - (counter * 2)
+//
+//     return ops
+// }
+//
+// console.log(isMatchingBrackets("()))"))
+// console.log(isMatchingBrackets("()))(("))

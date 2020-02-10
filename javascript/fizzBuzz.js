@@ -1,22 +1,28 @@
 // solution 1:
 
-// for (var i = 1; i <= 100; i++) {
-// 	var isDividibleByThree = i % 3 === 0;
-// 	var isDivisibleByFive = i % 5 === 0;
+// function fizzBuzz(n) {
 //
-// 	if (isDividibleByThree && isDivisibleByFive) {
-// 		console.log('FizzBuzz');
-// 	}
-// 	else if (isDividibleByThree) {
-// 		console.log('Fizz');
-// 	}
-// 	else if (isDivisibleByFive) {
-// 		console.log('Buzz');
-// 	}
-// 	else {
-// 		console.log(i);
-// 	}
+//   for(let i = 1; i <= n; i ++ ) {
+//       let divididBy3 = i % 3 === 0;
+//       let divideBy5 = i % 5 === 0;
+//       // debugger
+//       if (divididBy3 && divideBy5) {
+//         console.log('FizzBuzz');
+//       }
+//       else if (divididBy3) {
+//         console.log('Fizz');
+//       }
+//       else if (divideBy5) {
+//         console.log('Buzz');
+//       }
+//       else {
+//         console.log(i);
+//       }
+//     }
 // }
+//
+// fizzBuzz(15);
+
 
 //solution 2:
 // var i = 1,
