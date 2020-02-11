@@ -1,17 +1,86 @@
-function superStack(operations) {
-  let ops = operations.split(' ');
-  if (ops[0] === "push") {
-    let pushValue = ops[1];
-    // perform push operation with above value.
+let Stack1 = function() {
+  this.count = 0;
+  this.storage = {}
+}
+
+Stack1.prototype.push = function(value) {
+  this.storage[this.count] = value;
+  this.count++;
+}
+
+Stack1.prototype.pop = function() {
+  if (this.count === 0 ) {
+    return undefined;
   }
 
-  if (ops[0] === "inc") {
-    let incValue1 = ops[1];
-    let incValue1 = ops[2];
-    // perform inc operation with above value
+  this.count --;
+  var result = this.storage[this.count];
+  delete this.storage[this.count];
+  return result;
+}
+
+Stack1.prototype.size = function() {
+  return this.count;
+}
+
+class Stack2 {
+  constructor(){
+    this.count = 0;
+    this.storage = {}
   }
 
-  if (ops[0] === "pop") {
-    // perform inc operation with above value
+  push(value) {
+    this.storage[this.count] = value;
+    this.count++;
+  }
+
+  pop() {
+    if (this.count === 0 ) {
+      return undefined;
+    }
+    this.count --;
+    var result = this.storage[this.count];
+    delete this.storage[this.count];
+    return result;
+  }
+
+  size() {
+    return this.count;
   }
 }
+
+
+let stackTest1 = new Stack1();
+stackTest1.push(1);
+stackTest1.push(2);
+console.log(stackTest1.size());
+stackTest1.pop();
+console.log(stackTest1.size());
+
+let stackTest2 = new Stack1();
+stackTest2.push(1);
+stackTest2.push(2);
+console.log(stackTest2.size());
+stackTest2.pop();
+console.log(stackTest2.size());
+
+
+
+
+// function superStack(operations) {
+//   let ops = operations.split(' ');
+//   if (ops[0] === "push") {
+//     let pushValue = ops[1];
+//     // perform push operation with above value.
+//   }
+//
+//   if (ops[0] === "inc") {
+//     let incValue1 = ops[1];
+//     let incValue1 = ops[2];
+//     // perform inc operation with above value
+//   }
+//
+//   if (ops[0] === "pop") {
+//     // perform inc operation with above value
+//   }
+// }
