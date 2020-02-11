@@ -1,7 +1,44 @@
-function Stack( {
+//Stack implementation with JavaScript
+
+function Stack() {
   let items = [];
-  let top = 0; 
-})
+
+  this.push = function(element){
+    return items.push(element);
+  }
+
+  this.pop = function(){
+    return items.pop();
+  }
+
+  this.peek = function() {
+    return items[items.length - 1]
+  }
+
+  this.isEmpty = function () {
+    return `the stack is empty: ${items.length === 0}`;
+  }
+
+  this.clear = function () {
+    items.length = 0;
+    return `stack is cleared ${items.length}`
+  }
+
+  this.size = function(){
+    return `the stack length is: ${items.length}`;
+  }
+
+}
+
+let stack3 = new Stack();
+stack3.push('item1')
+stack3.push('item2')
+stack3.push('item3')
+console.log(stack3.size())
+console.log(stack3.pop())
+console.log(stack3.peek())
+console.log(stack3.isEmpty())
+console.log(stack3.clear())
 
 
 
