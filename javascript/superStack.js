@@ -23,12 +23,47 @@ Stack1.prototype.size = function() {
   return this.count;
 }
 
+class Stack2 {
+  constructor(){
+    this.count = 0;
+    this.storage = {}
+  }
+
+  push(value) {
+    this.storage[this.count] = value;
+    this.count++;
+  }
+
+  pop() {
+    if (this.count === 0 ) {
+      return undefined;
+    }
+    this.count --;
+    var result = this.storage[this.count];
+    delete this.storage[this.count];
+    return result;
+  }
+
+  size() {
+    return this.count;
+  }
+}
+
+
 let stackTest1 = new Stack1();
 stackTest1.push(1);
 stackTest1.push(2);
 console.log(stackTest1.size());
 stackTest1.pop();
 console.log(stackTest1.size());
+
+let stackTest2 = new Stack1();
+stackTest2.push(1);
+stackTest2.push(2);
+console.log(stackTest2.size());
+stackTest2.pop();
+console.log(stackTest2.size());
+
 
 
 
