@@ -21,4 +21,4 @@ function setDate() {
   // console.log(currenthour, currentMin)
 }
 
-setInterval(setDate, 1000)
+// setInterval(setDate, 1000)
