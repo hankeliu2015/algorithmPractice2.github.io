@@ -19,43 +19,43 @@
 // }
 //
 
-// function createButtons() {
-//
-//   const n = 5;
-//   // var i;
-//   for (let i = 0; i < n; i++) {
-//     let btn = document.createElement('button');
-//
-//     btn.appendChild(document.createTextNode('Button' + i));
-//
-//     btn.addEventListener('click', function(){
-//       console.log(i);
-//     });
-//     document.body.appendChild(btn);
-//   }
-//   // console.log('what is i:', i)
-// }
-
-// bind addEventListener outside the for loop.
-
 function createButtons() {
 
   const n = 5;
-  let btns = [];
   // var i;
   for (let i = 0; i < n; i++) {
-    btns[i] = document.createElement('button');
-    btns[i].appendChild(document.createTextNode('Button' + i));
-    document.body.appendChild(btns[i]);
-  }
+    let btn = document.createElement('button');
 
-  btns.forEach((el, index )=> {
-    el.addEventListener('click', function(){
-      console.log(index);
+    btn.appendChild(document.createTextNode('Button' + i));
+
+    btn.addEventListener('click', function(){
+      console.log(i);
     });
-  })
-
+    document.body.appendChild(btn);
+  }
+  // console.log('what is i:', i)
 }
+
+// bind addEventListener outside the for loop.
+
+// function createButtons() {
+//
+//   const n = 5;
+//   let btns = [];
+//   // var i;
+//   for (let i = 0; i < n; i++) {
+//     btns[i] = document.createElement('button');
+//     btns[i].appendChild(document.createTextNode('Button' + i));
+//     document.body.appendChild(btns[i]);
+//   }
+//
+//   btns.forEach((el, index )=> {
+//     el.addEventListener('click', function(){
+//       console.log(index);
+//     });
+//   })
+//
+// }
 
 
 // solution - old:
