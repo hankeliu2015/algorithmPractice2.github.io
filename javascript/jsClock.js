@@ -18,7 +18,7 @@ function setDate() {
   hourHand.style.transform = `rotate(${hoursDegree}deg)`
 
 
-  // console.log(secondsDegree, minsDegree, hoursDegree)
+  // console.log(currenthour, currentMin)
 }
 
-setDate();
+setInterval(setDate, 1000)
