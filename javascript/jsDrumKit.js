@@ -4,6 +4,7 @@ function playSound(e) {
   let key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
   // console.log(audio);
   // console.log(key);
+  
   if(!audio) { return ;}  //stop the function from running
   audio.currentTime = 0;
   audio.play();
