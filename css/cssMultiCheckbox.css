@@ -8,7 +8,9 @@ html {
  margin: 55px auto;
  background: grey;
  border-radius: 15px;
- box-shadow: 15px 15px 0 rgba(0,0,0,0.1);
+ /* box-shadow: 15px 15px 0 rgba(0,0,0,0.1); */
+ /* box-shadow: 10px 10px 8px 10px #888888; */
+ box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
 }
 
 .item {
