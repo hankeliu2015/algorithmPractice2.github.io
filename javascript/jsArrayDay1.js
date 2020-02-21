@@ -91,13 +91,33 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    let streetLinks = document.querySelectorAll(".mw-category a");
-    let linksArr = Array.from(streetLinks);
-    let deStringArr = linksArr.map(link => link.text).filter(streetName => streetName.includes(' de '))
+    // let streetLinks = document.querySelectorAll(".mw-category a");
+    // let linksArr = Array.from(streetLinks);
+    // let deStringArr = linksArr.map(link => link.text).filter(streetName => streetName.includes(' de '))
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+    // let lastNameSort = people.sort((a,b) => {
+    //   let {aLast, aFirst} = a.split(',');
+    //   let {bLast, bFirst} = b.split(',');
+    //   return aLast > bLast ? -1 : 1;
+    // })
+    // console.table(lastNameSort)
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    // set the intial value as a hash {}. user acc.el as the key, the Occurence as the value.
+    // const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    //
+    // let instanceSum = data.reduce((acc, el) => {
+    //   if (!acc[el]) {
+    //     acc[el] = 1;
+    //   } else {
+    //     acc[el] ++
+    //   }
+    //   return acc
+    // }, {})
+    //
+    // console.table(instanceSum)
