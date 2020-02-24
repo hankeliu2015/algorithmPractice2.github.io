@@ -71,7 +71,7 @@ body {
 .categories li {
   padding-bottom: 6px;
   border-bottom: dotted 1px #333;
-  list-style-image: url("../img/checkMark.png");
+  /* list-style-image: url("../img/checkMark.png"); */
 }
 
 a {
