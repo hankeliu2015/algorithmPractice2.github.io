@@ -1,8 +1,5 @@
 
 
-// const inOrder = inOrder(Right branch), root node, inOrder(left branch)
-
-
 // function printNodeWithoutLeft(currentNode){
 //   if(currentNode.left){
 //     printNodeWithoutLeft(currentNode.left)
@@ -12,16 +9,17 @@
 //     printNodeWithoutLeft(currentNode.right)
 //   }
 // }
-//
-//
-// let rootNode = {data: 6,
+// //
+// //
+// let rootNode2 = {data: 6,
 //                   right: {data: 8, left: null, right: null},
 //                   left:  {data: 1,
 //                     right: {data: 4, right: { data: 5, left: null, right: null}, left: {data: 2, left: null, right: null}},
 //                     left: null}
 //                 };
 //
-// printNodeWithoutLeft(rootNode);
+// printNodeWithoutLeft(rootNode2);
+
 /*
 
 console output:
