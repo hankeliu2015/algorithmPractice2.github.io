@@ -10,26 +10,49 @@
 //// if not divided by 3, it will jump to the second : , continue the conditions.
 
 // 6. distance matrix
-function distanceMatrix(arr) {
-  // nest loop between each element and the rest of the element.
-  // set condition if elements equal, calculate distance and add to counter
-  let matrixArr = []
+// function distanceMatrix(arr) {
+//   // nest loop between each element and the rest of the element.
+//   // set condition if elements equal, calculate distance and add to counter
+//   let matrixArr = []
+//
+//   for(i=0; i<arr.length; i++) {
+//
+//     matrixArr[i] = 0;
+//
+//     for(j=0; j<arr.length; j++) {
+//
+//       let currentMatrix = 0;
+//       // if both elements are equal and not the same one
+//       if (arr[i] === arr[j] && i !==j) {
+//         currentMatrix = Math.abs(i - j);
+//         matrixArr[i] += currentMatrix;
+//       }
+//     }
+//   }
+//   return matrixArr;
+// }
+//
+// console.log(distanceMatrix([1,2,1,1,2,3]))
 
-  for(i=0; i<arr.length; i++) {
+// 8. sort an array - return the least element move.
 
-    matrixArr[i] = 0;
+function miniMove(arr) {
+  let counter = 0
 
-    for(j=0; j<arr.length; j++) {
-
-      let currentMatrix = 0;
-      // if both elements are equal and not the same one
-      if (arr[i] === arr[j] && i !==j) {
-        currentMatrix = Math.abs(i - j);
-        matrixArr[i] += currentMatrix;
+  // find the least element not in order and move it to the end
+  // find all the elements greater than ant later element. move the least of them to the end first.
+  // counter increment
+  arr.forEach((el, index) => {
+  // if el greater than any of the rest elements, counter increment
+    for (i = index+1; i < arr.length; i ++) {
+      if (el > arr[i]) {
+        counter ++;
+        break;
       }
     }
-  }
-  return matrixArr;
+  })
+
+  return counter;
 }
 
-console.log(distanceMatrix([1,2,1,1,2,3]))
+console.log(miniMove([5,6,1,3,2]))
