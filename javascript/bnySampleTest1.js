@@ -39,20 +39,14 @@
 function miniMove(arr) {
   let counter = 0
 
-  // find the least element not in order and move it to the end
-  // find all the elements greater than ant later element. move the least of them to the end first.
-  // counter increment
   arr.forEach((el, index) => {
-  // if el greater than any of the rest elements, counter increment
     for (i = index+1; i < arr.length; i ++) {
       if (el > arr[i]) {
         counter ++;
-        break;
+        break;  // need to break the loop avoid duplicate counts.
       }
     }
   })
-
   return counter;
 }
-
 console.log(miniMove([5,6,1,3,2]))
