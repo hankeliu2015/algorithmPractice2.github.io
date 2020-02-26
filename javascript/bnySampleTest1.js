@@ -9,6 +9,33 @@
 //// if not divided by 5, it is fizz.
 //// if not divided by 3, it will jump to the second : , continue the conditions.
 
+// 2. what is running time of the following algorithms:
+
+// Procedure A(n)
+// begin
+//   if (n < 3)
+//     return 1
+//   else
+//     return A(ceiling(sqrt(n)))
+//   end
+// end
+//
+// // O(logN) or O(loglogN) or Q(N) ; O(1)
+
+
+// 3 parameter passing
+// main() {
+//   int i = 10, j = 20;
+//   swap(i, j)
+//   cout << i << " " << j << endl;
+// }
+//
+// void swap(int num1, int num2) {
+//   int temp = num1;
+//   num1 = num2;
+//   num2 = temp;
+// }
+
 // 5. counting closed path:
 // function closedPaths(num) {
 //   let numArr = Array.from(String(num), Number);
