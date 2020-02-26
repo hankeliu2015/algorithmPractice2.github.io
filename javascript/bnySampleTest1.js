@@ -20,7 +20,7 @@
 //   end
 // end
 //
-// // O(logN) or O(loglogN) or Q(N) ; O(1)
+// //  Q(N) ; O(1); O(logN); O(loglogN);
 
 
 // 3 parameter passing
