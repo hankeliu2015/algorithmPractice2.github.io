@@ -1,5 +1,7 @@
-body {
-  /* background: red; */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 
