@@ -107,6 +107,7 @@ nav { display: none; }
 
 @media (min-width: 600px) {
     .intro {
+      background-color: red;
         display: grid;
         width: min-content;
         margin: 0 auto;
