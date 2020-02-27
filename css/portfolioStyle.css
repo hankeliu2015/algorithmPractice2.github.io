@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
+/* css custom peoperty */
 
-/* css custome peoperty */
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
@@ -21,6 +21,9 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+              0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
 @media (min-width: 800px) {
@@ -40,6 +43,10 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.6;
+}
+
+section {
+  padding; 5em 2em;
 }
 
 img {
@@ -87,6 +94,7 @@ h3 { font-size: var(--fs-h3) }
 .section__subtitle--intro,
 .section__subtitle--about {
   background: var(--clr-accent);
+  padding: .25em 1em;
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
 }
@@ -105,9 +113,12 @@ nav { display: none; }
     box-shadow: var(--bs);
 }
 
+.section__subtitle--intro {
+  display: inline-block;
+}
 @media (min-width: 600px) {
     .intro {
-      background-color: red;
+      /* background-color: red; */
         display: grid;
         width: min-content;
         margin: 0 auto;
