@@ -55,7 +55,7 @@ strong {
 h1,
 h2,
 h3 {
-  line-heightL 1.1;
+  line-height: 1;
   margin: 0;
 }
 
@@ -76,6 +76,7 @@ h3 { font-size: var(--fs-h3) }
   /* keep the strong element on it own line under different media type */
 }
 
+/* service sections */
 
 .section__subtitle {
   margin: 0;
@@ -87,4 +88,49 @@ h3 { font-size: var(--fs-h3) }
 .section__subtitle--about {
   background: var(--clr-accent);
   font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+}
+
+/* header  */
+
+nav { display: none; }
+
+/* intro section  */
+
+.intro {
+  position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+         position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
 }
