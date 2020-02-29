@@ -33,7 +33,7 @@
         --fs-h3: 1.5rem;
         --fs-body: 1.125rem;
     }
-
+  }
 /* general styles */
 
 body {
@@ -249,7 +249,12 @@ header {
         z-index: 2;
     }
 
+    /* .section_title {
+      grid-area: title;
+    } */
+
     .section__subtitle--intro {
+        /* grid-area: subtitle; */
         align-self: start;
         grid-column: -1 / 1;
         grid-row: 2;
@@ -330,6 +335,7 @@ header {
     }
 
     .section__subtitle--about {
+
         grid-column: 1 / -1;
         grid-row: 2;
         position: relative;
