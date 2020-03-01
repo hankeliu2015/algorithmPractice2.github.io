@@ -288,9 +288,7 @@ header {
         width: calc(100% + 4.6em);
     }
 }
-
 /* My servcies section  */
-
 .my-services {
   background-color: var(--clr-dark);
   background-image: url(../img/services-bg.jpg);
