@@ -284,8 +284,8 @@ header {
         grid-row: 2;
         text-align: right;
         position: relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
+        left: -1.2em;
+        width: calc(100% + 4.6em);
     }
 }
 
