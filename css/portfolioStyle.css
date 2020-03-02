@@ -247,7 +247,7 @@ header {
 
 .intro__img {
     box-shadow: var(--bs);
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
 
 .section__subtitle--intro {
