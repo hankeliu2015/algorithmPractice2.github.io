@@ -293,7 +293,8 @@ header {
 
 .my-services {
   background-color: var(--clr-dark);
-  background-image: url(../img/services-bg.jpg);
+  /* background-image: url(../img/services-bg.jpg); */
+  background-image: url(../img/2019MeetupGrubhub.png);
   background-blend-mode: multiply;
   background-size: cover;
   color: var(--clr-light);
