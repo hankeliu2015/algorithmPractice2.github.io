@@ -322,6 +322,11 @@ header {
   margin: 0 auto;
 }
 
+h3 a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 @media (min-width:800px) {
   .services {
     display: flex;
