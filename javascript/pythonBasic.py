@@ -21,7 +21,32 @@
 # print(type(1.64))
 # print(type(True))
 
-print(type('hello'))
-print(type(1))
-print(type(1.64))
-print(type(True))
+# print(type('hello'))
+# print(type(1))
+# print(type(1.64))
+# print(type(True))
+
+# item_name = 'widget'
+# price = 23.5
+# inventory = 100
+# is_in_inventory = True
+# print(item_name, price, inventory)
+
+# a=10
+# b=3
+# print('Addition : ', a + b)
+# print('Subtraction : ', a - b)
+# print('Multiplication : ', a * b)
+# print('Division (float) : ', a / b)
+# print('Division (floor) : ', a // b)
+# print('Modulus : ', a % b)
+# print('Exponent : ', a ** b)
+
+# msg = "welcome to Python 101"
+# print(msg)
+# print(msg.upper())
+# print(msg.lower())
+# print(msg.capitalize())
+# print(msg.title())
+
+
