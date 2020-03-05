@@ -42,11 +42,15 @@
 # print('Modulus : ', a % b)
 # print('Exponent : ', a ** b)
 
-# msg = "welcome to Python 101"
+msg = "welcome to Python 101"
 # print(msg)
 # print(msg.upper())
 # print(msg.lower())
 # print(msg.capitalize())
 # print(msg.title())
+print(len(msg))
+print(msg.count('Python'))
+#slicing
+print(msg[1:7])
 
 
