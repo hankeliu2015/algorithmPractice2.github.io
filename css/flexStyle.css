@@ -1,7 +1,20 @@
 /* customize styles  */
 
 
+/* wrap  */
+.container5 {
+  border: 10px solid #ffcc5c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.container5 > div {
+  width: 300px;
+}
+
+/* flex direction  */
 .container4 {
   border: 10px solid #ffcc5c;
   display: flex;
@@ -73,6 +86,7 @@ space-between space-evenly */
 
 /* basic style  */
 
+.container5 > div,
 .container4 > div,
 .container3 > div,
 .container2 > div,
@@ -90,6 +104,7 @@ html, body {
   height: 100%;
 }
 
+.container5 > div:nth-child(1),
 .container4 > div:nth-child(1),
 .container3 > div:nth-child(1),
 .container2 > div:nth-child(1),
@@ -97,6 +112,7 @@ html, body {
 .container > div:nth-child(1) {
   background-color: #96ceb4;
 }
+.container5 > div:nth-child(2),
 .container4 > div:nth-child(2),
 .container3 > div:nth-child(2),
 .container2 > div:nth-child(2),
@@ -104,6 +120,7 @@ html, body {
 .container > div:nth-child(2) {
   background-color: #ff6f69;
 }
+.container5 > div:nth-child(3),
 .container4 > div:nth-child(3),
 .container3 > div:nth-child(3),
 .container2 > div:nth-child(3),
