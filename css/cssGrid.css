@@ -1,6 +1,6 @@
 /* basic styles  */
 
-.container6 > div,
+/* .container6 > div, */
 .container5 > div,
 .container4 > div,
 .container3 > div,
@@ -178,6 +178,7 @@ html, body {
     font-size: 2em;
     color: #ffeead;
 }
+
 .container6 > div > img {
     width: 100%;
     height: 100%;
@@ -188,4 +189,18 @@ html, body {
   grid-gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-auto-rows: 75px;
+  grid-auto-flow: dense;
+}
+
+.horizontal {
+  grid-column: auto / span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
 }
