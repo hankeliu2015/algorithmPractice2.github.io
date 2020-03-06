@@ -164,5 +164,6 @@ html, body {
     /* grid-template-columns: repeat(6, 1fr); */
     /* grid-template-columns: repeat(auto-fit, 100px); */
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: repeat(2, 100px);
+    /* grid-template-rows: 100px 100px; */
+    grid-auto-rows: 100px;
 }
