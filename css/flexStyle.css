@@ -1,11 +1,96 @@
 /* customize styles  */
 
+
+/* wrap  */
+.container5 {
+  border: 10px solid #ffcc5c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container5 > div {
+  width: 300px;
+}
+
+/* flex direction  */
+.container4 {
+  border: 10px solid #ffcc5c;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: stretch; */
+  align-items: flex-end;
+}
+
+.container3 {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  height: 100%;
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logout3 {
+  /* flex: 1; */
+  align-self: flex-start;
+}
+.home3 {
+  /* flex: 1; */
+  align-self: flex-end;
+}
+
+.container2 {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: flex-end;
+}
+
+/* .container2 > .search2 {
+  flex: 1;
+} */
+
+.container2 > .home2 {
+  flex: 1;
+}
+
+.logout2 {
+  flex: 1;
+}
+
+.container1 {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: flex-end;
+}
+
+.home1 {
+  margin-right: auto;
+}
+
 .container {
   border: 5px solid #ffcc5c;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
 }
+
+/* flex-start flex-end center space-around
+space-between space-evenly */
+
 
 /* basic style  */
 
+.container5 > div,
+.container4 > div,
+.container3 > div,
+.container2 > div,
+.container1 > div,
 .container > div {
   padding: 10px;
   text-align: center;
@@ -16,16 +101,30 @@
 html, body {
   background-color: #ffeead;
   margin: 10px;
+  height: 100%;
 }
 
+.container5 > div:nth-child(1),
+.container4 > div:nth-child(1),
+.container3 > div:nth-child(1),
+.container2 > div:nth-child(1),
+.container1 > div:nth-child(1),
 .container > div:nth-child(1) {
   background-color: #96ceb4;
 }
-
+.container5 > div:nth-child(2),
+.container4 > div:nth-child(2),
+.container3 > div:nth-child(2),
+.container2 > div:nth-child(2),
+.container1 > div:nth-child(2),
 .container > div:nth-child(2) {
   background-color: #ff6f69;
 }
-
+.container5 > div:nth-child(3),
+.container4 > div:nth-child(3),
+.container3 > div:nth-child(3),
+.container2 > div:nth-child(3),
+.container1 > div:nth-child(3),
 .container > div:nth-child(3) {
   background-color: #88d8b0;
 }
