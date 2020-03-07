@@ -36,7 +36,7 @@
 .home6 {
   /* flex: 1; */
   flex-grow: 10;
-  flex-shrink: 10;
+  flex-shrink: 1;
   flex-basis: 400px;
 }
 .logout6 {
@@ -102,7 +102,6 @@
 .container2 > .home2 {
   flex: 1;
 }
-
 .logout2 {
   flex: 1;
 }
@@ -150,6 +149,7 @@ html, body {
   margin: 10px;
   height: 100%;
 }
+
 
 .container7 > div:nth-child(1),
 .container6 > div:nth-child(1),
