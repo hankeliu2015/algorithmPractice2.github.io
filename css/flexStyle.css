@@ -1,5 +1,37 @@
 /* customize styles  */
 
+/* flexbox image grid  */
+
+.container9 {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  /* justify-content: flex-start;
+  align-items: center; */
+}
+
+.container9 > div > img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.container9 > .normal {
+  flex: 1 1 150px;
+}
+
+.container9 > .big {
+  flex: 1 1 250px;
+}
+
+/* .container9 > .normal {
+  flex: 1 1 75px;
+}
+.container9 > .big {
+  flex: 1 1 150px;
+} */
+
 /* responsive navbar and media query  */
 
 .container8 > li {
