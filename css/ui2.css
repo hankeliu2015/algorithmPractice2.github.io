@@ -45,21 +45,27 @@ span {
 */
 
 .container {
-  padding: 3em;
+  width: 90%;
   /* text-align: center; */
-  background-color: grey;
+  /* background-color: grey; */
 }
 
 .card {
   padding: 2em;
-  color: white;
+  /* color: white; */
+  background: #2c3031;
 }
 
 p.date {
-
+  text-transform: uppercase;
+  font-size: .75em;
+  letter-spacing: .1em;
+  color: #7a8587;
+  margin-botton: .4em;
 }
 
 h3 {
-  margin-left: 0;
-
+  margin: 0 0 .3em;
+  color: #b6eaff;
+  font-size: 1.8em;
 }
