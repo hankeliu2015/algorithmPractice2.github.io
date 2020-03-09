@@ -1,3 +1,4 @@
+/* regular rule sets  */
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat:400,700|Seymour+One&display=swap');
 
 html, body {
@@ -41,4 +42,23 @@ cite {
     font-style: normal;
     font-family: 'Amatic SC', cursive;
     font-size: 1.4em;
+}
+
+/* customize css / overwrites  */
+h1, p, blockquote p, cite {
+    font-family: 'Montserrat';
+}
+
+h1 {
+    font-size: 2em;
+}
+
+blockquote p {
+    line-height: 1.5em;
+}
+
+cite {
+    font-size: .7em;
+    font-weight: bold;
+    color: #373737;
 }

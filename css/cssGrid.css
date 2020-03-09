@@ -59,7 +59,7 @@ html, body {
   /* grid-template-rows: 50px, 75px; */
   /* grid-template-rows: repeat(2, 50px); */
   grid-template: repeat(2, 50px) / repeat(3, 1fr);
-  grid-gap: 3px;
+  grid-gap: 5px;
   }
 
 /* container 2 */
