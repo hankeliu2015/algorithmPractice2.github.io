@@ -9,6 +9,7 @@
 
 // function whatIsInAName(collection, source) {
 //   let matchedArray = collection.filter(obj => {
+//
 //     for (const key in obj ) {
 //
 //       for (const k in source) {
@@ -45,11 +46,10 @@
 //   var srcKeys = Object.keys(source);
 //   let data =  collection.filter(function(obj) {
 //               //filters function will filter all element when return srcKeys
-//     return srcKeys
-//       .map(function(key) {
-//         return obj.hasOwnProperty(key) && obj[key] === source[key];
-//       })      // if this return 2 true element in an array, the reduce will make it one true (accumulator). if there one element is false, all array will return false.
-//       .reduce(function(a, b) {
+//     return srcKeys.map(function(key) {
+//         return obj.hasOwnProperty(key) && obj[key] === source[key]; // check if it has the same key and if the same key has the same value.
+//       })
+//       .reduce(function(a, b) {  // if this return 2 true element in an array, the reduce will make it one true (accumulator). if there one element is false, all array will return false.
 //         return a && b;
 //       }
 //     );
