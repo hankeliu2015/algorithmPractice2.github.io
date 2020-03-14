@@ -13,12 +13,12 @@
 //
 //       for (const k in source) {
 //         if ( !obj.hasOwnProperty(k) || source[k] !== obj[k]) {
-//           return false;
+//           return false;    //not has the key or has the same key with fifferent value.
 //         }
 //       }
 //
 //       if (obj[key] === source[key] && Object.keys(obj).length >= Object.keys(source).length ) {
-//         return true;
+//         return true;     //has the same key value pair. also the collection element can have more objects.
 //       }
 //     }
 //   })
@@ -40,21 +40,21 @@
 // the reduce method will verify if all the source objects are included in the source objects.
 
 
-function whatIsInAName(collection, source) {
-
-  var srcKeys = Object.keys(source);
-  let data =  collection.filter(function(obj) {
-
-    return srcKeys      //filters function will filter all element when return srcKeys
-      .map(function(key) {
-        return obj.hasOwnProperty(key) && obj[key] === source[key];
-      })      // if this return 2 true element in an array, the reduce will make it one true (accumulator). if there one element is false, all array will return false.
-      .reduce(function(a, b) {
-        return a && b;
-      }
-    );
-
-    });
-
-  return data;
-}
+// function whatIsInAName(collection, source) {
+//
+//   var srcKeys = Object.keys(source);
+//   let data =  collection.filter(function(obj) {
+//               //filters function will filter all element when return srcKeys
+//     return srcKeys
+//       .map(function(key) {
+//         return obj.hasOwnProperty(key) && obj[key] === source[key];
+//       })      // if this return 2 true element in an array, the reduce will make it one true (accumulator). if there one element is false, all array will return false.
+//       .reduce(function(a, b) {
+//         return a && b;
+//       }
+//     );
+//
+//     });
+//
+//   return data;
+// }
