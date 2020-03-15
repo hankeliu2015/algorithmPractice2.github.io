@@ -17,16 +17,17 @@
 //             let last = stack.pop();
 //
 //             //If the popped element from the stack, which is the last opening brace doesn’t match the corresponding closing brace in the map, then return false
-//             if (str[i] !== map[last]) {return false};
+//             if (str[i] !== map[last]) {return false}; // this statement handle the mismach. map is hash value pairs, and last acting as the key. if they not equal, there is a mismath on the brackets.
 //         }
 //     }
 //     // By the completion of the for loop after checking all the brackets of the str, at the end, if the stack is not empty then fail
 //         if (stack.length !== 0) {return false};
+//         // this means there is opening or closing bracket saved in the stack.
 //
 //     return true;
 // }
 
-// balacing parentheis
+// balancedBracket
 // if ( , add it to the stack .
 // if ) , pop it out of the stack,
 // counting the stack length and return the value

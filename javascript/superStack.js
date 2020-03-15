@@ -50,8 +50,8 @@
 // console.log(stack3.peek())
 // console.log(stack3.isEmpty())
 // console.log(stack3.clear())
-
-
+//
+//
 // let Stack1 = function() {
 //   this.count = 0;
 //   this.storage = {}
@@ -124,7 +124,7 @@
 //
 //
 //
-
+//
 // function superStack(operations) {
 //   let ops = operations.split(' ');
 //   if (ops[0] === "push") {
