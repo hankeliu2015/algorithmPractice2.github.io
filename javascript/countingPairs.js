@@ -8,8 +8,10 @@ function countingPairs(numbers, k) {
 
       if (numbers[i] + k === numbers[j]) {
 
-        if (pairArr.length > 0) {
-          // check if the new pair is unique in the pairArr
+        if (pairArr.length === 0) {    //first matched pair
+          pairArr.push([numbers[i], numbers[j]]);
+        } else {
+          // check if the new pair is unique in the pairArr.
           let uniquePair = pairArr.map(el => {
             if (el[0] === numbers[i] && el[1] === numbers[j]) {
               return false;
@@ -23,10 +25,7 @@ function countingPairs(numbers, k) {
           if (uniquePair) {
             pairArr.push([numbers[i], numbers[j]]);
           }
-        } else {
-          pairArr.push([numbers[i], numbers[j]]);
         }
-
       }
     }
   }
