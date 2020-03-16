@@ -61,13 +61,13 @@
 
     // 5. Sort the inventors by years lived
     // let lifeSort = inventors.sort((a, b) => {
-    //   console.log(a.first, a.last, a.passed - a.year)
+    //   console.log(a.first, a.last, a.passed - a.year) // get the name and lived years.
     //   // return a.passed - b.passed
-    //   // if ((a.passed - a.year) > (b.passed - b.passed)) {
-    //   //   return 1
-    //   // } else {
-    //   //   return -1
-    //   // };
+    //   if ((a.passed - a.year) > (b.passed - b.passed)) {
+    //     return 1
+    //   } else {
+    //     return -1
+    //   };
     //
     //   const lastGuy = a.passed - a.year;
     //   const nextGuy = b.passed - a.year;
@@ -80,11 +80,11 @@
     //
     // console.table(lifeSort)
 
+    // 5. sort  the inventors by years lived.
     // const oldest = inventors.sort(function(a, b) {
-    //   console.log(a.first, a.passed - a.year)
     //   const lastInventor = a.passed - a.year;
     //   const nextInventor = b.passed - b.year;
-    //   return lastInventor > nextInventor ? -1 : 1;
+    //   return lastInventor > nextInventor ? -1 : 1;  // from hight to low. -1 goes first
     // });
     // console.table(oldest);
 
@@ -98,12 +98,13 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
-    // let lastNameSort = people.sort((a,b) => {
-    //   let {aLast, aFirst} = a.split(',');
-    //   let {bLast, bFirst} = b.split(',');
-    //   return aLast > bLast ? -1 : 1;
-    // })
-    // console.table(lastNameSort)
+    let lastNameSort = people.sort((a,b) => {
+      let {aLast, aFirst} = a.split(', ');
+      let {bLast, bFirst} = b.split(', ');
+      // console.log(a.split(",")[0])
+      return aLast > bLast ? -1 : 1;
+    })
+    console.table(lastNameSort)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
