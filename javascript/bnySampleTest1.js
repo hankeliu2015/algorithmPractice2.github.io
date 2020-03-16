@@ -79,6 +79,8 @@
 //
 // console.log(distanceMatrix([1,2,1,1,2,3]))
 
+// 7. SQL on the code challeng note
+
 // 8. sort an array - return the least element move.
 //
 // function miniMove(arr) {

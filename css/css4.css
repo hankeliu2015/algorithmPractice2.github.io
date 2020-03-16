@@ -26,7 +26,7 @@ body {
 .box-1 {
   background-color:  #333333;
   color: #ffffff;
-  padding: 20px;
+  padding: 10px;
   border-bottom-width: 10px;
   border-top-style: dotted;
   border: 5px red solid;
@@ -187,6 +187,8 @@ a:visited {
 }
 
 .bny4 {
+  /* display:inline-block; */
+  /* position: absolute; */
   margin: 30px;
   padding: 5px;
   width: 300px;
