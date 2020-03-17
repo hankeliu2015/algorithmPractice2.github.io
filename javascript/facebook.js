@@ -31,7 +31,10 @@
 // 1. Artisan Martians:
 
 function stickers_for(phrase) {
-  let phraseArr = phrase.split("").filter(el => el)
+  let phraseArr = phrase.split("").filter(el => el != " ")
+  // debugger
+  // let phraseArr = phrase.split(" ").join().split("");
+
   let phraseObj = phraseArr.reduce((acc, el) => {
     if (!acc[el]) {
       acc[el] = 1
@@ -57,7 +60,8 @@ function stickers_for(phrase) {
 console.log(stickers_for("artisan martins"))
 console.log(stickers_for("taming giant gnats"))
 console.log(stickers_for("tiara"))
-console.log(stickers_for("tttiaraaaaaa"))
+console.log(stickers_for("i n s t a g r a m"))
+// console.log(stickers_for("tttiaraaaaaa"))
 
 
 // test code before test.
