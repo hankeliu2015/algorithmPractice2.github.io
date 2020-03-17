@@ -70,7 +70,7 @@
 // } //end of function
 // console.log(climbingLeaderboard([100,100,50,40,40,20,10], [2,25,50,120]))
 // //
-// // //solution from suggestions:
+// // //solution from babara suggestions:
 //
 // function climbingLeaderboard(scores, alice) {
 //     // const results = Array(alice.length);  // creating array with empty elements.

@@ -98,13 +98,13 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
-    let lastNameSort = people.sort((a,b) => {
-      let {aLast, aFirst} = a.split(', ');
-      let {bLast, bFirst} = b.split(', ');
-      // console.log(a.split(",")[0])
-      return aLast > bLast ? -1 : 1;
-    })
-    console.table(lastNameSort)
+    // let lastNameSort = people.sort((a,b) => {
+    //   let {aLast, aFirst} = a.split(', ');
+    //   let {bLast, bFirst} = b.split(', ');
+    //   // console.log(a.split(",")[0])
+    //   return aLast > bLast ? -1 : 1;
+    // })
+    // console.table(lastNameSort)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
