@@ -4,33 +4,33 @@
 
 //// anagrams solution | iterate through anagrams, find and remove anagrams. sort out the element left by alphabetically.
 
-function funWithAnagrams(text) {
+// function funWithAnagrams(text) {
+//
+//     for (let i = 0; i < text.length ; i++) {
+//       // the last element will have no anagrams. stop it compare to the last + 1 element.
+//       if ( !text[i + 1]) {
+//           break;
+//         }
+//       for(let j = i + 1; j < text.length; j++) {
+//         let currentElSortChars = text[i].split('').sort().join('');
+//         let nextELSortChars = text[j].split('').sort().join('');
+//         // there is a matched anagram, remove that from orignal array and reset the index backward.
+//         if (text[i].length === text[j].length && currentElSortChars === nextELSortChars) {
+//           if (!anagramArr[i]) {
+//             text.splice(j, 1);
+//             j -=1;
+//           } else {
+//             text.splice(j, 1);
+//             j -=1;
+//           }
+//         }
+//         // for element without any anagrams
+//       } //end of outer loop
+//     }
+//     return text.sort();
+//   }
 
-    for (let i = 0; i < text.length ; i++) {
-      // the last element will have no anagrams. stop it compare to the last + 1 element.
-      if ( !text[i + 1]) {
-          break;
-        }
-      for(let j = i + 1; j < text.length; j++) {
-        let currentElSortChars = text[i].split('').sort().join('');
-        let nextELSortChars = text[j].split('').sort().join('');
-        // there is a matched anagram, remove that from orignal array and reset the index backward.
-        if (text[i].length === text[j].length && currentElSortChars === nextELSortChars) {
-          if (!anagramArr[i]) {
-            text.splice(j, 1);
-            j -=1;
-          } else {
-            text.splice(j, 1);
-            j -=1;
-          }
-        }
-        // for element without any anagrams
-      } //end of outer loop
-    }
-    return text.sort();
-  }
-
-// anagrams | array inside array to group anagrams, remove anagrams and sort the final array.
+// anagrams | use array inside array to group anagrams, remove anagrams and sort the final array.
 
 // function funWithAnagrams(text) {
 //
@@ -76,9 +76,9 @@ function funWithAnagrams(text) {
 //     return(uniqueArr);
 //   }
 
-  console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
-  console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
-  console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce", "aaagmnsr", "anagarms"]))
+  // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
+  // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
+  // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce", "aaagmnsr", "anagarms"]))
 
 
 // 1. Artisan Martians:
