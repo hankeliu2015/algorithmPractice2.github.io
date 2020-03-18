@@ -29,11 +29,35 @@
 // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
 
 // 1. Artisan Martians:
+//
+// function stickers_for(phrase) {
+//   let phraseArr = phrase.split("").filter(el => el != " ")
+//   // let phraseArr = phrase.split(" ").join().split("");
+//   let phraseObj = phraseArr.reduce((acc, el) => {
+//     if (!acc[el]) {
+//       acc[el] = 1
+//     } else {
+//       acc[el] ++
+//     }
+//     return acc
+//   }, {})
+//
+//   let maxCharKey = 0;
+//
+//   if (!phraseObj["a"]) {
+//     maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
+//     maxCharKey = Math.max(Object.values(phraseObj).map(el => el))
+//   } else {
+//     phraseObj["a"] = Math.ceil(phraseObj["a"] / 2);
+//     maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
+//   }
+//   return phraseObj[maxCharKey];
+// }
+
+// // function with Mapping
 
 function stickers_for(phrase) {
   let phraseArr = phrase.split("").filter(el => el != " ")
-  // debugger
-  // let phraseArr = phrase.split(" ").join().split("");
 
   let phraseObj = phraseArr.reduce((acc, el) => {
     if (!acc[el]) {
@@ -44,16 +68,14 @@ function stickers_for(phrase) {
     return acc
   }, {})
 
-  let maxCharKey = 0;
-  if (!phraseObj["a"]) {
-
-    maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
-    // maxCharKey = Math.max(Object.values(phraseObj).map(el => el))
-  } else {
-    phraseObj["a"] = Math.ceil(phraseObj["a"] / 2);
-    maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
-  }
-  return phraseObj[maxCharKey];
+  let phraseFrq = Object.keys(phraseObj).map((key, index) => {
+    if (key === 'a') {
+      return Math.ceil(phraseObj[key] / 2);
+    } else {
+      return phraseObj[key]
+    }
+  })
+  return Math.max(...phraseFrq)
 }
 
 // "instagram"
