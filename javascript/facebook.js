@@ -1,3 +1,92 @@
+// function funWithAnagrams(text) {
+//
+//     let textObj = text.reduce((acc, el) => {
+//       acc[el] = el;
+//       return acc
+//     }, {})
+//
+//     let textObj2 = {};
+//
+//     for (const key in textObj) {
+//       let currentSortedValue = textObj[key].split("").sort().join("");
+//       textObj[key] = currentSortedValue
+//       if (!textObj2[currentSortedValue]) {
+//         textObj2[currentSortedValue] = [];
+//         textObj2[currentSortedValue].push(textObj[key])
+//       } else {
+//         textObj2[currentSortedValue].push(textObj[key])
+//       }
+//     }
+    // let combinedArr = []
+    // for (const key in textObj2) {
+    //   let single = textObj2[key].sort()
+    //   console.log(single)
+    // }
+
+//     return textObj2;
+// }
+//
+// console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
+
+// 1. Artisan Martians:
+//
+// function stickers_for(phrase) {
+//   let phraseArr = phrase.split("").filter(el => el != " ")
+//   // let phraseArr = phrase.split(" ").join().split("");
+//   let phraseObj = phraseArr.reduce((acc, el) => {
+//     if (!acc[el]) {
+//       acc[el] = 1
+//     } else {
+//       acc[el] ++
+//     }
+//     return acc
+//   }, {})
+//
+//   let maxCharKey = 0;
+//
+//   if (!phraseObj["a"]) {
+//     maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
+//     maxCharKey = Math.max(Object.values(phraseObj).map(el => el))
+//   } else {
+//     phraseObj["a"] = Math.ceil(phraseObj["a"] / 2);
+//     maxCharKey = Object.keys(phraseObj).reduce((a,b) => phraseObj[a] > phraseObj[b] ? a : b);
+//   }
+//   return phraseObj[maxCharKey];
+// }
+
+// // function with Mapping
+
+function stickers_for(phrase) {
+  let phraseArr = phrase.split("").filter(el => el != " ")
+
+  let phraseObj = phraseArr.reduce((acc, el) => {
+    if (!acc[el]) {
+      acc[el] = 1
+    } else {
+      acc[el] ++
+    }
+    return acc
+  }, {})
+
+  let phraseFrq = Object.keys(phraseObj).map((key, index) => {
+    if (key === 'a') {
+      return Math.ceil(phraseObj[key] / 2);
+    } else {
+      return phraseObj[key]
+    }
+  })
+  return Math.max(...phraseFrq)
+}
+
+// "instagram"
+console.log(stickers_for("artisan martins"))
+console.log(stickers_for("taming giant gnats"))
+console.log(stickers_for("tiara"))
+console.log(stickers_for("i n s t a g r a m"))
+// console.log(stickers_for("tttiaraaaaaa"))
+
+
+// test code before test.
 // function findNumber(arr, k) {
 //
 //   let j = "NO"
