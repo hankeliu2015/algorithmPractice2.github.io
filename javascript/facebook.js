@@ -2,66 +2,66 @@
 // //remove each string taht is an anagram of an earlier string, then return the remianing array in sorted order.
 //
 
-//// ae solution:
+//// ABE solution:
 // The word "dict" means dictionary - which all javascript objects are (key-value stores)
 // Here, I create a dictionary from each word of the counts of characters
 // I then check if any previous words have those same number of characters
 // If yes, I keep going
 // If no, I add that word to 'result' and the dicts I've seen.
 
-function funWithAnagrams(words) {
-  const prevWordDicts = []
-  const result = []
-
-  for (let word of words) {
-    let wordDict = createDictionaryFromWord(word)
-    if (isSameAsAnyPrevDict(prevWordDicts, wordDict)) {
-      continue
-    }
-
-    prevWordDicts.push(wordDict)
-    result.push(word)
-  }
-
-  return result
-}
-
-function isSameAsAnyPrevDict(prevWordDicts, wordDict) {
-  for (let prevWordDict of prevWordDicts) {
-    if (isSameDict(prevWordDict, wordDict)) {
-      return true
-    }
-  }
-  return false
-}
-
-function isSameDict(dict1, dict2) {
-  if (Object.keys(dict1).length !== Object.keys(dict2).length) {
-    return false
-  }
-
-  for (let key in dict1) {
-    if (dict1[key] !== dict2[key]) {
-      return false
-    }
-  }
-
-  return true
-}
-
-function createDictionaryFromWord(word) {
-  const wordDict = {}
-
-  for (let char of word) {
-    if (char in wordDict) {
-      wordDict[char] += 1
-    } else {
-      wordDict[char] = 1
-    }
-  }
-
-  return wordDict
-}
+// function funWithAnagrams(words) {
+//   const prevWordDicts = []
+//   const result = []
+//
+//   for (let word of words) {
+//     let wordDict = createDictionaryFromWord(word)
+//     if (isSameAsAnyPrevDict(prevWordDicts, wordDict)) {
+//       continue
+//     }
+//
+//     prevWordDicts.push(wordDict)
+//     result.push(word)
+//   }
+//
+//   return result
+// }
+//
+// function isSameAsAnyPrevDict(prevWordDicts, wordDict) {
+//   for (let prevWordDict of prevWordDicts) {
+//     if (isSameDict(prevWordDict, wordDict)) {
+//       return true
+//     }
+//   }
+//   return false
+// }
+//
+// function isSameDict(dict1, dict2) {
+//   if (Object.keys(dict1).length !== Object.keys(dict2).length) {
+//     return false
+//   }
+//
+//   for (let key in dict1) {
+//     if (dict1[key] !== dict2[key]) {
+//       return false
+//     }
+//   }
+//
+//   return true
+// }
+//
+// function createDictionaryFromWord(word) {
+//   const wordDict = {}
+//
+//   for (let char of word) {
+//     if (char in wordDict) {
+//       wordDict[char] += 1
+//     } else {
+//       wordDict[char] = 1
+//     }
+//   }
+//
+//   return wordDict
+// }
 
 // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
 // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
@@ -136,9 +136,9 @@ function createDictionaryFromWord(word) {
 //     return(uniqueArr);
 //   }
 
-  console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
-  console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
-  console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce", "aaagmnsr", "anagarms"]))
+  // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
+  // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
+  // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce", "aaagmnsr", "anagarms"]))
 
 
 // 1. Artisan Martians:
