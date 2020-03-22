@@ -8,7 +8,7 @@
 // I then check if any previous words have those same number of characters
 // If yes, I keep going
 // If no, I add that word to 'result' and the dicts I've seen.
-
+//
 // function funWithAnagrams(words) {
 //   const prevWordDicts = []
 //   const result = []
@@ -29,7 +29,7 @@
 // function isSameAsAnyPrevDict(prevWordDicts, wordDict) {
 //   for (let prevWordDict of prevWordDicts) {
 //     if (isSameDict(prevWordDict, wordDict)) {
-//       return true
+//       return true     // the end of the loop return true, the function will return true
 //     }
 //   }
 //   return false
@@ -62,7 +62,7 @@
 //
 //   return wordDict
 // }
-
+//
 // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
 // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
 
