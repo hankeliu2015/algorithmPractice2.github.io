@@ -6,28 +6,28 @@
 //     3   2   3   1     2   1
 //
 // */
-function getPermutations(string) {
-      var results = [];
-
-      if (string.length === 1)
-      {
-        results.push(string);
-        return results;
-      }
-
-      for (var i = 0; i < string.length; i++)
-      {
-        var firstChar = string[i];    //1
-        var otherChar = string.substring(0, i) + string.substring(i + 1); //23
-        var otherPermutations = getPermutations(otherChar);   // after percursive returned 3, it will concatenate with 2 in the j loop
-                                                              // next i loop of 23, 2 will concatenate with 3.
-        for (var j = 0; j < otherPermutations.length; j++) {
-          results.push(firstChar + otherPermutations[j]);   // 2 + 3
-        }
-
-      }
-      return results;
-    }
+// function getPermutations(string) {
+//       var results = [];
+//
+//       if (string.length === 1)
+//       {
+//         results.push(string);
+//         return results;
+//       }
+//
+//       for (var i = 0; i < string.length; i++)
+//       {
+//         var firstChar = string[i];    //1
+//         var otherChar = string.substring(0, i) + string.substring(i + 1); //23
+//         var otherPermutations = getPermutations(otherChar);   // after percursive returned 3, it will concatenate with 2 in the j loop
+//                                                               // next i loop of 23, 2 will concatenate with 3.
+//         for (var j = 0; j < otherPermutations.length; j++) {
+//           results.push(firstChar + otherPermutations[j]);   // 2 + 3
+//         }
+//
+//       }
+//       return results;
+//     }
 
 // console.log(getPermutations('123'));
 
