@@ -7,33 +7,33 @@
 //
 // // Lowest Common Acestor
 
-// lowestCommonAncestor = function(root, p, q) {
-//   if (!root)
-//     return null;
-//
-//   if (root === p || root === q)
-//     return root;
-//
-//   var left = lowestCommonAncestor(root.left, p, q);
-//   var right = lowestCommonAncestor(root.right, p, q);
-//
-//   if (left && right)
-//     return root;
-//   else if (left)
-//     return left;
-//   else
-//     return right;
-// };
+lowestCommonAncestor = function(root, p, q) {
+  if (!root)
+    return null;
 
-function lowestCommonAncestor(root, p, q) {
-  if (p.data < root.data && q.data < root.data){
-    return lowestCommonAncestor(root.left, p, q);
-  } else if (p.data > root.data && q.data > root.data) {
-    return lowestCommonAncestor(root.right, p, q)
-  } else {
+  if (root.data === p.data || root.data === q.data)
     return root;
-  }
-}
+
+  var left = lowestCommonAncestor(root.left, p, q);
+  var right = lowestCommonAncestor(root.right, p, q);
+
+  if (left && right)
+    return root;
+  else if (left)
+    return left;
+  else
+    return right;
+};
+
+// function lowestCommonAncestor(root, p, q) {
+//   if (p.data < root.data && q.data < root.data){
+//     return lowestCommonAncestor(root.left, p, q);
+//   } else if (p.data > root.data && q.data > root.data) {
+//     return lowestCommonAncestor(root.right, p, q)
+//   } else {
+//     return root;
+//   }
+// }
 
 // //testing
 //   6
@@ -62,3 +62,4 @@ let rootNode3 = {data: 6,
 
 console.log(lowestCommonAncestor(rootNode3, n1, n2))
 console.log(lowestCommonAncestor(rootNode3, n2, n8))
+console.log(lowestCommonAncestor(rootNode3, n2, n5))
