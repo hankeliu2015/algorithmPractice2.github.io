@@ -5,7 +5,7 @@
 // //
 // // console.log(LexicographicalMaxString("ababaa"))
 //
-// // Lowest Common Acestor
+// // Lowest Common Acestor solution 1
 
 lowestCommonAncestor = function(root, p, q) {
   if (!root)
@@ -25,6 +25,7 @@ lowestCommonAncestor = function(root, p, q) {
     return right;
 };
 
+//// solution 2
 // function lowestCommonAncestor(root, p, q) {
 //   if (p.data < root.data && q.data < root.data){
 //     return lowestCommonAncestor(root.left, p, q);
