@@ -103,6 +103,18 @@ a:active{
   margin-top: 40px;
 }
 
+@media(max-width: 600px) {
+  #main {
+    width: 100%;
+    float: none;
+  }
+
+  #sidebar {
+    width: 100%;
+    float: none;
+  }
+}
+
 .box-1 {
   background-color: #fff;
   color: #fff;
