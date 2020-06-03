@@ -79,3 +79,34 @@ a:visited {
   border-bottom: 1px dotted #000;
   /* list-style-image: url('../img/checkmark.jpg'); */
 }
+
+.my-form {
+  padding: 40px;
+}
+
+.my-form .form-group {
+  padding-bottom: 25px;
+}
+
+.my-form label {
+  display: block;
+}
+
+.my-form input[type="text"], .my-form textarea {
+  padding: 10px;
+  width: 100%;
+}
+
+/* .my-form input[type="button"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+} */
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
