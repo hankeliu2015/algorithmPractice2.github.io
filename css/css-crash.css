@@ -27,9 +27,9 @@ a:active{
   color: #00ff00;
 }
 
-a:visited {
+/* a:visited {
   color: #0000ff;
-}
+} */
 
 .container {
   max-width: 80%;
@@ -109,4 +109,81 @@ a:visited {
   color: #fff;
   padding: 10px 15px;
   border: none;
+}
+
+.button:hover {
+  background-color: #f00;
+  color: #fff;
+}
+
+.block {
+  float: left;
+  border: 1px solid #ccc;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.clr {
+  clear:both;
+}
+
+#main-block {
+  float: left;
+  padding: 0 10px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+#side-bar {
+  float: right;
+  padding: 0 10px;
+  width: 30%;
+  box-sizing: border-box;
+  background-color: #ccc;
+}
+
+.p-box {
+  position: relative;
+  width: 850px;
+  height: 600px;
+  border: 3px solid #999;
+  margin-top: 30px;
+  background: url("../img/background-img-small-1.gif");
+  background-repeat: no-repeat;
+  background-position: 50px 50px;
+  background-position: center 30%;
+}
+
+.p-box h1 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.p-box h2 {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.fix-me {
+  position: fixed;
+  top: 100px;
+  left: 25px;
+}
+
+.my-list li:first-child{
+  background: #00ff00;
+}
+.my-list li:last-child{
+  background: #00ffff;
+}
+
+.my-list li:nth-child(5) {
+  background: #ffff00;
+}
+
+.my-list li:nth-child(even) {
+  background: #999;
 }
