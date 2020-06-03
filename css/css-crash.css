@@ -172,3 +172,18 @@ a:active{
   top: 100px;
   left: 25px;
 }
+
+.my-list li:first-child{
+  background: #00ff00;
+}
+.my-list li:last-child{
+  background: #00ffff;
+}
+
+.my-list li:nth-child(5) {
+  background: #ffff00;
+}
+
+.my-list li:nth-child(even) {
+  background: #999;
+}
