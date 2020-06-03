@@ -117,10 +117,28 @@ a:active{
 }
 
 .block {
-  display: inline-block;
-  width: 25%;
-  background-color: #fafafa;
-  /* text-align: center; */
-  padding: 0 20px;
-  margin: auto;
+  float: left;
+  border: 1px solid #ccc;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* .clr {
+  clear:both;
+} */
+
+#main-block {
+  float: left;
+  padding: 0 10px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+#side-bar {
+  float: right;
+  padding: 0 10px;
+  width: 30%;
+  box-sizing: border-box;
+  background-color: #ccc;
 }
