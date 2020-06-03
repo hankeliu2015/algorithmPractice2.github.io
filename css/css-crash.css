@@ -27,9 +27,9 @@ a:active{
   color: #00ff00;
 }
 
-a:visited {
+/* a:visited {
   color: #0000ff;
-}
+} */
 
 .container {
   max-width: 80%;
@@ -109,4 +109,18 @@ a:visited {
   color: #fff;
   padding: 10px 15px;
   border: none;
+}
+
+.button:hover {
+  background-color: #f00;
+  color: #fff;
+}
+
+.block {
+  display: inline-block;
+  width: 25%;
+  background-color: #fafafa;
+  /* text-align: center; */
+  padding: 0 20px;
+  margin: auto;
 }
