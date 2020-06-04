@@ -109,5 +109,32 @@ header a:hover{
   border: 0;
   padding: 0 20px;
   height: 37px;
+}
 
+#boxes{
+  margin: 20px 0;
+  padding: 0 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.box{
+  float: left;
+  display: inline-block;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.box img {
+  width: 80%;
+  height: 80%;
+}
+
+footer{
+  background-color: #e8491d;
+  min-height: 50px;
+  text-align: center;
+  color: #fff;
+  padding: 15px 0 10px 0;
 }
