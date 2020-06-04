@@ -83,3 +83,31 @@ header a:hover{
 #showcase p{
   font-size: 20px;
 }
+
+#newsletter{
+  background-color: #35424a;
+  color: #fff;
+  padding: 15px;
+}
+#newsletter h1{
+  float: left;
+
+}
+#newsletter form{
+  float: right;
+  margin-top: 15px;
+}
+#newsletter input[type="email"]{
+  height: 25px;
+  width: 250px;
+  padding: 4px;
+}
+
+.button-1{
+  background-color:#e8491d;
+  color: #fff;
+  border: 0;
+  padding: 0 20px;
+  height: 37px;
+
+}
