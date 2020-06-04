@@ -149,13 +149,13 @@ footer{
 .sidebar{
   float: right;
   text-align: center;
-  width: 25%;
+  width: 30%;
   padding: 0 10px;
 }
 
 #main-col{
   float: left;
-  width: 70%;
+  width: 65%;
 }
 
 .dark{
@@ -165,3 +165,16 @@ footer{
 }
 
 /* service page */
+
+ul#services li{
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  background: #e6e6e6;
+
+}
+
+aside.sidebar .quote input, aside.sidebar textarea{
+  width: 95%;
+  padding: 5px;
+}
