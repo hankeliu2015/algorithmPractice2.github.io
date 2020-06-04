@@ -23,7 +23,7 @@ ul {
 header{
   background: #35424a;
   color: #fff;
-  margin-top: 30px;
+  padding-top: 30px;
   min-height: 70px;
   border-bottom: 3px solid #e8491d;
 }
@@ -45,7 +45,7 @@ header a {
 
 nav{
   float: right;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 header ul li{
   float: left;
@@ -61,5 +61,5 @@ header .highlight, header .current a{
 
 header a:hover{
   color: #ccc;
-  font-weight: bold; 
+  font-weight: bold;
 }
