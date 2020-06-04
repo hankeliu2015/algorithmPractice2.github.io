@@ -111,6 +111,8 @@ header a:hover{
   height: 37px;
 }
 
+/* boxes  */
+
 #boxes{
   margin: 20px 0;
   padding: 0 20px;
@@ -131,6 +133,7 @@ header a:hover{
   height: 80%;
 }
 
+/* footer */
 footer{
   background-color: #e8491d;
   min-height: 50px;
@@ -138,3 +141,27 @@ footer{
   color: #fff;
   padding: 15px 0 10px 0;
 }
+
+/* about page  */
+
+/* sidbar */
+
+.sidebar{
+  float: right;
+  text-align: center;
+  width: 25%;
+  padding: 0 10px;
+}
+
+#main-col{
+  float: left;
+  width: 70%;
+}
+
+.dark{
+  background: #35424a;
+  color: #fff;
+  padding: 0 20px;
+}
+
+/* service page */
