@@ -259,11 +259,9 @@ a:active{
 .my-list li:last-child{
   background: #00ffff;
 }
-
 .my-list li:nth-child(5) {
   background: #ffff00;
 }
-
 .my-list li:nth-child(even) {
   background: #999;
 }
