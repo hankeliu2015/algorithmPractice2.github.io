@@ -178,3 +178,9 @@ aside.sidebar .quote input, aside.sidebar textarea{
   width: 95%;
   padding: 5px;
 }
+
+/* media queries  */
+
+@media (max-width: 760px){
+  
+}
