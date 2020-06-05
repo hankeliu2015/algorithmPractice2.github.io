@@ -148,7 +148,7 @@ footer{
 
 .sidebar{
   float: right;
-  text-align: center;
+  /* text-align: center; */
   width: 30%;
   padding: 0 10px;
 }
@@ -167,7 +167,7 @@ footer{
 /* service page */
 
 ul#services li{
-  padding: 5px;
+  padding: 20px;
   border: 1px solid #ccc;
   margin-bottom: 5px;
   background: #e6e6e6;
