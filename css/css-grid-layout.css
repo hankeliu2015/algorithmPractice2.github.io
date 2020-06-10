@@ -13,3 +13,18 @@
 .wrapper div:nth-child(odd){
   background-color: #ddd;
 }
+
+.wrapper2{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+.wrapper2 div{
+  background-color: #eee;
+  padding: 1em;
+}
+
+.wrapper2 div:nth-child(odd){
+  background-color: #ddd;
+}
