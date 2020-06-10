@@ -5,7 +5,7 @@
   /* flex-direction: column; */
 }
 
-.container-1 div, .container-2 div {
+.container-1 div, .container-2 div, .container-3 div {
   border: 2px #ccc solid;
   padding: 10px;
 }
@@ -32,6 +32,16 @@
 
 .container-2-box{
   flex-basis: 25%;
+}
+
+.container-3{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container-3-box{
+  flex-basis: 12%;
 }
 
 @media(max-width: 768px){
