@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+}
+
+body{
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #926239;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+#showcase{
+  background: url("https://res.cloudinary.com/dcyxkrt7p/image/upload/v1591888252/beach-sand.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
