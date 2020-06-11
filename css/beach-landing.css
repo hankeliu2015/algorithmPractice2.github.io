@@ -16,4 +16,34 @@ body{
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 25px;
+}
+
+#showcase h1{
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+#showcase p{
+  font-size:20px;
+}
+
+#showcase .button{
+  font-size: 18px;
+  text-decoration: none;
+  color: #926239;
+  border: 1px #926239 solid;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+#showcase .button:hover{
+  color: #fff;
+  background-color: #926239;
 }
