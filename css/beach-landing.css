@@ -47,3 +47,34 @@ body{
   color: #fff;
   background-color: #926239;
 }
+
+#section-a{
+  background-color: #926239;
+  color:#fff;
+  text-align: center;
+  padding: 20px;
+}
+#section-b{
+  background-color: #ddd;
+  text-align: center;
+  padding: 20px;
+}
+#section-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#section-c div{
+  padding: 20px;
+}
+
+#section-c .box-1, #section-c .box-3{
+  background-color: #926239;
+  color:#fff;
+}
+
+#section-c .box2{
+  background-color: #f4f4f4;
+}
