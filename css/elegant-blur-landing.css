@@ -1,0 +1,12 @@
+
+*{
+  margin: 0;
+}
+
+.showcase{
+  background: url("https://res.cloudinary.com/dcyxkrt7p/image/upload/v1591906309/information-sign-on-shelf-251225.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
