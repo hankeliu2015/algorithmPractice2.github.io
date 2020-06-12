@@ -5,10 +5,11 @@
 
 body{
   background: rgba(0,0,0, 0.6);
-  /* background: #000; */
   color: #fff;
   font-family: 'Sefoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* showcase section */
 .showcase::after{
   background: url("https://res.cloudinary.com/dcyxkrt7p/image/upload/v1591906309/information-sign-on-shelf-251225.jpg");
   content: "";
@@ -20,7 +21,6 @@ body{
   width: 100%;
   filter: blur(10px);
   transition: all 1000ms;
-
 }
 
 .showcase:hover::after{
@@ -53,12 +53,14 @@ body{
   margin-top: 1rem;
 }
 
+/* service sections */
 .container{
   max-width: 960px;
   margin: auto;
   overflow: hidden;
   padding: 4rem 1rem;
 }
+
 .grid-3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
