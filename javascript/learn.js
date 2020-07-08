@@ -1,3 +1,14 @@
+// function s3(){
+//   var a3 = "first";
+//   let b3 = "1st";
+//   if(true){
+//     var a3="2nd";
+//     b3="2nd"
+//   }
+//   console.log(a3);
+//   console.log(b3);
+// }
+
 
 // var a = 'Hello World';
 //

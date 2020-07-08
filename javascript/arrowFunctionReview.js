@@ -19,7 +19,6 @@ let sally = { name: 'Sally' };
 
 
 
-
 function arrowTest() {
   let obj = {
     test: () => console.log(this)
