@@ -1,3 +1,18 @@
+// const myVar = 'Foo';
+//
+// function first () {
+//   console.log('Inside first()');
+//
+//   console.log('myVar is currently equal to:', myVar);
+// }
+//
+// function second () {
+//   const myVar = 'Bar';
+//
+//   first();
+// }
+
+
 // function s3(){
 //   var a3 = "first";
 //   let b3 = "1st";
