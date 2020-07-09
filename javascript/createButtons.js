@@ -31,9 +31,9 @@ function createButtons() {
     btn.addEventListener('click', function(){
       console.log(i);
     });
+
     document.body.appendChild(btn);
   }
-  // console.log('what is i:', i)
 }
 
 // bind addEventListener outside the for loop.
@@ -43,7 +43,7 @@ function createButtons() {
 //   const n = 5;
 //   let btns = [];
 //   // var i;
-//   for (let i = 0; i < n; i++) {
+//   for (var i = 0; i < n; i++) {
 //     btns[i] = document.createElement('button');
 //     btns[i].appendChild(document.createTextNode('Button' + i));
 //     document.body.appendChild(btns[i]);
