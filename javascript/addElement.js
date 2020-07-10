@@ -44,7 +44,6 @@ $( document ).ready(function() {
 $(() => {
   console.log( "ready again!" );
 })
-
 // how jQuery works intro
 // window.onload = function () {
 //   alert('welcome!')
@@ -80,3 +79,30 @@ $( "#myAnimatedDiv:visible" ).animate({
 $( "#myAnimatedDiv" ).text()
 
 $( "#myselect option:selected" ).text()
+
+$("#yo").append("appendthis");
+$("#image").append("<img src='https://s3.amazonaws.com/learn-verified/painting-with-dog.gif' >");
+
+// const test1 = document.getElementsByTagName('h3');
+//
+// $(document).ready(function(){
+//   test1.addEventListener('click', function(event) {
+//     alert('I was clicked!');
+//   });
+// })
+
+$( document ).ready(function() {
+    console.log( "docuemnt ready test!" );
+});
+
+$( document ).ready(function() {
+    console.log( "document loaded" );
+  });
+
+$( window ).on( "load", function() {
+  console.log( "window loaded" );
+  });
+
+let myDivId2 = $("myDivId2").val();
+console.log(myDivId2);
+$("#myDivId2").val("This is the message replace my Div ID 2")
