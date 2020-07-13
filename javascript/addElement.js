@@ -106,3 +106,20 @@ $( window ).on( "load", function() {
 let myDivId2 = $("myDivId2").val();
 console.log(myDivId2);
 $("#myDivId2").val("This is the message replace my Div ID 2")
+
+// window.onload = function() {
+//   alert("welcome");
+// }
+
+$( document ).ready(function() {
+//     $( "a" ).click(function( e ) {
+//         e.preventDefault();
+//         alert( "Thanks for visiting!" );
+//     });
+
+  // $( "a" ).click(function( event ) {
+  //     event.preventDefault();
+  //     $( this ).hide( "slow" );
+  // });
+
+});
