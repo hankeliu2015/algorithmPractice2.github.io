@@ -28,12 +28,14 @@ function removeFromInventory(quantity, callback) {
 
 }
 
+
 // removeFromInventory(10, function(err, msg) {
 //   if (err) {
 //   return console.log(err)
 //   }
 //   console.log(msg);
 // })  // return inv is 10
+
 // removeFromInventory(20, function(err, msg) {
 //   if (err) {
 //   return console.log(err)
@@ -54,3 +56,17 @@ function removeFromInventory(quantity, callback) {
 //   }
 //   console.log(msg);
 // })  // return mes quantity must be a number.
+
+const s = new Date().getSeconds();
+
+setTimeout(function() {
+  // prints out "2", meaning that the callback is not called immediately after 500 milliseconds.
+  console.log("Ran after " + (new Date().getSeconds() - s) + " seconds");
+}, 500)
+
+while (true) {
+  if (new Date().getSeconds() - s >= 2) {
+    console.log("Good, looped for 2 seconds")
+    break;
+  }
+}
