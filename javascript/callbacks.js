@@ -9,24 +9,24 @@
   //wait for the timeout;
   // callback();
 //
-let inventory = 20
-
-function removeFromInventory(quantity, callback) {
-  setTimeout(() => {
-    if (typeof(quantity) !== 'number') {
-      return callback("Quantity must be a number")
-    }
-
-    if (quantity > inventory) {
-      return callback(null, "Quantity must less than inventory")
-    }
-
-    if (quantity <= inventory) {
-      return callback(null, ` Inventory is down to: ${inventory - quantity}`)
-    }
-  }, 1000)
-
-}
+// let inventory = 20
+//
+// function removeFromInventory(quantity, callback) {
+//   setTimeout(() => {
+//     if (typeof(quantity) !== 'number') {
+//       return callback("Quantity must be a number")
+//     }
+//
+//     if (quantity > inventory) {
+//       return callback(null, "Quantity must less than inventory")
+//     }
+//
+//     if (quantity <= inventory) {
+//       return callback(null, ` Inventory is down to: ${inventory - quantity}`)
+//     }
+//   }, 1000)
+//
+// }
 
 
 // removeFromInventory(10, function(err, msg) {
@@ -57,16 +57,16 @@ function removeFromInventory(quantity, callback) {
 //   console.log(msg);
 // })  // return mes quantity must be a number.
 
-const s = new Date().getSeconds();
-
-setTimeout(function() {
-  // prints out "2", meaning that the callback is not called immediately after 500 milliseconds.
-  console.log("Ran after " + (new Date().getSeconds() - s) + " seconds");
-}, 500)
-
-while (true) {
-  if (new Date().getSeconds() - s >= 2) {
-    console.log("Good, looped for 2 seconds")
-    break;
-  }
-}
+// const s = new Date().getSeconds();
+//
+// setTimeout(function() {
+//   // prints out "2", meaning that the callback is not called immediately after 500 milliseconds.
+//   console.log("Ran after " + (new Date().getSeconds() - s) + " seconds");
+// }, 500)
+//
+// while (true) {
+//   if (new Date().getSeconds() - s >= 2) {
+//     console.log("Good, looped for 2 seconds")
+//     break;
+//   }
+// }
