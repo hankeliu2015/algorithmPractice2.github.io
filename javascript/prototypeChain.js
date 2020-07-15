@@ -7,14 +7,14 @@ let person1 = {
 	}
 };
 
-let p2 = {
-	greet: function() {
-		 const otherFunction = () => {
-			return this;
-		}
-		return otherFunction();
-	}
-};
+// let p2 = {
+// 	greet: function() {
+// 		 const otherFunction = () => {
+// 			return this;
+// 		}
+// 		return otherFunction();
+// 	}
+// };
 
 // Let's create an object o from function f with its own properties a and b:
 let f = function () {

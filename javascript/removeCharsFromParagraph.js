@@ -22,9 +22,9 @@
 //
 // let p4 = " dolor Lorem ipsum + - ) ( ! @ # $ . "
 //
-// let p5 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum Lorem ipsum"
-//
-// function removeCharsFromParagraoh(paragraph) {
+// let p5 = "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum Lorem ipsum abcf"
+
+// function removeCharsFromParagraph(paragraph) {
 //
 //   let totalChars = paragraph.split(' ').join('');
 //
@@ -57,8 +57,44 @@
 //   }
 // }
 //
-// // removeCharsFromParagraoh(p1)
-// // removeCharsFromParagraoh(p2)
-// // removeCharsFromParagraoh(p3)
-// // removeCharsFromParagraoh(p4)
-// // removeCharsFromParagraoh(p5)
+
+// re-test
+// split and rejoin the paragraph
+// convert the chars to object key and value as occurence.
+// store the unique chars into an array.
+// set conditions:
+//if all chars less than 50, nothing removed.
+// if allchars minus unique chars greater than 50, unique chars all can be removed.
+// if allchars minus unique chars less than 50, the reminder of all chars - 50 is the unique chars can be removed.
+
+// function removeCharsFromParagraph(p) {
+//   let allChars = p.split(' ').join('');
+//   let allCharsObj = {};
+//
+//   for(i = 0; i < allChars.length; i++) {
+//     if(!allCharsObj[allChars[i]] === true) {
+//       allCharsObj[allChars[i]] = 1;
+//     }else {
+//       allCharsObj[allChars[i]] += 1;
+//     }
+//   }
+//
+//   let uniqueChars = Object.keys(allCharsObj).filter(key => allCharsObj[key] === 1)
+//   let allCharsLength = allChars.length;
+//   let uniqueCharsLength = uniqueChars.length;
+//
+//   if (allCharsLength <= 50) {
+//     console.log("No chars can be removed")
+//   } else if (allCharsLength - uniqueCharsLength > 50 ) {
+//     console.log(`largest unique set of characters that can be removed is: ${uniqueCharsLength}`)
+//   } else if (allCharsLength - uniqueCharsLength <= 50 ) {
+//     console.log(`largest unique set of characters that can be removed is: ${allCharsLength - 50}`)
+//   }
+// 
+// }
+
+// removeCharsFromParagraph(p1)
+// removeCharsFromParagraph(p2)
+// removeCharsFromParagraph(p3)
+// removeCharsFromParagraph(p4)
+// removeCharsFromParagraph(p5)
