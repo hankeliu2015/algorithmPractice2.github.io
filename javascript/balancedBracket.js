@@ -165,6 +165,6 @@
 //   console.log(final);
 // }
 // //
-isMatchingBrackets(")())()))");
-console.log(isMatchingBrackets(")()))(("));
-console.log(isMatchingBrackets("(){}[]({[]})"));
+// isMatchingBrackets(")())()))");
+// console.log(isMatchingBrackets(")()))(("));
+// console.log(isMatchingBrackets("(){}[]({[]})"));
