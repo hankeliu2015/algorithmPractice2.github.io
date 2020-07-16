@@ -27,12 +27,12 @@
 //     return true;
 // }
 
-// balancedBracket
+// balancedBracket interview code challange
 // if ( , add it to the stack .
 // if ) , pop it out of the stack,
 // counting the stack length and return the value
 
-// isMatchingBrackets(s) {
+// function isMatchingBrackets(s) {
 //     let stack = [];
 //     let bCounter = 0;
 //     let cCounter = 0;
@@ -48,6 +48,23 @@
 //
 //     console.log(Math.abs(bCounter-cCounter))
 // }
+
+// re-test
+
+// function isMatchingBrackets(str) {
+//   let bCounter = 0;
+//   let cCounter = 0;
+//   for(i=0; i < str.length; i++ ){
+//     if (str[i] === "(") {
+//       bCounter ++;
+//     } else if(str[i] === ")") {
+//       cCounter ++;
+//     }
+//   }
+//   console.log(Math.abs(bCounter - cCounter));
+// }
+
+
 
 // function isMatchingBrackets(s) {
 //     let finalS = s;
@@ -99,11 +116,28 @@
 //         counter ++;
 //       }
 //     }
-//
 //     ops = s.length - (counter * 2)
-//
-//     return ops
+//     console.log(ops);
 // }
+
+// retest error - stack.length not str.length.
+// function isMatchingBrackets(str) {
+//   let stack = [];
+//   let counter = 0;
+//   let final = 0;
 //
-// console.log(isMatchingBrackets("()))"))
-// console.log(isMatchingBrackets("()))(("))
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === "(") {
+//       stack.push(str[i]);
+//     }else if(str[i]=== ")" && stack.length > 0){    //stack.lenght, not str.length
+//       stack.pop();
+//       counter ++;
+//     }
+//   }
+//
+//   final = str.length - (counter * 2);
+//   console.log(final);
+// }
+// //
+// isMatchingBrackets(")())()))");
+// isMatchingBrackets(")()))((");

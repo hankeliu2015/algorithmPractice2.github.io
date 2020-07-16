@@ -1,11 +1,11 @@
-let person1 = {
-	greet: function() {
-		function otherFunction() {
-			return this;
-		}
-		return otherFunction();
-	}
-};
+// let person1 = {
+// 	greet: function() {
+// 		function otherFunction() {
+// 			return this;
+// 		}
+// 		return otherFunction();
+// 	}
+// };
 
 // let p2 = {
 // 	greet: function() {
@@ -17,15 +17,15 @@ let person1 = {
 // };
 
 // Let's create an object o from function f with its own properties a and b:
-let f = function () {
-   this.a = 1;
-   this.b = 2;
-}
-let o = new f(); // {a: 1, b: 2}
+// let f = function () {
+//    this.a = 1;
+//    this.b = 2;
+// }
+// let o = new f(); // {a: 1, b: 2}
 
 // add properties in f function's prototype
-f.prototype.b = 3;
-f.prototype.c = 4;
+// f.prototype.b = 3;
+// f.prototype.c = 4;
 
 // do not set the prototype f.prototype = {b:3,c:4}; this will break the prototype chain
 // o.[[Prototype]] has properties b and c.

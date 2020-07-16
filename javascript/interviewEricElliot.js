@@ -1,9 +1,9 @@
 
-const getSecret = (secret) => {
-  return {
-    get: () => secret
-  };
-};
+// const getSecret = (secret) => {
+//   return {
+//     get: () => secret
+//   };
+// };
 
 // test("Closure for object privacy.", assert => {
 //
