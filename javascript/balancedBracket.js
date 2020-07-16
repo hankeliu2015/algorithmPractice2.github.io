@@ -27,6 +27,32 @@
 //     return true;
 // }
 
+// re-test return true of false
+
+// function isMatchingBrackets(str) {
+//   let stack = [];
+//   let matchObj = {
+//     '(': ")",
+//     '[': ']',
+//     '{': '}'
+//   }
+//   for(let i = 0; i < str.length; i ++ ){
+//     if (str[i] === "(" || str[i] === "{" || str[i] === "[") {
+//       stack.push(str[i]);
+//     } else {
+//       let lastStack = stack.pop();
+//       if (matchObj[lastStack] !== str[i]) {
+//         return false;
+//       }
+//     }
+//   }
+//   if (stack.length !== 0) {
+//     return false
+//   }
+//   return true;
+// }
+
+
 // balancedBracket interview code challange
 // if ( , add it to the stack .
 // if ) , pop it out of the stack,
@@ -49,7 +75,7 @@
 //     console.log(Math.abs(bCounter-cCounter))
 // }
 
-// re-test
+
 
 // function isMatchingBrackets(str) {
 //   let bCounter = 0;
@@ -139,5 +165,6 @@
 //   console.log(final);
 // }
 // //
-// isMatchingBrackets(")())()))");
-// isMatchingBrackets(")()))((");
+isMatchingBrackets(")())()))");
+console.log(isMatchingBrackets(")()))(("));
+console.log(isMatchingBrackets("(){}[]({[]})"));
