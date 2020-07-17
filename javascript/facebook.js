@@ -9,63 +9,115 @@
 // // If yes, I keep going
 // // If no, I add that word to 'result' and the dicts I've seen.
 // //
-// // function funWithAnagrams(words) {
-// //   const prevWordDicts = []
-// //   const result = []
-// //
-// //   for (let word of words) {
-// //     let wordDict = createDictionaryFromWord(word)
-// //     if (isSameAsAnyPrevDict(prevWordDicts, wordDict)) {
-// //       continue
-// //     }
-// //
-// //     prevWordDicts.push(wordDict)
-// //     result.push(word)
-// //   }
-// //
-// //   return result
-// // }
-// //
-// // function isSameAsAnyPrevDict(prevWordDicts, wordDict) {
-// //   for (let prevWordDict of prevWordDicts) {
-// //     if (isSameDict(prevWordDict, wordDict)) {
-// //       return true     // the end of the loop return true, the function will return true
-// //     }
-// //   }
-// //   return false
-// // }
-// //
-// // function isSameDict(dict1, dict2) {
-// //   if (Object.keys(dict1).length !== Object.keys(dict2).length) {
-// //     return false
-// //   }
-// //
-// //   for (let key in dict1) {
-// //     if (dict1[key] !== dict2[key]) {
-// //       return false
-// //     }
-// //   }
-// //
-// //   return true
-// // }
-// //
-// // function createDictionaryFromWord(word) {
-// //   const wordDict = {}
-// //
-// //   for (let char of word) {
-// //     if (char in wordDict) {
-// //       wordDict[char] += 1
-// //     } else {
-// //       wordDict[char] = 1
-// //     }
-// //   }
-// //
-// //   return wordDict
-// // }
-// //
-// // console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
-// // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
+// function funWithAnagrams(words) {
+//   const prevWordDicts = []
+//   const result = []
 //
+//   for (let word of words) {
+//     let wordDict = createDictionaryFromWord(word)
+//     if (isSameAsAnyPrevDict(prevWordDicts, wordDict)) {
+//       continue
+//     }
+//
+//     prevWordDicts.push(wordDict)
+//     result.push(word)
+//   }
+//
+//   return result
+// }
+// //
+// function isSameAsAnyPrevDict(prevWordDicts, wordDict) {
+//   for (let prevWordDict of prevWordDicts) {
+//     if (isSameDict(prevWordDict, wordDict)) {
+//       return true
+//       // the end of the loop return true, the function will return true
+//     }
+//   }
+//   return false
+// }
+// //
+// function isSameDict(dict1, dict2) {
+//   if (Object.keys(dict1).length !== Object.keys(dict2).length) {
+//     return false
+//   }
+//
+//   for (let key in dict1) {
+//     if (dict1[key] !== dict2[key]) {
+//       return false
+//     }
+//   }
+//
+//   return true
+// }
+
+// //
+// function createDictionaryFromWord(word) {
+//   const wordDict = {}
+//
+//   for (let char of word) {
+//     if (char in wordDict) {
+//       wordDict[char] += 1
+//     } else {
+//       wordDict[char] = 1
+//     }
+//   }
+//
+//   return wordDict
+// }
+// //
+//retest
+
+function createDictionaryFromWord(word){
+  let wordDict = {};
+  for (let char of word){
+    if(wordDict[char] === undefined) {
+      wordDict[char] = 1;
+    }else {
+      wordDict[char] ++;
+    }
+  }
+  return wordDict;
+}
+
+function isSameDict(dict1, dict2) {
+  if (Object.keys(dict1).length !== Object.keys(dict2).length) {
+    return false;
+  }else {
+    for (let key in dict1) {
+      if (dict1[key] !== dict2[key]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function isSameAsAnyPrevDict(prevDicts, dict){
+  for(let prevDict of prevDicts){
+    if(isSameDict(prevDict, dict)){
+      return true;
+    }
+  }
+  return false;
+}
+
+function funWithAnagrams(anagrams){
+  let dicts = [];
+  let results = [];
+  for(let anagram of anagrams){
+    let dict = createDictionaryFromWord(anagram);
+    if(!isSameAsAnyPrevDict(dicts, dict)){
+      dicts.push(dict)
+      results.push(anagram);
+    }
+  }
+  return results;
+}
+
+console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
+console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
+
+
 //
 // //// anagrams solution | iterate through anagrams, find and remove anagrams. sort out the element left by alphabetically.
 // //
