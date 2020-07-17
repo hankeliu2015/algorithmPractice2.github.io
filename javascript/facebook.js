@@ -65,57 +65,60 @@
 //   return wordDict
 // }
 // //
+
 //retest
 
-function createDictionaryFromWord(word){
-  let wordDict = {};
-  for (let char of word){
-    if(wordDict[char] === undefined) {
-      wordDict[char] = 1;
-    }else {
-      wordDict[char] ++;
-    }
-  }
-  return wordDict;
-}
-
-function isSameDict(dict1, dict2) {
-  if (Object.keys(dict1).length !== Object.keys(dict2).length) {
-    return false;
-  }else {
-    for (let key in dict1) {
-      if (dict1[key] !== dict2[key]) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
-function isSameAsAnyPrevDict(prevDicts, dict){
-  for(let prevDict of prevDicts){
-    if(isSameDict(prevDict, dict)){
-      return true;
-    }
-  }
-  return false;
-}
-
-function funWithAnagrams(anagrams){
-  let dicts = [];
-  let results = [];
-  for(let anagram of anagrams){
-    let dict = createDictionaryFromWord(anagram);
-    if(!isSameAsAnyPrevDict(dicts, dict)){
-      dicts.push(dict)
-      results.push(anagram);
-    }
-  }
-  return results;
-}
-
-console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
-console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
+// function createDictionaryFromWord(word){
+//   let wordDict = {};
+//   for (let char of word){
+//     if(wordDict[char] === undefined) {
+//       wordDict[char] = 1;
+//     }else {
+//       wordDict[char] ++;
+//     }
+//   }
+//   return wordDict;
+// }
+//
+// function isSameDict(dict1, dict2) {
+//   if (Object.keys(dict1).length !== Object.keys(dict2).length) {
+//     return false;
+//   }else {
+//     for (let key in dict1) {
+//       if (dict1[key] !== dict2[key]) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
+//
+// function isSameAsAnyPrevDict(prevDicts, dict){
+//   for(let prevDict of prevDicts){
+//     if(isSameDict(prevDict, dict)){
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+//
+// function funWithAnagrams(anagrams){
+//   let dicts = [];
+//   let results = [];
+//   for(let anagram of anagrams){
+//     let dict = createDictionaryFromWord(anagram);
+//     if(!isSameAsAnyPrevDict(dicts, dict)){
+//       dicts.push(dict)
+//       results.push(anagram);
+//     }
+//   }
+//   return results;
+// }
+//
+// //retest end
+//
+// console.log(funWithAnagrams(["code", "doce", "ecod", "framer", "frame"]))
+// console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
 
 
 //
@@ -193,8 +196,9 @@ console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
 //   // console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce", "aaagmnsr", "anagarms"]))
 //
 //
-// // 1. Artisan Martians:
-// // Daniel Dawson's example:
+// 1. Artisan Martians:
+// // // "instagram"
+// Daniel Dawson's example:
 // function stickers_for(phrase) {
 //   // keep track of letter frequencies
 //   const freq = {};
@@ -217,6 +221,34 @@ console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
 //   return maxFreq;
 // }
 //
+console.log(stickers_for("artisan martins"))
+console.log(stickers_for("taming giant gnats"))
+console.log(stickers_for("tiara"))
+console.log(stickers_for("i n s t a g r a m"))
+
+//re-test
+
+function stickers_for(text){
+  let freq = {};
+  let maxFreq = 0;
+
+  for(let char of text) {
+    if(char === ' ') { continue }
+    if(freq[char] === undefined) {
+      freq[char] = 1;
+    }else {
+      freq[char] ++;
+    }
+
+    let currentFreq = char === 'a' ? Math.ceil(freq[char]/2) : freq[char];
+
+    if(currentFreq > maxFreq) {
+      maxFreq = currentFreq;
+    }
+  }
+  return maxFreq;
+}
+
 // //// my solution 1
 // //
 // function stickers_for(phrase) {
@@ -267,12 +299,6 @@ console.log(funWithAnagrams(["code", "aaagmnrs", "anagrams", "doce"]))
 // //   return Math.max(...phraseFrq)
 // // }
 //
-//
-// // // "instagram"
-// console.log(stickers_for("artisan martins"))
-// console.log(stickers_for("taming giant gnats"))
-// console.log(stickers_for("tiara"))
-// console.log(stickers_for("i n s t a g r a m"))
 //
 // // sample test .
 // // function findNumber(arr, k) {
