@@ -221,33 +221,33 @@
 //   return maxFreq;
 // }
 //
-console.log(stickers_for("artisan martins"))
-console.log(stickers_for("taming giant gnats"))
-console.log(stickers_for("tiara"))
-console.log(stickers_for("i n s t a g r a m"))
+// console.log(stickers_for("artisan martins"))
+// console.log(stickers_for("taming giant gnats"))
+// console.log(stickers_for("tiara"))
+// console.log(stickers_for("i n s t a g r a m"))
 
 //re-test
 
-function stickers_for(text){
-  let freq = {};
-  let maxFreq = 0;
-
-  for(let char of text) {
-    if(char === ' ') { continue }
-    if(freq[char] === undefined) {
-      freq[char] = 1;
-    }else {
-      freq[char] ++;
-    }
-
-    let currentFreq = char === 'a' ? Math.ceil(freq[char]/2) : freq[char];
-
-    if(currentFreq > maxFreq) {
-      maxFreq = currentFreq;
-    }
-  }
-  return maxFreq;
-}
+// function stickers_for(text){
+//   let freq = {};
+//   let maxFreq = 0;
+//
+//   for(let char of text) {
+//     if(char === ' ') { continue }
+//     if(freq[char] === undefined) {
+//       freq[char] = 1;
+//     }else {
+//       freq[char] ++;
+//     }
+//
+//     let currentFreq = char === 'a' ? Math.ceil(freq[char]/2) : freq[char];
+//
+//     if(currentFreq > maxFreq) {
+//       maxFreq = currentFreq;
+//     }
+//   }
+//   return maxFreq;
+// }
 
 // //// my solution 1
 // //
