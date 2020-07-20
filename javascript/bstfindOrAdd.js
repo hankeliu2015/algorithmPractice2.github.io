@@ -42,7 +42,6 @@
 //     if(rootNode.right === null){
 //       rootNode.right = newNode;
 //
-//       return true;
 //     }else{
 //       currentNode = rootNode.right;
 //       findOrAdd(currentNode, newNode);
@@ -53,7 +52,6 @@
 //     if(rootNode.left === null){
 //       rootNode.left = newNode;
 //
-//       return true;
 //     }else{
 //       currentNode = rootNode.left;
 //       findOrAdd(currentNode, newNode);
