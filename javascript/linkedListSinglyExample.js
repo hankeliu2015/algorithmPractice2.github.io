@@ -119,7 +119,7 @@
 // console.log(list.searchNodeAt(5))
 // console.log(list.removeNodeAt(5))
 
-// retest
+// retest | added more conditon for remove function 
 
 class Node{
   constructor(value){
@@ -133,6 +133,55 @@ class LinkedList{
     this.head = null;
     this._length = 0;
   }
+
+  removeNodeAt(p) {
+
+    let currentNode = this.head;
+    let nodeToBeDeleted = null;
+    let nodeBeforeDeleted = null;
+
+    // validtate the position data
+    if (isValidPosition(p, this._length)) {
+      // if the position is the head and no tail.
+      if (p === 1 && currentNode.next == null) {
+        nodeToBeDeleted = this.head;  //for the console log value at the end of method.
+        this.head = null;
+        this._length = 0;
+        // the position is the head with tail.
+      } else if (p === 1 && currentNode.next) {
+        nodeToBeDeleted = this.head;  //for the console log value at the end of method.
+        this.head = this.head.next;
+        this._length--;
+      } else {
+
+        // if the postion is in the middle of the tail.
+        // need to change the previous node and the node after it.
+
+        for (let i = 1; i < p; i++) {
+          nodeBeforeDeleted = currentNode;
+          currentNode = currentNode.next;
+        }
+
+        nodeToBeDeleted = currentNode;
+
+        // if the position point to the last node of the tail
+        if (currentNode.next) {
+          this._length--;
+          nodeBeforeDeleted.next = nodeToBeDeleted.next; //link the before node and after node without the deleted node.
+        } else {
+          this._length--;
+          nodeBeforeDeleted.next = null;
+        }
+
+      }
+
+      console.log(`The node deleted value is: ${nodeToBeDeleted.value}`)
+
+    }
+    return this;
+
+  }
+
 
   add(value){
     let node = new Node(value);
@@ -153,11 +202,14 @@ class LinkedList{
 
   searchNodeAt(position){
     let currentNode = this.head;
-    if (position === 0 ) {
+    if (position === 1 ) {
       return this.head;
     } else if(isValidPosition(position, this._length)){
+
       for(let i = 1; i < position; i++) {
         currentNode = currentNode.next;
+        // console.log(1);
+        // console.log(currentNode.value);
       }
       return currentNode;
     }
@@ -167,7 +219,7 @@ class LinkedList{
 
 function isValidPosition(position, length){
 
-  if (position < 0 || position > length){
+  if (position <= 0 || position > length){
     console.log("invalid position")
     return false;
   }
@@ -175,7 +227,11 @@ function isValidPosition(position, length){
 }
 
 let l1 = new LinkedList();
-l1.add(0)
 l1.add(1)
-l1.add(2)
-l1.add(3)
+let l2 = new LinkedList();
+l2.add(1)
+l2.add(2)
+let l3 = new LinkedList();
+l3.add(1)
+l3.add(2)
+l3.add(3)
