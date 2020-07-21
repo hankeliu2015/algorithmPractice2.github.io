@@ -1,28 +1,26 @@
 // /*
-// //singly linked list . head note and everything else is tail nodes.
+// //singly linked list . head node and everything else is tail nodes.
 //
-// [{value: 3, next 1}, {value: 10, next: 2}, {value: 4, next: null}]
+// //head is [{value: 3, next: 1}]
 //
-// //head
-//
-// [{value: 3, next 1}]
+// [{value: 3, next: 1}, {value: 10, next: 2}, {value: 4, next: null}]
 //
 // //tail
 // [{valueL 10, next: 2}, {value: 4, next, null}]
 //
 // //describe into operations
-// need create new note and new linked list
+// need create new node and new linked list
 //
-// build a constructor function for a single note
-//   new node with an value
+// build a constructor function for a single node
+//   new node with an value | new Node(value)
 //   attribute for value and next
 //
 // build a constructor function for a singly linked list
 // new SinglyLinkedList()
 //   set the the _length default 0 and set up no head as default
-//   add values that build ew notes
+//   add values that build new nodes
 //   search the list for the node at a specifiy position or index
-//   delte a note from a specific position
+//   delete a node from a specific position
 //
 // */
 //
@@ -33,7 +31,7 @@
 //   }
 // }
 //
-// // let node = new Node(10);
+
 // // console.log(node)
 //
 //
@@ -43,7 +41,7 @@
 //     this.head = null;
 //   }
 //
-//   add(value) {                    //same as SinglyLinkedList.prototype.add = function () {}
+//   add(value) {         //instance method, same as SinglyLinkedList.prototype.add = function () {}
 //     const node = new Node(value)
 //     let currentNode = this.head;      //is the list empty?
 //
@@ -56,19 +54,19 @@
 //     while (currentNode.next) {        // if the list is not empty
 //       currentNode = currentNode.next; //make the end of the list, currentNode assign the last node
 //     }
-//     currentNode.next = node;          // assing the new node to the last node's next node.
+//     currentNode.next = node;          // assigning the new node to the last node's next node.
 //     this._length++;
 //     return node
 //   }
 //
-//   searchNodeAt(position) {            //
+//   searchNodeAt(position) {
 //     let currentNode = this.head;
-//     this.isValidPosition(position);   // is the position valid?
-//     // debugger
+//     this.isValidPosition(position);   // create another function below
+//
 //     for ( let i = 1; i < position; i++) {
 //       currentNode = currentNode.next  // currentNode will assign from head to the node where position is.
-//     return currentNode                // reture the node on that position
 //     }
+//     return currentNode                // reture the node on that position
 //   }
 //
 //   removeNodeAt(position) {
@@ -76,10 +74,12 @@
 //     let beforeNodeToBeDeleted = null;
 //     let nodeToBeDeleted = null;
 //     let deletedNode = null;
+
 //     // is the position valid?
 //     this.isValidPosition(position)
+
 //     // are we removing the head node?
-//     if (position ===1) {
+//     if (position === 1) {
 //       this.head = currentNode.next; //overwrite the head with second node.
 //       deletedNode = currentNode;
 //       this._length--;               // minus one from the length
@@ -103,7 +103,7 @@
 //
 //   isValidPosition(position) {
 //   if (this._length === 0 || position < 1 || position > this._length ) {
-//       console.log(`Nothing found at postion ${position}`); //thron new Error('unalble to fine')
+//       console.log(`Nothing found at postion ${position}`); //throw new Error('unalble to fine')
 //     }
 //   }
 //
@@ -117,4 +117,65 @@
 // list.removeNodeAt(3)
 // console.log(list)
 // console.log(list.searchNodeAt(5))
-// // console.log(list.removeNodeAt(5))
+// console.log(list.removeNodeAt(5))
+
+// retest
+
+class Node{
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList{
+  constructor(){
+    this.head = null;
+    this._length = 0;
+  }
+
+  add(value){
+    let node = new Node(value);
+    let currentNode = node;
+    if(!this.head){
+      this.head = currentNode;
+      this._length ++ ;
+    }else{
+      currentNode = this.head
+      while(currentNode.next){
+        currentNode = currentNode.next;
+      }
+      this._length ++ ;
+      currentNode.next = node;
+    }
+    return this;
+  }
+
+  searchNodeAt(position){
+    let currentNode = this.head;
+    if (position === 0 ) {
+      return this.head;
+    } else if(isValidPosition(position, this._length)){
+      for(let i = 1; i < position; i++) {
+        currentNode = currentNode.next;
+      }
+      return currentNode;
+    }
+  }
+
+} //end of class
+
+function isValidPosition(position, length){
+
+  if (position < 0 || position > length){
+    console.log("invalid position")
+    return false;
+  }
+  return true;
+}
+
+let l1 = new LinkedList();
+l1.add(0)
+l1.add(1)
+l1.add(2)
+l1.add(3)
