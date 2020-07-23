@@ -1,7 +1,48 @@
-// //Stack implementation with JavaScript
+//// stack using es6
+
+// class Stack1 {
+//   constructor() {
+//     this.items = [];
+//     this._length = 0;
+//   }
+//   pop(){
+//     this._length--;
+//     return this.items.pop();
+//   }
+//   push(item) {
+//     this._length++;
+//     this.items.push(item);
+//     return this.items;
+//   }
+//   peek() {
+//     return this.items[this._length-1];
+//   }
+//   inc(a, b) {
+//     this.items[a-1] += b;
+//     return this.items;
+//   }
+//   printStack() {
+//     let str = '';
 //
-// function Stack() {
+//     this.items.forEach((el, index) => {
+//       console.log(`Items ${index + 1} is: ${el}`);
+//       str = str.concat(' ', el);
+//     });
+//     return str;
+//   }
+//
+//   isEmpty() {
+//     this.items = [];
+//     this._length = 0;
+//     console.log("current stack is emptied")
+//   }
+// }
+
+//Stack implementation with JavaScript | my own test with function declaration.
+
+// function Stack1() {
 //   let items = [];
+//   // this.items = []
 //
 //   this.push = function(element){
 //     return items.push(element);
@@ -28,30 +69,25 @@
 //     return `the stack length is: ${items.length}`;
 //   }
 //
-// }
-//
-// // stack using es6
-//
-// class Stack {
-//   constructor() {
-//     this.items = [];
+//   this.displayItems = function() {
+//     console.log(items);
 //   }
-//   pop(){
-//     return this.items.pop();
+//
+//   this.inc = function(a, b) {
+//     items[a-1] += b;
+//     return items;
 //   }
 // }
-//
-// let stack3 = new Stack();
-// stack3.push('item1')
-// stack3.push('item2')
-// stack3.push('item3')
-// console.log(stack3.size())
-// console.log(stack3.pop())
-// console.log(stack3.peek())
-// console.log(stack3.isEmpty())
-// console.log(stack3.clear())
-//
-//
+
+
+//// use bind(s1) for this function
+
+// let showItems = function() {
+//   return console.log(this.items);
+// }
+
+//// function syntax test with hash object
+
 // let Stack1 = function() {
 //   this.count = 0;
 //   this.storage = {}
@@ -76,8 +112,52 @@
 // Stack1.prototype.size = function() {
 //   return this.count;
 // }
+
+// retest on prototype property
+
+// let Stack1 = function() {
+//   this.count = 0;
+//   this.collect = {};
+// }
 //
-// class Stack2 {
+// Stack1.prototype.push = function(item) {
+//   this.count++;
+//   this.collect[this.count] = item;
+//   return this.collect;
+// }
+//
+// Stack1.prototype.pop = function() {
+//   delete this.collect[this.count];
+//   this.count--;
+//   return this.collect;
+// }
+//
+// Stack1.prototype.size = function() {
+//   return this.count;
+// }
+//
+// Stack1.prototype.inc = function(a, b) {
+//   this.collect[a] += b;
+//   return this.collect;
+// }
+//
+// let s3 = new Stack1();
+// s3.push(1)
+// s3.push(2)
+// s3.push(3)
+// let s1 = new Stack1();
+// s1.push('item1')
+// s1.push('item2')
+// s1.push('item3')
+// console.log(s1.size())
+// console.log(s1.pop())
+// console.log(s1.peek())
+// console.log(s1.isEmpty())
+// console.log(s1.clear())
+
+//// use hash object to implement
+
+// class Stack5 {
 //   constructor(){
 //     this.count = 0;
 //     this.storage = {}
@@ -106,25 +186,23 @@
 //   }
 //
 // }
-//
-// // let stackTest1 = new Stack1();
-// // stackTest1.push(1);
-// // stackTest1.push(2);
-// // stackTest1.push(3);
-// // console.log(stackTest1.size());
-// // console.log(stackTest1.pop());
-// // console.log(stackTest1.size());
-//
-// let stackTest2 = new Stack2();
+
+// let stackTest1 = new Stack5();
+// stackTest1.push(1);
+// stackTest1.push(2);
+// stackTest1.push(3);
+// console.log(stackTest1.size());
+// console.log(stackTest1.pop());
+// console.log(stackTest1.size());
+
+// let stackTest2 = new Stack5();
 // stackTest2.push(1);
 // stackTest2.push(2);
 // console.log(stackTest2.size());
 // stackTest2.pop();
 // console.log(stackTest2.size());
-//
-//
-//
-//
+
+// final versin should like the following:
 // function superStack(operations) {
 //   let ops = operations.split(' ');
 //   if (ops[0] === "push") {
@@ -134,7 +212,7 @@
 //
 //   if (ops[0] === "inc") {
 //     let incValue1 = ops[1];
-//     let incValue1 = ops[2];
+//     let incValue2 = ops[2];
 //     // perform inc operation with above value
 //   }
 //
