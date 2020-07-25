@@ -13,12 +13,11 @@
 // function merge(firstHalf, secondHalf){
 //   let sorted = [];
 //   let currentMin;
-// // debugger
+
 //   while(firstHalf.length != 0 && secondHalf.length != 0){
 //     let currentMin = findMinAndRemove(firstHalf, secondHalf)
 //     sorted.push(currentMin)
 //           //when first or second become 0, the function will return following.
-// // debugger
 //   }
 //   return sorted.concat(firstHalf).concat(secondHalf)
 // }
