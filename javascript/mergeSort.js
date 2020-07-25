@@ -39,10 +39,10 @@ function mergeSort(array){
     } else {
       sortedArr = merge(mergeSort(firstHalf), mergeSort(secondHalf)) ////recursive here
     }
-    return sortedArr;
+    return sortedArr;   // must have a return here. 
   }
 
-//// solution
+//// curriculum solution
 
 // function findMinAndRemoveSorted(array){
 //   return array.shift()
