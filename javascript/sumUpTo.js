@@ -11,3 +11,24 @@
 // }
 //
 // console.log(sumUpTo(5));
+
+
+// retest
+
+
+function sumUpTo(n) {
+  //base case
+
+  if (n === 1) {
+    console.log(n);
+    return n;
+  } else {
+    // debugger
+    console.log(n);
+    n = n + sumUpTo(n-1);
+  }
+
+  return n;
+}
+
+console.log(sumUpTo(5))
