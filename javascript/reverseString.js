@@ -40,18 +40,18 @@
 
 ////retest ververstring
 
-function reverseString(str) {
-  //base case
-  if ( str.length < 2) {
-    return str;
-  } else {
-    let char = str.substring(str.length - 1)
-    let subStr = str.substring(0, str.length -1)
-    return char.concat(reverseString(subStr));
-  }
-}
+// function reverseString(str) {
+//   //base case
+//   if ( str.length < 2) {
+//     return str[0];    //return str
+//   } else {
+//     let char = str.substring(str.length - 1)
+//     let subStr = str.substring(0, str.length -1)
+//     return char.concat(reverseString(subStr));
+//   }
+// }
 
-console.log(reverseString("lissa"))
+// console.log(reverseString("lissa"))
 // let newString = reverseString('pizza')
 // console.log(newString)
 // console.log(reverseString('pizza'))
