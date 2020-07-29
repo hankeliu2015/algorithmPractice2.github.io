@@ -72,22 +72,22 @@
 
 
 //// recursive solution
-
-function quickSort(array) {
-    if (array.length == 0) return [];
-
-    var left = [], right = [], pivot = array[0];
-
-    for (var i = 1; i < array.length; i++) {
-        if(array[i] < pivot)
-            left.push(array[i])
-        else
-            right.push(array[i]);
-    }
-    let currentArray = quickSort(left).concat(pivot, quickSort(right));
-    console.log(currentArray.join(' '));
-    debugger;
-    return currentArray;
-}
+// 
+// function quickSort(array) {
+//     if (array.length == 0) return [];
 //
-console.log(quickSort([5,8,1]))
+//     var left = [], right = [], pivot = array[0];
+//
+//     for (var i = 1; i < array.length; i++) {
+//         if(array[i] < pivot)
+//             left.push(array[i])
+//         else
+//             right.push(array[i]);
+//     }
+//     let currentArray = quickSort(left).concat(pivot, quickSort(right));
+//     console.log(currentArray.join(' '));
+//     debugger;
+//     return currentArray;
+// }
+// //
+// console.log(quickSort([5,8,1]))
