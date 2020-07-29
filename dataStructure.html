@@ -41,30 +41,28 @@
       <div class="categories">
         <h2>Sorting Algorithm, BigO & Binary Search</h2>
         <ul>
-          <li><a href="#" target="_blank">Sort Algorithm note on M1 and M6</a></li>
+          <li><a href="#" target="_blank">Sort Algorithm note on M1</a></li>
           <li><a href="#" target="https://big-o.io/">Sort Examples & BigO: </a></li>
           <ol>
-            <li>Selection Sort | N^2 | remove(splice) the el with miniIndex at the end of each pass. In outer while loop push that el into a new array(sorted). </li>
-            <li>Insertion Sort</li>
-            <li>Merge Sort(recursive)</li>
-            <li>Quick Sort(Pivot point)</li>
-            <li>Radis Sort(buckets, recursive, array interpolation)</li>
-            <li>Bubble Sort(LastIndexSwapValue)</li>
-            <li>Shell Sort(Improved insertion sort)</li>
-            <li>Heap Sort(Binary Tree, Mac Heap, remove last node, repeat)</li>
+            <li>Selection Sort | N^2 | In outer loop, declear miniIndex to track the mininal value. If it changed by inside loop, swap the value at the end of outer loop with miniIndex before outloop continue  </li>
+            <li>Insertion Sort | Opposite from Selectoin sort. Outer for loop start from 1. Inside while loop manage the compare backward and element's swap</li>
+            <li>Shell Sort | n(log(n)^2 |) | use shell original sequence or knuth increments squence to sort elements first, then use same insertion sort algorithms. </li>
+            <li>Merge Sort(recursive) | n*log(n) | create findMini and merge utility function. split the array into half. base case is array length equal 1. return the merge function with mergSort(firstHalf) and mergeSort(2ndhalf) as argument. </li>
+            <li>Quick Sort | N^2 | pick a element as pivot point. elements less than that goes to left array, greater goes to right away. return the recurive function with left argument concate with pivot and recursive function with right as argument </li>
+            <li>Bubble Sort | N^2 | Outer while loop control the passes. Inner for loop control the compare and swap. lastModifiedIndex value to end the while loop</li>
+            <li>Radix Sort | O(n+k) |(user Matho.pow() to get the single digit. Match single digit to the correct bucket array element. At the end of the loop, concat the spread operator with array argument)</li>
+            <li>Heap Sort | nlog(n) | convert array into binary heap structure, convert the heap into a max heap, rearrange the array accordling. swap the root node and last node, rearrange the array accordingly. remove the last node from heap. Repeat the process until only root node left. </li>
             <li>Cycle Sort(wip)</li>
           </ol>
-          <li><a href="#" target="_blank">Linear search | Bianry search Example on m1</a></li>
         </ul>
       </div>
 
       <div class="categories">
         <h2>Algorighms | Recursive</h2>
         <ul>
-          <li><a href="#" target="_blank">Recursive note on M1 and M6</a></li>
-          <li><a href="#" target="_blank">Recursive Examples - sayDownFrom(), reverseString(), Factorial function, reverse array, palindrome, string permutations </a></li>
-          <li><a href="#" target="_blank">Examples: Binary Search, BST add and display; merge sort</a></li>
-          <li><a href="#" target="_blank"> React Examples - triagle on React Component, reactColorbox, Todo items nested components, PizzaTopping, Dropdown submmenu, commentInsideComments</a></li>
+          <li><a href="#" target="_blank">Recursive Examples on M1 - sayDownFrom(), reverseString(), Factorial function, reverse array, palindrome, string permutations </a></li>
+          <li><a href="#" target="_blank">Apply to search and sort: Binary Search, Binary Search Tree - add add and display; merge sort</a></li>
+          <li><a href="#" target="_blank"> React Examples on M6 - triagle on React Component, reactColorbox, Todo items nested components, PizzaTopping, Dropdown submmenu, commentInsideComments</a></li>
         </ul>
       </div>
 
@@ -73,7 +71,7 @@
       <div class="categories">
         <h2>Data Structure</h2>
         <ul>
-          <li><a href="#" target="_blank">Data Structure note on M1 and M6</a></li>
+          <li><a href="#" target="_blank">Data Structure note on M1</a></li>
           <li><a href="#" target="_blank">Array and Linked list BigO comparasion</a></li>
           <li><a href="#" target="_blank">Linked List | Build a singly Linked list from scratch</a></li>
           <li><a href="#" target="_blank">Trees: Binary search trees(findandAdd(), bsttreeInOrder.js) and their BigO</a></li>
@@ -86,7 +84,7 @@
       <div class="categories">
         <h2>Algorighms | Reduce examples</h2>
         <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">Reduce examples and Reduce explained on my note</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">Reduce examples and Reduce explained on M4</a></li>
 
           <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/wherefore-art-thou" target="_blank">Example - whatIsInAName code challenge</a></li>
           <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">More Examples - Counting instances of values in an object</a></li>

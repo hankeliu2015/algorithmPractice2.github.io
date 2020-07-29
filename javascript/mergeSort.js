@@ -16,7 +16,7 @@ function findMinAndRemove(firstHalf, secondHalf){
 function merge(firstHalf, secondHalf){
   let sorted = []
   let currentMin;
-// debugger
+
   while(firstHalf.length != 0 && secondHalf.length != 0){
     let currentMin = findMinAndRemove(firstHalf, secondHalf)
     sorted.push(currentMin)
@@ -32,21 +32,22 @@ function mergeSort(array){
     let sortedArr;
     let secondHalf = array.slice(midpoint, array.length)
     if(array.length < 2){
-      console.log(firstHalf, secondHalf);
+      console.log(`firstHalf: ${firstHalf}, secondHalf: ${secondHalf}`);
       // debugger
       return array    //base case relturn value when length === 2;
     } else {
       sortedArr = merge(mergeSort(firstHalf), mergeSort(secondHalf)) ////recursive here
     }
+    console.log(`sorted array: ${sortedArr}`);
     return sortedArr;   // must have a return here.
   }
 
 // let array =  [2, 1, 7, 6, 8, 3, 4, 5]
 // let array =  [2, 1, 7, 6]
 // console.log(mergeSort(array))
-
-//// BigO cheatsheet solution test ( skip for now )
-
+//
+// //// BigO cheatsheet solution test ( skip for now ) // skip for now . 
+//
 // let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8]
 // mergeSort(array, 0, array.length - 1)
 // alert(array)
