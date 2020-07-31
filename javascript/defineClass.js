@@ -298,23 +298,98 @@
 //// Difference Between Class & Prototypal Inheritance
 
 //// delegate prototype | old way
-function Greeter(name) {
-  this.name = name || "Joe Smith"
-}
+// function Greeter(name) {
+//   this.name = name || "Joe Smith"
+// }
+//
+// Greeter.prototype.hello = function hello() {
+//   return 'hello, my name is' + this.name;
+// }
+//
+// let george = new Greeter('George')
+//
+// // new way | js has dynamic object extension. just exend the object.
+// const proto = {       // create a prototype and pass that to object by object create.
+//   hello: function hello() {
+//     return 'Hello, my name is ' + this.name;
+//   }
+// };
+//
+//// var george = Object.create(proto);
+// george.name = 'George'  //// "name" is a property set on "george", but not on "greeter"
+// console.log(george.hello());
 
-Greeter.prototype.hello = function hello() {
-  return 'hello, my name is' + this.name;
-}
+//// cloneing and concatanation
+// const proto = {
+//   hello: function hello() {
+//     return 'Hello, my name is ' + this.name;
+//   }
+// };
 
-let george = new Greeter('George')
+//// extending the properties from child object to parent object.
+//// _.extend work under certain library.
+// let george2 = _.extend({}, proto, {name: "george"});
+// console.log(george2);
 
-// new way
-const proto = {       // create a prototype and pass that to object by object create.
-  hello: function hello() {
-    return 'Hello, my name is ' + this.name;
-  }
-};
+//// example for above | create an event emitter
 
-var george = Object.create(proto);
-george.name = 'George'  //// "name" is a property set on "george", but not on "greeter"
-console.log(george.hello());
+// const foo = _.extend({
+//   attrs: {};
+//   set: function (name, value) {
+//     this.attrs[name] = value;
+//     this.trigger("change", {
+//       name: name,
+//       value: value
+//     });
+//   },
+//   get: function (name, value) {
+//     return this.attrs[name];
+//   }
+// }, Backbone.events )
+
+//// replace constructor, init and super()
+// const model = function() {
+//   let attrs = {}
+//
+//   this.set = function (name, value) {
+//     this.attrs[name] = value;
+//     this.trigger("change", {
+//       name: name,
+//       value: value
+//     });
+//   },
+//   this.get = function(name, value) {
+//     return attrs[name];
+//   }
+//   _.extend(this, Backbone.Events);
+// }
+//
+// let geroge = {};
+// model.call(george).set('name', 'George')
+// george.get('name');
+//
+// george.on('change', function(event) {
+//   console.log(event.name, event.value);
+// });
+//
+// george.set('name', 'Simon'); // name Simon
+
+//// closure
+
+// var counter = function() {
+//   var count = 0;
+//   return {
+//     getCount: function() {
+//       return count;
+//     },
+//     increment: function() {
+//       count += 1;
+//     }
+//   }
+// }
+//
+// let c1 = counter();
+// c1.increment();
+// c1.increment();
+// c1.increment();
+// console.log(c1.getCount()) // 3
