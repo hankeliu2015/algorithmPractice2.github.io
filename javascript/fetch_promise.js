@@ -1,31 +1,132 @@
-// closure
+// compostion function
 
-const add = (a, b) => a + b;
-const add10 = partialApply(add, 10);
+const toSlug = input => encodeURIComponent(
+  input.split(' ')
+    .map(str => str.toLowerCase())
+    .join('-')
+);
+
+
+const curry = fn => (...args) => fn.bind(null, ...args);
+
+const map = curry((fn, arr) => arr.map(fn));
+
+const join = curry((str, arr) => arr.join(str));
+
+const toLowerCase = str => str.toLowerCase();
+
+const split = curry((splitOn, str) => str.split(splitOn));
+
+// closure on MDN
+
+// function init(message) {
+//   var name = message; // name is a local variable created by init
+//   function displayName() { // displayName() is the inner function, a closure
+//     alert(name); // use variable declared in the parent function
+//   }
+//   displayName();
+// }
+// init("this is a closure test");
+
+// function makeAdder(x) {
+//   return function(y) {
+//     return x + y;
+//   };
+// }
+//
+// var add5 = makeAdder(5);
+// var add10 = makeAdder(10);
+//
+// console.log(add5(2));  // 7
+// console.log(add10(2)); // 12
+
+// var makeCounter = function() {
+//   var privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment: function() {
+//       changeBy(1);
+//     },
+//
+//     decrement: function() {
+//       changeBy(-1);
+//     },
+//
+//     value: function() {
+//       return privateCounter;
+//     }
+//   }
+// };
+//
+// var counter1 = makeCounter();
+// var counter2 = makeCounter();
+//
+// console.log(counter1.value());  // 0.
+//
+// counter1.increment();
+// counter1.increment();
+// console.log(counter1.value()); // 2.
+//
+// counter1.decrement();
+// console.log(counter1.value()); // 1.
+// console.log(counter2.value()); // 0.
+
+// function showHelp(help) {
+//   document.getElementById('help').innerHTML = help;
+// }
+//
+// function setupHelp() {
+//   var helpText = [
+//       {'id': 'email', 'help': 'Your e-mail address'},
+//       {'id': 'name', 'help': 'Your full name'},
+//       {'id': 'age', 'help': 'Your age (you must be over 16)'}
+//     ];
+//
+//   for (var i = 0; i < helpText.length; i++) {
+//     let item = helpText[i];
+//     document.getElementById(item.id).onfocus = function() {
+//       showHelp(item.help);
+//     }
+//   }
+// }
+//
+// setupHelp();
+
+// closure EE
+
+// const secret = (msg) => () => msg;
+// const theSecret = 'Closures are easy.';
+// const mySecret = secret(theSecret);
+// const actual = mySecret();
+//
+// console.log(actual);
+
+
+// const add = (a, b) => a + b;
+// const add10 = partialApply(add, 10);
 // add10(5);
 
-const partialApply = (fn, ...fixedArgs) => {
-  return function (...remainingArgs) {
-    return fn.apply(this, fixedArgs.concat(remainingArgs));
-  };
-};
+// const partialApply = (fn, ...fixedArgs) => {
+//   return function (...remainingArgs) {
+//     // debugger
+//     return fn.apply(this, fixedArgs.concat(remainingArgs));
+//   };
+// };
 
+// const partialApply = (fn, fixedArgs) => {
+//   return function (remainingArgs) {
+//     // debugger
+//     return fn.apply(null, [fixedArgs, remainingArgs]);
+//   };
+// };
+//
+// const add = (a, b) => a + b;
+// const add10 = partialApply(add, 10);
+//
+// console.log(add10(5));
 
-function test() {
-  const msg = 'partialApply() should partially apply functions'
-
-  const add = (a, b) => a + b;
-
-  const add10 = partialApply(add, 10);
-
-
-  const actual = add10(5);
-  const expected = 15;
-
-  test.equal(actual, expected, msg);
-};
-
-test();
 
 
 // functional programing
