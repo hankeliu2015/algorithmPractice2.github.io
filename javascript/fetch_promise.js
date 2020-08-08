@@ -1,21 +1,32 @@
+// curry
+
+const add = a => b => a + b;
+
+console.log(add(1)(2));
+
+// const curry = f => g => x => f(g(x));
+// const double = n => n * 2;
+// const inc = n => n + 1;
+// console.log(curry(double)(inc)(3));
+
 // compostion function
 
-const toSlug = input => encodeURIComponent(
-  input.split(' ')
-    .map(str => str.toLowerCase())
-    .join('-')
-);
-
-
-const curry = fn => (...args) => fn.bind(null, ...args);
-
-const map = curry((fn, arr) => arr.map(fn));
-
-const join = curry((str, arr) => arr.join(str));
-
-const toLowerCase = str => str.toLowerCase();
-
-const split = curry((splitOn, str) => str.split(splitOn));
+// const toSlug = input => encodeURIComponent(
+//   input.split(' ')
+//     .map(str => str.toLowerCase())
+//     .join('-')
+// );
+//
+//
+// const curry = fn => (...args) => fn.bind(null, ...args);
+//
+// const map = curry((fn, arr) => arr.map(fn));
+//
+// const join = curry((str, arr) => arr.join(str));
+//
+// const toLowerCase = str => str.toLowerCase();
+//
+// const split = curry((splitOn, str) => str.split(splitOn));
 
 // closure on MDN
 
