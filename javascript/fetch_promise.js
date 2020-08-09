@@ -1,8 +1,51 @@
+// function composition
+
+// const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+//
+// const fn1 = s => s.toLowerCase();
+// const fn2 = s => s.split('').reverse().join('');
+// const fn3 = s => s + '!'
+//
+// const newFunc = pipe(fn1, fn2, fn3);
+// const result = newFunc('Time'); // emit!
+//
+// const toSlug = pipe(
+//   split(' '),
+//   map(toLowerCase),
+//   join('-'),
+//   encodeURIComponent
+// );
+//
+// console.log(toSlug('JS Cheerleader')); // 'js-cheerleader'
+
+//curry and function
+
+// const pipe = (...fns) => x => fns.reduce((y, f) => f(y), x);
+// const isEven = n => n % 2 === 0;
+// const map = fn => mappable => mappable.map(fn);
+// const stripe = n => isEven(n) ? 'dark' : 'light';
+// const stripeAll = map(stripe);
+//
+// const arr1 = [1, 2, 3, 4];
+// const striped = stripeAll(arr1);
+//
+// const log = (...args) => console.log(...args);
+//
+// log(striped);
+
+// => ["light", "dark", "light", "dark"]
+// const double = n => n * 2;
+// const doubleAll = map(double);
+// const doubled = doubleAll(arr1);
+// log(doubled);
+// => [2, 4, 6, 8]
+
+
 // curry
 
-const add = a => b => a + b;
-
-console.log(add(1)(2));
+// const add = a => b => a + b;
+//
+// console.log(add(1)(2));
 
 // const curry = f => g => x => f(g(x));
 // const double = n => n * 2;
@@ -17,16 +60,6 @@ console.log(add(1)(2));
 //     .join('-')
 // );
 //
-//
-// const curry = fn => (...args) => fn.bind(null, ...args);
-//
-// const map = curry((fn, arr) => arr.map(fn));
-//
-// const join = curry((str, arr) => arr.join(str));
-//
-// const toLowerCase = str => str.toLowerCase();
-//
-// const split = curry((splitOn, str) => str.split(splitOn));
 
 // closure on MDN
 
