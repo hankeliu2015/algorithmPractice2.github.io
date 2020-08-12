@@ -1,33 +1,33 @@
-function telephoneCheck(str) {
-  const validPatt = [
-    // 555-555-5555
-    /(\d{3}-)\1\d{4}$/,
-    // 1 555-555-5555
-    /^1 (\d{3}-)\1\d{4}$/,
-    // 1 (555)-555-5555
-    /^1 \(\d{3}\) \d{3}-\d{4}$/,
-    // 5555555555
-    /^\d{10}$/,
-    // (555)555-5555
-    /^\(\d{3}\)\d{3}-\d{4}$/,
-    //// 1 555 555 5555
-    /^1 (\d{3} )\1\d{4}$/,
-    //1(555)555-5555
-    /^1\(\d{3}\)\d{3}-\d{4}$/,
-  ]
-
-  return validPatt.some(pattern => {
-    return pattern.test(str);
-  })
-}
-
-console.log(telephoneCheck('555-555-5555'))
-console.log(telephoneCheck('1 555-555-5555'))
-console.log(telephoneCheck('1 (555) 555-5555'))
-console.log(telephoneCheck('5555555555'))
-console.log(telephoneCheck('(555)555-5555'))
-console.log(telephoneCheck('1 555 555 5555'))
-console.log(telephoneCheck('1(555)555-5555'))
+// function telephoneCheck(str) {
+//   const validPatt = [
+//     // 555-555-5555
+//     /(\d{3}-)\1\d{4}$/,
+//     // 1 555-555-5555
+//     /^1 (\d{3}-)\1\d{4}$/,
+//     // 1 (555)-555-5555
+//     /^1 \(\d{3}\) \d{3}-\d{4}$/,
+//     // 5555555555
+//     /^\d{10}$/,
+//     // (555)555-5555
+//     /^\(\d{3}\)\d{3}-\d{4}$/,
+//     //// 1 555 555 5555
+//     /^1 (\d{3} )\1\d{4}$/,
+//     //1(555)555-5555
+//     /^1\(\d{3}\)\d{3}-\d{4}$/,
+//   ]
+//
+//   return validPatt.some(pattern => {
+//     return pattern.test(str);
+//   })
+// }
+//
+// console.log(telephoneCheck('555-555-5555'))
+// console.log(telephoneCheck('1 555-555-5555'))
+// console.log(telephoneCheck('1 (555) 555-5555'))
+// console.log(telephoneCheck('5555555555'))
+// console.log(telephoneCheck('(555)555-5555'))
+// console.log(telephoneCheck('1 555 555 5555'))
+// console.log(telephoneCheck('1(555)555-5555'))
 
 // 555-555-5555
 // (555)555-5555
