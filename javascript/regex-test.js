@@ -36,6 +36,8 @@
 // 5555555555
 // 1 555 555 5555
 // 1(555)555-5555
+
+
 // let petStr = " James has a pet cat."
 // let petRegex = /dog|cat|bird|fish/
 //
@@ -147,7 +149,7 @@
 // check 2 or more pattern in one string
 // a password has 5 chars long and 2 consecutive digits.
 
-// let sampleWord = "atsrr2";
+// let sampleWord = "atsrr22";
 // let pwRegex = /(?=\w{5})(?=\D*\d{2})/;  //first patter is 5 more chars and second patter is none digits plus to digits.
 // console.log(pwRegex.test(sampleWord))
 
