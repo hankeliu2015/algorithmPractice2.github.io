@@ -1,33 +1,64 @@
+// function binarySearch1(array, targetV) {
+//   let min = 0;
+//   let max = array.length;
+//   let found = false;
+//   let guessValue;
+//
+//   while(min <= max) {
+//
+//     guessIndex = Math.floor((max + min)/2);
+//     let guessValue  = array[guessIndex];
+//
+//     if(targetV === guessValue) {
+//       // find the value guessValue
+//       found = true;
+//       break;
+//     } else if (targetV < guessValue) {
+//       // go left
+//       max = guessIndex - 1;
+//     } else if (targetV > guessValue) {
+//       // go right
+//       // debugger
+//       min = guessIndex + 1;
+//     } else if (!guessValue) { // must have this condition, other wise loop won't stop.
+//       break;
+//     }
+//   }
+//   return found;
+//
+// }
+// console.log(binarySearch1([1,2,3], 3))
+
 // //
 // // Binary Search for sorted array : Algorithm Lectures in JavaScript
 // // indexOf is the js function.
 //
 //
-// function binarySearch1(sortedArray, targetValue) {
-//   let min = 0;
-//   let max = sortedArray.length
-//   let guessIndex;      //wills guess in the half way of the array
-//
-//   while (min <= max) {
-//     guessIndex = (min + max ) /2 | 0 //bitwise
-//     // guessIndex = Math.floor((min + max) /2); //same equations but slower.
-//     guessValue = sortedArray[guessIndex];
-//
-//     if (guessValue === targetValue) {
-//
-//       console.log(`Matched number ${sortedArray[guessIndex]} is found at index : ${guessIndex}.`);
-//       return 1;
-//
-//     } else if (guessValue < targetValue) {
-//       min = guessIndex + 1
-//     } else {
-//       max = guessIndex - 1
-//     }
-//   }
-//
-//   console.log(`Target number ${targetValue} is not found`)
-//   return -1
-// }
+function binarySearch2(sortedArray, targetValue) {
+  let min = 0;
+  let max = sortedArray.length
+  let guessIndex;      //wills guess in the half way of the array
+
+  while (min <= max) {
+    guessIndex = (min + max ) /2 | 0 //bitwise
+    // guessIndex = Math.floor((min + max) /2); //same equations but slower.
+    guessValue = sortedArray[guessIndex];
+
+    if (guessValue === targetValue) {
+
+      console.log(`Matched number ${sortedArray[guessIndex]} is found at index : ${guessIndex}.`);
+      return 1;
+
+    } else if (guessValue < targetValue) {
+      min = guessIndex + 1
+    } else {
+      max = guessIndex - 1
+    }
+  }
+
+  console.log(`Target number ${targetValue} is not found`)
+  return -1
+}
 //
 // //retest
 //
