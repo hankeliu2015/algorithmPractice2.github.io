@@ -1,3 +1,4 @@
+
 // let isMatchingBrackets = function (str) {
 //     let stack = [];
 //     let map = {
@@ -52,7 +53,6 @@
 //   return true;
 // }
 
-
 // balancedBracket interview code challange
 // if ( , add it to the stack .
 // if ) , pop it out of the stack,
@@ -75,8 +75,6 @@
 //     console.log(Math.abs(bCounter-cCounter))
 // }
 
-
-
 // function isMatchingBrackets(str) {
 //   let bCounter = 0;
 //   let cCounter = 0;
@@ -89,8 +87,6 @@
 //   }
 //   console.log(Math.abs(bCounter - cCounter));
 // }
-
-
 
 // function isMatchingBrackets(s) {
 //     let finalS = s;
@@ -167,4 +163,36 @@
 // //
 // isMatchingBrackets(")())()))");
 // console.log(isMatchingBrackets(")()))(("));
+// console.log(isMatchingBrackets("{[()]}"));
 // console.log(isMatchingBrackets("(){}[]({[]})"));
+//
+// // matching brackets retest
+//
+// function isMatchingBrackets(str) {
+//   const hashTable = {
+//     '(': ')',
+//     '{': '}',
+//     '[': ']'
+//   }
+//   let matched = [];
+//
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === '(' || str[i] === '{'|| str[i] === '[' ) {
+//       matched.push(str[i]);
+//     } else {
+//       let lastPoped = matched.pop();
+//       if (str[i] !== hashTable[lastPoped]){
+//         return false;
+//       }
+//     }
+//   } // end of for loop.
+//
+//
+//   // it matched still has elements, return false.
+//   if (matched.length !== 0) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+//
+// } // end of function
