@@ -13,6 +13,17 @@
   </head>
   <body>
 
+
+    <h5>JS Events</h5>
+    <button type="button" name="button" onclick="displayDate()">The Time is </button>
+    <p id="event-demo"></p>
+    <script type="text/javascript">
+      function displayDate() {
+        document.getElementById("event-demo").innerHTML = Date();
+      }
+    </script>
+
+
     <h5>Add New Elements</h5>
     <div id="div1">The text above has been created dynamically.</div>
     <div id="container"></div>
