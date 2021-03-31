@@ -179,7 +179,7 @@ header {
     color: var(--clr-accent);
 }
 
-/* hamberger */
+/* hamburger */
 
 .nav-toggle {
     padding: .5em;
@@ -204,9 +204,12 @@ header {
   transform: rotate(.625turn);
 }
 
-.nav-open .hamburger::before,
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
 .nav-open .hamburger::after {
-  transform: rotate(90deg) translateX(-1px);
+  transform: rotate(90deg) translateX(6px);
 }
 
 .nav-open .hamberger::after {

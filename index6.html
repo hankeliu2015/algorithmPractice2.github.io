@@ -9,10 +9,21 @@
         font-weight: bold
       }
     </style>
-
   </head>
-  <body>
 
+  <body>
+    <h3>How jQuery Works</h3>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
+      $( document ).ready(function() {
+          $( "a" ).click(function( event ) {
+              alert( "Thanks for visiting!" );
+          });
+      });
+    </script>
+
+<hr>
     <div id="d1"> nodeName test</div>
     <input type="text" id="t">
     <script type="text/javascript">

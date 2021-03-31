@@ -25,8 +25,8 @@ function createButtons() {
   // var i;
   for (let i = 0; i < n; i++) {
     let btn = document.createElement('button');
-
-    btn.appendChild(document.createTextNode('Button' + i));
+    console.log(btn);
+    btn.appendChild(document.createTextNode('Button' + i)); // add content for button text node
 
     btn.addEventListener('click', function(){
       console.log(i);

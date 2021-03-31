@@ -1,7 +1,7 @@
-
+from math import *
 # print('Welcome to Python 101!2')
-# print('Welcome to Python 101!')
-#
+print('Welcome to Python 101!')
+
 # print("Create hammer")
 # print("Create hammer")
 # print("Use hammer")
@@ -42,15 +42,40 @@
 # print('Modulus : ', a % b)
 # print('Exponent : ', a ** b)
 
-msg = "welcome to Python 101"
+# msg = "welcome to Python 101"
 # print(msg)
 # print(msg.upper())
 # print(msg.lower())
 # print(msg.capitalize())
 # print(msg.title())
-print(len(msg))
-print(msg.count('Python'))
-#slicing
-print(msg[1:7])
+# print(len(msg))
+# print(msg.count('Python'))
+# #slicing
+# print(msg[1:7])
 
+# character_name = 'Henry'
+# print("my name is " + character_name + "How are you!")
+# character_name = 'Mike'
+# print("my name is " + character_name + ".\nHow are you!")
+# isMale = True
+
+# strings
+# string_phase = "This is a string variable testing and function testing"
+# print(string_phase)
+# print(string_phase.upper().isupper())
+# print(len(string_phase))
+# print(string_phase[0])
+# print(string_phase.index("is"))
+# print(string_phase.replace("is", "was"))
+
+# numbers
+# my_num = -5
+# print(str(my_num) + " doing a number test")
+# print(abs(my_num))
+# print(pow(3, 2))
+# print(max(3, 2))
+# print(min(3, 2))
+# print(round(3.67))
+# print(floor(3.67))
+# print(ceil(3.67))
 
