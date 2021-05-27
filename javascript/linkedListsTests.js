@@ -82,3 +82,36 @@ function deleteNode(llist, position) {
   previousNode.next = currentNode.next; 
   return llist; 
 }
+
+function reversePrint(llist) {
+
+  // if llist is null or llist.next is null 
+  // if(!llist) { return null}
+
+  // Write your code here
+  // reach every node and store them  in an array from the end
+  // print the array 
+
+  // const arr = []; 
+  // let currentNode = llist;
+  // while(currentNode.next) {
+  //   arr.unshift(currentNode.data); 
+  //   currentNode = currentNode.next;
+  // }
+  // return arr; // need to return console.log one by one not the whole array. 
+
+  if (llist !== null) {
+    reversePrint(llist.next);
+    console.log(llist.data)
+  }
+}
+
+function reverse(head) {
+  if (head === null || head.next === null) {
+    return head
+  }
+  let remaining = reverse(head.next);
+  head.next.next = head;
+  head.next = null; 
+  return remaining; 
+}
