@@ -50,6 +50,60 @@ function matchingStrings(strings, queries) {
 }
 
 function dynamicArray(n, queries) {
-  // Write your code here
+  const arr = []    //declare the 2 dimentional array with n empty arrays
+  while (arr.length < n) {
+    arr.push([])
+  }
+  
+  let lastAnswer = 0  //declare lastAnswer
+  const answers = []
+  for (const query of queries) {
+    const [queryType, x, y] = query
+    if (queryType === 1) {                // query type just 1 and 2
+      const idx = (x ^ lastAnswer) % n
+      arr[idx].push(y)
+    } else if (queryType === 2) {
+      const idx = (x ^ lastAnswer) % n
+      lastAnswer = arr[idx][y % arr[idx].length]
+      answers.push(lastAnswer)
+    } else {
+      throw new Error(`Unrecognized query type ${queryType}`)
+    }
+  }
+  return answers
+
+}
+
+function arrayManipulation(n, queries) {
+
+  // loop for each query and perform the operation
+  // loop from index start to end to add the values on the array
+  // the get the larget value of the array element. 
+
+  let arr = []; 
+    let max = 0; 
+    
+    for(let query of queries) {
+        let a, b, k;
+        [a, b, k] = query; 
+    
+        for(let i = a - 1; i < b; i ++) {
+          (!arr[i]) ? (arr[i] = k) : (arr[i] += k);
+          if(max < arr[i]) { max = arr[i]}
+        }
+    }
+    return max;
+
+}
+
+// solution 2 
+
+function arrayManipulation(n, queries) {
+
+  let arr = []; 
+  let max = 0; 
+  // find the most overlaped element index between a and b 
+
+  return max;
 
 }

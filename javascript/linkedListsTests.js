@@ -115,3 +115,17 @@ function reverse(head) {
   head.next = null; 
   return remaining; 
 }
+
+function CompareLists(llist1, llist2) {
+  //compare head and head.next 
+  // while loop each node, and compare, return 0 if not equal. 
+  // return 1 at the end 
+
+  
+  while(llist1.next) {
+    if(llist1 !== llist2) {return 0}; 
+    llist1 = llist1.next; 
+    llist2 = llist2.next; 
+  }
+  return 1; 
+}
