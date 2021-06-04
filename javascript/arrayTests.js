@@ -74,36 +74,94 @@ function dynamicArray(n, queries) {
 
 }
 
-function arrayManipulation(n, queries) {
+// function arrayManipulation(n, queries) {
 
-  // loop for each query and perform the operation
-  // loop from index start to end to add the values on the array
-  // the get the larget value of the array element. 
-
-  let arr = []; 
-    let max = 0; 
+//   let arr = []; 
+//   // while(arr.length < n) {
+//   //   arr.push(0);
+//   // }
+//   let max = 0; 
     
-    for(let query of queries) {
-        let a, b, k;
-        [a, b, k] = query; 
+//     for(let query of queries) {
+//         let a, b, k;
+//         [a, b, k] = query; 
     
-        for(let i = a - 1; i < b; i ++) {
-          (!arr[i]) ? (arr[i] = k) : (arr[i] += k);
-          if(max < arr[i]) { max = arr[i]}
-        }
-    }
-    return max;
+//         for(let i = a - 1; i < b; i ++) {
+//           (!arr[i]) ? (arr[i] = k) : (arr[i] += k);
+//           if(max < arr[i]) { max = arr[i]}
+//         }
+//     }
+//     return max;
 
-}
+// }
 
 // solution 2 
 
 function arrayManipulation(n, queries) {
 
-  let arr = []; 
   let max = 0; 
-  // find the most overlaped element index between a and b 
+  let pA = 1; 
+  let pB = n;
+  for(let query of queries) {
+    let a, b, k; 
+    // [a, b, k] = [query];
+    a = query[0]; 
+    b = query[1]; 
+    k = query[2];
+// debugger
+    if(pB < a) {            
+      if(max < k) {                       // no overlap 
+        pA = a; 
+        pB = b; 
+        max = k; 
+      } 
+    } else if(pA > b) {                   // no overlap 
+      if(max < k) {
+        pA = a; 
+        pB = b; 
+        max = k; 
+      } 
+    } else if(pA <= a && pB >= b) {          // previous range contain current 
+      pA = a; 
+      pB = b;
+      max += k;  
+    } else if(pA >= a && pB <= b) {   // previous range within current
+      pA = pA; 
+      pB = pB; 
+      max += k;
+    } else if(pA ===a && pB >= b) {     // left side equal
+      pA = pA; 
+      pB= b; 
+      sum += k
+    } else if(pA ===a && pB <= b) {     // left side equal
+      pA = PA; 
+      pB= pB; 
+      sum += k
+    } else if(pA <= a && pB === b) {     // right side equal
+      pA = a; 
+      pB= pB; 
+      sum += k
+    } else if(pA >= a && pB === b) {     // right side equal
+      pA = pA; 
+      pB= pB; 
+      sum += k
+    } else if(pA > a && pB > b) {
+      pA = pA; 
+      pB = b;
+      max += k; 
+    } else if(pA < a && pB < b) {
+      pA = a; 
+      pB = pB;
+      max += k; 
+    } 
+  }
 
+  console.log(pA);
+  console.log(pB);
+  console.log(max);
   return max;
 
 }
+
+// arrayManipulation(10, [[2,6,8],[3,5,7],[1,8,1],[5,9,15]])
+arrayManipulation(10, [[1,5,3],[4,8,7],[6,9,1]])
