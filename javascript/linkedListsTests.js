@@ -239,6 +239,8 @@ function mergeLists(head1, head2) {
 //   return 0; 
 // }
 
+
+// find merge point 
 function findMergeNode(headA, headB) {
 
   // the merged part of the node are the 'same' length. 
