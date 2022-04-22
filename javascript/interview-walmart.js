@@ -1,8 +1,6 @@
 /* 
 18 
-Create a function named
-arity
-which takes a function as an argument and returns the number of defined arguments the function accepts.
+Create a function named arity which takes a function as an argument and returns the number of defined arguments the function accepts.
 For example:
 If,
 const add = (a, b) => a + b
@@ -10,8 +8,12 @@ const addOne = (a) => a + 1
 Then,
 arity(add) should return 2
 arity(addOne) should return 1
-
 */
+
+const arify1 = function(fn) {
+    let argNum = Array.from(arguments).length
+    return argNum 
+}
 
 /*
 Create a function called functionalize which takes a value and returns a function, which when executed, returns that value.
@@ -20,12 +22,14 @@ functionalize('a')() should return 'a'
 functionalize(false)() should return false
 */
 
-function functionalize2(val) {
-    let returnVal = function(val) {
-        return val
-    }
-    return returnVal()
-    
+function fun2(val) {
+    // let newFun = () =>  {
+    //     console.log(val)
+    //     return val
+    // }
+
+    // non arrow function ? 
+    return newFun;
 }
 
 /* 
@@ -36,8 +40,16 @@ If,
 const addOne = (a) => a + 1;
 const multiplyByTwo = (b) => b * 2;
 Then,
-compose(addOne, multiplyByTwo)(3) should return 8.
+compose2(addOne, multiplyByTwo)(3) should return 8.
 */
+
+const compose = (...fns) => (val) => {
+    //from left to right?
+    let result = fns.reduce((acc, currentFn) => {
+        return acc = currentFn(acc); 
+    }, val)  
+    return result
+}
 
 /*
 Create a function named setDefault which takes an argument of any value and returns a function, which when passed a truthy argument, returns that truthy argument, and when passed a falsy argument, returns the original argument passed to setDefault
@@ -46,6 +58,10 @@ For example:
 setDefault(72)(true) should return true
 setDefault('foobar')(false) should return 'foobar'
 */
+
+const setDefault = function(val) {
+    // create a interanl function here. 
+}
 
 /*
 Create a function named safelyTraverse which takes an object as the fi rst parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefi ned.
