@@ -10,8 +10,8 @@ arity(add) should return 2
 arity(addOne) should return 1
 */
 
-const arify1 = function(fn) {
-    let argNum = Array.from(arguments).length
+const arify = function(fn) {
+    let argNum = fn.length
     return argNum 
 }
 
@@ -22,13 +22,17 @@ functionalize('a')() should return 'a'
 functionalize(false)() should return false
 */
 
-function fun2(val) {
+function functionalize(val) {
     // let newFun = () =>  {
     //     console.log(val)
     //     return val
     // }
 
-    // non arrow function ? 
+    // non arrow function
+    //shadowing - make 2 varaibles the same name 
+    const newFun = function() { 
+        return val
+    }
     return newFun;
 }
 
@@ -44,7 +48,6 @@ compose2(addOne, multiplyByTwo)(3) should return 8.
 */
 
 const compose = (...fns) => (val) => {
-    //from left to right?
     let result = fns.reduce((acc, currentFn) => {
         return acc = currentFn(acc); 
     }, val)  
@@ -64,7 +67,7 @@ const setDefault = function(val) {
 }
 
 /*
-Create a function named safelyTraverse which takes an object as the fi rst parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefi ned.
+Create a function named safelyTraverse which takes an object as the first parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefi ned.
 For example:
 safelyTraverse({ fi rst: { second: 2 } }, ['fi rst', 'second']) should return 2
 safelyTraverse({}, ['a', 'b']) should return undefi ned
