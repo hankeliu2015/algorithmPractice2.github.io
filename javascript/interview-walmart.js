@@ -126,6 +126,14 @@ getValues({ a: 1, b: 2}) should return [1, 2]
 getValues({ c: 'foo' }) should return ['foo']
 */
 
+const getValues = function(obj) {
+    let result = [];
+    for(key in obj) {
+        result.push(obj[key])
+    }
+    return result;
+}
+
 /* 
 18 
 Create a function named arity which takes a function as an argument and returns the number of defined arguments the function accepts.
