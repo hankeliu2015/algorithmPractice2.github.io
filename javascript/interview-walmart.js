@@ -5,27 +5,38 @@ which takes a string as an argument and returns the length of the string.
 For example:
 getLength('foo') should return 3
 getLength('hello') should return 5
+
+const getLength = function(str) {
+    return str.length;
+}
+console.log(getLength('hello'))
 */
+
 
 /* 
 Create a function named concatenate which takes two strings as arguments and returns a single string composed of those two strings without spaces.
 For example:
 concatenate('foo','bar') should return 'foobar'
 concatenate('hello','world') should return 'helloworld'
+
+const concatenate = function(str1, str2) {
+    return str1.concat(str2)
+}
+
+console.log(concatenate('hello','world'))
 */
 
 /*
-Create a function named diff erence which takes two integers as arguments and returns the absolute value of the diff erence.
+Create a function named difference which takes two integers as arguments and returns the absolute value of the diff erence.
 For example:
-diff erence(1, 2) should return 1
-diff erence(-5, 5) should return 10
-*/ 
+difference(1, 2) should return 1
+difference(-5, 5) should return 10
 
-/*
-Create a function named diff erence which takes two integers as arguments and returns the absolute value of the diff erence.
-For example:
-diff erence(1, 2) should return 1
-diff erence(-5, 5) should return 10
+const difference = function(int1, int2) {
+    let result = Math.abs(int1 - int2); 
+    return result;
+}
+console.log(difference(-5, 5))
 */
 
 /* 
@@ -33,6 +44,15 @@ Create a function named isOdd which accepts an integer as an argument and return
 For example:
 isOdd(4) should return false
 isOdd(5) should return true
+
+const isOdd = function(int) {
+    if(int % 2 === 0) {
+        return true; 
+    }else {
+        return false;
+    }
+}
+console.log(isOdd(5))
 */
 
 /*
@@ -40,7 +60,28 @@ Create a function named addTwo which takes an array of integers as an argument a
 For example:
 addTwo([1, 2, 3]) should return [3, 4, 5]
 addTwo([0, 0]) should return [2, 2]
+
+const addTwo = function(arr) {
+    let newArr = arr.map(el => el + 2)
+    return newArr;
+}
+
+console.log(addTwo([1, 2, 3, 0, 0]))
 */
+
+/*
+Create a function named convertHexadecimal which takes as an argument a string representing a hexadecimal integer (base-16) and returns a decimal integer (base-10).
+For example:
+convertHexadecimal('10') should return 16
+convertHexadecimal('af') should return 175
+
+const convertHexadecimal = function(str) {
+    return parseInt(str, 16);
+}
+
+console.log(convertHexadecimal('10'))
+*/
+
 
 /*
 7
@@ -48,13 +89,33 @@ Create a function named onlyTruthy which takes as an argument an array of values
 For example:
 onlyTruthy([false, true, true]) should return [true, true]
 onlyTruthy([0, 1, '', 'a']) should return [1, 'a']
+
+const onlyTruthy = function(arr) {
+    let result = arr.filter(el => {
+        if (el) {
+            return el;
+        }
+    })
+    return result;
+}
+
+console.log(onlyTruthy([0, 1, '', 'a', false, true]))
 */
+
 
 /*
 Create a function named sum which takes as an argument a non-empty array of integers and returns the sum of those integers.
 For example:
 sum([1, 2, 3]) should return 6
 sum([0, 4, 4, 4]) should return 12
+
+const sum = function(arr) {
+    let result = arr.reduce((acc, el) => {
+        return acc += el; 
+    })
+    return result; 
+}
+console.log(sum([0, 4, 4, 4, 4]))
 */
 
 /*
@@ -65,27 +126,61 @@ removeVowels('Hello World') should return 'Hll Wrld'
 removeVowels('FOOBAR') should return 'FBR'
 */
 
+const removeVowels = function(str) {
+    let newStr = str.replace(/[a, e, i, o, u]/ig, '')
+    //need an exception for space. 
+    return newStr
+}
+
+// console.log(removeVowels('Hel lo World'))
+
 /*
 10
 Create a function removeDuplicates which takes a non-empty array as a value and returns an array with only one copy of any of the original array's values.
 For example:
 removeDuplicates([0, 0, 1, 2, 2]) should return [0, 1, 2]
 removeDuplicates(['a', 'a', 'a']) should return ['a']
+
+const removeDuplicates = function(arr) {
+    // if the el include in previous acc, do not do anything 
+    let newArr = arr.reduce((acc, el) => {
+        if(!acc.includes(el)) {
+            acc.push(el)
+            return acc;
+        }
+        return acc; 
+    }, [])
+    return newArr; 
+}
+console.log(removeDuplicates(['a', 'a', 'a', 'b', 'c']))
 */
+
 
 /* 
 Create a function named join which takes two arrays as argument and returns a single array consisting of all the values of those two arrays.
 For example:
 join([0, 1], [1, 2]) should return [0, 1, 1, 2]
 join(['a', 'b'], ['c']) should return ['a', 'b', 'c']
+
+const join = function(arr1, arr2) {
+    return arr1.concat(arr2)
+}
+console.log(join(['a', 'b'], ['c']))
 */
 
+
 /* 
-Create a function named getLast which takes a non-empty array of unspecifi ed length and returns the last element of the array.
+Create a function named getLast which takes a non-empty array of unspecified length and returns the last element of the array.
 For example:
 getLast([1, 2, 3]) should return 3
 getLast([9, 7, 5]) should return 5
+
+const getLast = function(arr) {
+    return arr[arr.length - 1]
+}
+console.log(getLast([9, 7, 5, 6]))
 */
+
 
 /* 
 13
@@ -94,7 +189,6 @@ without mutating the input.
 For example:
 reverse([1, 2, 3]) should return [3, 2, 1]
 reverse([1, 0]) 2 should return [0, 1]
-*/
 
 const reverse = function(arr) {
     let newArr = arr.reduce((acc, el) => {
@@ -106,22 +200,25 @@ const reverse = function(arr) {
 
 console.log(reverse([1, 2, 3]))
 
+*/
+
+
 /* 
  Created a function named toArray which takes an unspecified number of arguments and returns an array with those arguments as values.
 For example:
 toArray(1, 2, 3) should return [1, 2, 3]
 toArray('a') should return ['a']
-*/
+
 const toArray = function(...args) {
     return args; 
 }
+*/
 
 /*
 15 Create a function named allGreaterThanThree which accepts an unspecified number of integer arguments and returns true only if all passed arguments are greater than 3.
 For example:
 allGreaterThanThree(1, 3, 5) should return false
 allGreaterThanThree(4, 6) should return true
-*/
 
 const allGreaterThanThree = function(...args) {
     let res = args.every(el => {
@@ -129,6 +226,7 @@ const allGreaterThanThree = function(...args) {
     })
     return res
 }
+*/
 
 /* 
 Create a function named anyGreaterThanThree which accepts an unspecified number of integer arguments and returns true if any passed argument is greater than 3.
