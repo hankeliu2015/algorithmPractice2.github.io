@@ -111,12 +111,25 @@ allGreaterThanThree(4, 6) should return true
 */
 
 /* 
-Create a function named anyGreaterThanThree
-which accepts an unspecified number of integer arguments and returns true if any passed argument is greater than 3.
+Create a function named anyGreaterThanThree which accepts an unspecified number of integer arguments and returns true if any passed argument is greater than 3.
 For example:
 anyGreaterThanThree(2, 3) should return false
-anyGreaterThanThree(2, 3, 4) should return true
+anyGreaterThanThree10(2, 3, 4) should return true
 */
+const anyGreaterThanThree10 = function(...args) {
+    let res = false;
+    args.forEach(el => {
+        if(el > 3) { 
+            res = true
+        }})
+
+    // every method
+    // let res2 = args.every(el => {
+    //     el <= 3
+    // })
+    // return !res2
+    return res
+}
 
 /* 
 17
@@ -125,12 +138,14 @@ For example:
 getValues({ a: 1, b: 2}) should return [1, 2]
 getValues({ c: 'foo' }) should return ['foo']
 */
+// An enumerable property in JavaScript means that a property can be viewed if it is iterated using the for…in loop or Object.keys() method.
 
 const getValues = function(obj) {
-    let result = [];
-    for(key in obj) {
-        result.push(obj[key])
-    }
+    // let result = [];
+    // for(key in obj) {
+    //     result.push(obj[key])
+    // }
+    let result = Object.values(obj)
     return result;
 }
 
