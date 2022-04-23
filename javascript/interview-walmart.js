@@ -93,22 +93,42 @@ Create a function named reverse which takes a non-empty array as an argument and
 without mutating the input.
 For example:
 reverse([1, 2, 3]) should return [3, 2, 1]
-reverse([1, 0]) should return [0, 1]
+reverse([1, 0]) 2 should return [0, 1]
 */
 
+const reverse = function(arr) {
+    let newArr = arr.reduce((acc, el) => {
+        acc.unshift(el)
+        return acc; 
+    }, [])
+    return newArr; 
+}
+
+console.log(reverse([1, 2, 3]))
+
 /* 
-Created a function named toArray which takes an unspecifi ed number of arguments and returns an array with those arguments as values.
+ Created a function named toArray which takes an unspecified number of arguments and returns an array with those arguments as values.
 For example:
 toArray(1, 2, 3) should return [1, 2, 3]
 toArray('a') should return ['a']
 */
+const toArray = function(...args) {
+    return args; 
+}
 
-/* 
-Create a function named all GreaterThanThree which accepts an unspecifi ed number of integer arguments and returns true only if all passed arguments are greater than 3.
+/*
+15 Create a function named allGreaterThanThree which accepts an unspecified number of integer arguments and returns true only if all passed arguments are greater than 3.
 For example:
 allGreaterThanThree(1, 3, 5) should return false
 allGreaterThanThree(4, 6) should return true
 */
+
+const allGreaterThanThree = function(...args) {
+    let res = args.every(el => {
+        return el > 3
+    })
+    return res
+}
 
 /* 
 Create a function named anyGreaterThanThree which accepts an unspecified number of integer arguments and returns true if any passed argument is greater than 3.
