@@ -124,15 +124,19 @@ Create a function named removeVowels which takes a string as an argument and ret
 For example:
 removeVowels('Hello World') should return 'Hll Wrld'
 removeVowels('FOOBAR') should return 'FBR'
-*/
 
 const removeVowels = function(str) {
-    let newStr = str.replace(/[a, e, i, o, u]/ig, '')
-    //need an exception for space. 
+    let newStr = str.replace(/[a,e,i,o,u]/ig, '')
+    // a callback also worked
+    let newStr2 = str.replace(/[A,E,I,O,U]/ig, function(char) {
+        return char = '';
+    })
+    console.log(newStr2)
     return newStr
 }
+console.log(removeVowels('Hel lo World'))
+*/
 
-// console.log(removeVowels('Hel lo World'))
 
 /*
 10
