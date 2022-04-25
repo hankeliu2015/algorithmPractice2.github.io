@@ -334,7 +334,7 @@ Create a function named setDefault which takes an argument of any value and retu
 For example:
 setDefault(72)(true) should return true
 setDefault('foobar')(false) should return 'foobar'
-*/
+
 
 const setDefault = (defaultV) => (val) => {
     return  function innerFn() {
@@ -348,6 +348,8 @@ const setDefault = (defaultV) => (val) => {
 
 console.log(setDefault(72)(true)()); 
 console.log(setDefault('foobar')(false)()); 
+
+*/
 
 /*
 Create a function named safelyTraverse which takes an object as the first parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefined.
@@ -388,6 +390,17 @@ await promisify(2) should return 2
 await promisify(3).then(val => val + 1) should return 4
 */
 
+const promisifyValue = function(val) {
+    let myPromise = new Promise(function(res, err) {
+        if(val) {
+            res(2);
+        } else {
+            err("There is an error")
+        }
+    })
+}
+
+
 /*
 Create a function named promisifyFunction which takes a synchronous function
 fn with an unspecifi ed argument signature as an argument and returns a function with the same argument signature that returns a promise which resolves to the output of fn with passed arguments.
@@ -399,3 +412,130 @@ Then,
 await promisifyFunction(add)(1, 1) should return 2
 await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 */
+
+/*
+Write a function:
+
+function solution(A);
+
+that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+
+For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+
+Given A = [1, 2, 3], the function should return 4.
+
+Given A = [−1, −3], the function should return 1.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..100,000];
+each element of array A is an integer within the range [−1,000,000..1,000,000].
+
+const solution = function(a) {
+    let max = 0
+    let current = 0
+
+    for (i = 0; i < a.length; i ++) {
+        if (a[i] > max) {
+            max = a[i]
+        }
+    }
+    // change above to compare the nextNum with the currentNum
+    // if the next greater than current, max = current + 1
+
+    return max
+}
+*/
+
+/*
+
+interview accessment by spot and tango
+1. 
+days of the week 
+write  a function that, given a string S repsenting the day of the week and an integer k( 0 to 500), returns the day of the week that is K days later. 
+for example, give s = 'Wed' and k - 2, the function return 'Fri'
+
+function daysoftheWeek(s,k) {
+    //convert the weekday into numbers, convert the sum back to the weekday
+    // weekday => numbers => weekday
+    
+    let weekdaysArr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    
+    // get the index of the week and add get the number
+    let weekDayIndex = weekdaysArr.indexOf(s) + k
+
+    // convert back to index. 7 days is a cycle
+    let weekdaysArrIndex = weekDayIndex % 7
+    let result = weekdaysArr[weekdaysArrIndex]
+    return result
+}
+
+console.log(daysoftheWeek('Mon', 5))
+
+*/
+
+/*
+2.
+*/
+
+// a strings' first char is digit, lower case of upper case, other chars. 
+// need split the string to have the first one. 
+// confition to meet one of the 4. 
+
+function solution3(s) {
+    let char = s.charAt(0)
+
+    if(char.match(/^d/)) {
+        return 'digit'
+    }else if (char === char.lowerCase()) {
+        return "lower"
+    }else if (char === char.upperCase()) {
+        return 'upper'
+    }else {
+        return 'other'
+    }
+}
+
+
+/*
+3.
+*/
+
+/*
+4.
+want to the minimul cost to remove duplicate
+You are given a string S. Deletion of the K-th letter of S costs C(K). after deleting a litter, the costs of deleting other letters do not change. For example, for S='ab' and C=[1,3], after deleting 'a', deletion of 'b' will still cost 3. 
+You want to delete some letters from S to obtain a string without two identical letters next to each other. What is the minimum total cost of deletions to achieve such a string? 
+*/
+
+function solution4(S, C) {
+
+    let minCostSum = 0 
+    for (i = 0; i < S.length; i ++) {
+        let currentCharMaxCost = C[i]
+        let currentCharSumCost = 0
+
+        
+        for (j = 0; j < S.length; j ++) {
+            // match the current char with all the rest of duplciate chars. find the lowest cost 
+            if (S[i] === S[j] && C[i] < C[j]) {
+                // I need to keep the highest one and remove the rest of lower one. 
+                // count the total currentCharCost and the highst cost 
+                currentCharMaxCost = C[j]
+                currentCharSumCost = C[j]
+            } 
+            // must remove the match char from string and its cost array
+            if (S[i] === S[j]) {
+                 
+
+            }
+        }
+        // add the cost to the sum
+        minCostSum += currentCharSumCost - currentCharMaxCost
+    }
+
+    return minCostSum; 
+
+}
+
+
