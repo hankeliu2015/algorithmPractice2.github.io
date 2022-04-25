@@ -436,31 +436,55 @@ each element of array A is an integer within the range [−1,000,000..1,000,000]
 
 const missingMinValue = function(a) {
     let minValue;
-    let currentMin = 0;
+    let currentMin;
+    let maxEl; 
 
     for (i = 0; i < a.length - 1; i ++) {
-        if ((Math.abs(a[i + 1] - a[i])) > 1 ) {
-            //need to figure out the small one between 2 els. 
-            currentMin = a[i] + 1; 
+        // they all equal. get the maxEl and minValue
+        if(a[i+1] === a[i]) {
+            minValue ??= a[i] + 1
+            maxEl ??= a[i]
         }
+        // find smaller one between 2 els to get the currentMin
+        if(a[i+1] > a[i]) {
+            maxEl = a[i+1];     //need to get the max when els in a squence
+            if((a[i + 1] - a[i]) > 1) {
+                currentMin = a[i] + 1
+            }
+        }
+
+        if (a[i+1] < a[i]) {
+            maxEl = a[i]; 
+            if((a[i] - a[i + 1]) > 1) { 
+                currentMin = a[i + 1] + 1; 
+            }
+        } 
+
         // if  the intitial minValue is null, assign the currentMin
         if(!minValue) { minValue = currentMin}
         //compare the currentMin and minValue
         if(minValue > currentMin) {
-            minVale = currentMin;
+            minValue = currentMin;
         }
     }
 
-    // if the next el greater than current el more than 1, minValue = current + 1
+    //if all els value are in a sequal, the minValue is the largest one plus one 
+    if (!minValue) { 
+        minValue = maxEl + 1;
+     }
 
-    // need another compare between the minValue itself. 
-
-    return minValue < 0 ? 1 : minValue
+    return minValue <= 0 ? 1 : minValue
 }
-console.log(missingMinValue([1,1,2,4,6,9]))
+/*
+console.log(missingMinValue([1,1,2,3,6,9,100,300]))
+console.log(missingMinValue([6,2,4,10, 100, 50, 1000]))
 console.log(missingMinValue([1,2,3,4]))
+console.log(missingMinValue([4,3,2,1]))     //wrong output
+console.log(missingMinValue([-4,3,-2,1]))   //wrong output
 console.log(missingMinValue([-1,-2,-3,-4]))
-console.log(missingMinValue([6,2,4,10]))
+console.log(missingMinValue([-4,-2,-1,-3]))
+
+*/
 
 /*
 
@@ -542,7 +566,7 @@ function minDeleteCost(S, C) {
                 currentCharMaxCost = C[j]
                 currentCharSumCost = C[j]
             } 
-            // must remove the match char from string and its cost array
+            // must remove the match char from string and its cost array ? 
             if (S[i] === S[j]) {
                  
             }
