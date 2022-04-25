@@ -352,6 +352,7 @@ console.log(setDefault('foobar')(false)());
 */
 
 /*
+22
 Create a function named safelyTraverse which takes an object as the first parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefined.
 For example:
 safelyTraverse({ first: { second: 2 } }, ['first', 'second']) should return 2
@@ -360,6 +361,7 @@ safelyTraverse({}, ['a', 'b']) should return undefined
 
 
 /*
+23
 Create a function named throwOn2 which accepts an integer as an argument and returns the integer if it is not 2. If it is 2, the function should throw an error with message "2 is not allowed."
 For example:
 throwOn2(3) should return 3
@@ -384,6 +386,7 @@ console.log(throwOn2(2))
 
 
 /*
+24
 Create a function named promisifyValue which takes an argument of any type and returns a Promise which resolves to that value.
 For example:
 await promisify(2) should return 2
@@ -402,6 +405,7 @@ const promisifyValue = function(val) {
 
 
 /*
+25 
 Create a function named promisifyFunction which takes a synchronous function
 fn with an unspecifi ed argument signature as an argument and returns a function with the same argument signature that returns a promise which resolves to the output of fn with passed arguments.
 For example:
@@ -414,11 +418,8 @@ await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 */
 
 /*
-Write a function:
-
-function solution(A);
-
-that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+sample question. Write a function:
+function solution(A); that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
 
 For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
 
@@ -431,21 +432,26 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
 
-const solution = function(a) {
-    let max = 0
-    let current = 0
+*/
 
-    for (i = 0; i < a.length; i ++) {
-        if (a[i] > max) {
-            max = a[i]
+const missingMin = function(a) {
+    let missingNumber = 0
+
+    for (i = 0; i < a.length - 1; i ++) {
+        if (a[i + 1] - a[i] > 1 && a[i] + 1 < missingNumber ) {
+            missingNumber = a[i] + 1
         }
     }
     // change above to compare the nextNum with the currentNum
-    // if the next greater than current, max = current + 1
+    // if the next el greater than current el more than 1, missingNumber = current + 1
+    // need another compare between the missingNumber itself. 
+    // the first compare need to allow the first missingNUmber over write the 0? 
 
-    return max
+    return missingNumber < 0 ? 1 : missingNumber
 }
-*/
+console.log(missingMin([1,1,2,4,6,9]))
+console.log(missingMin([1,2,3,4]))
+console.log(missingMin([-1,-2,-3,-4]))
 
 /*
 
@@ -476,29 +482,29 @@ console.log(daysoftheWeek('Mon', 5))
 
 /*
 2.
-*/
+a strings' first char is digit, lower case of upper case, other chars. 
+condition to meet one of the 4. 
+testing your regex skills
 
-// a strings' first char is digit, lower case of upper case, other chars. 
-// need split the string to have the first one. 
-// confition to meet one of the 4. 
-
-function solution3(s) {
+function firstCharType(s) {
     let char = s.charAt(0)
 
-    if(char.match(/^d/)) {
+    if(char.match(/^\d/)) {
         return 'digit'
-    }else if (char === char.lowerCase()) {
+        //the first char need match [a-z] or [A-Z] 
+    }else if ( char.match(/^[a-z]/)) {
         return "lower"
-    }else if (char === char.upperCase()) {
+    }else if (char.match(/^[A-Z]/)) {
         return 'upper'
     }else {
         return 'other'
     }
 }
-
+console.log(firstCharType('2fadfsfafas'))
+*/
 
 /*
-3.
+3. SQL query syntax
 */
 
 /*
@@ -506,9 +512,12 @@ function solution3(s) {
 want to the minimul cost to remove duplicate
 You are given a string S. Deletion of the K-th letter of S costs C(K). after deleting a litter, the costs of deleting other letters do not change. For example, for S='ab' and C=[1,3], after deleting 'a', deletion of 'b' will still cost 3. 
 You want to delete some letters from S to obtain a string without two identical letters next to each other. What is the minimum total cost of deletions to achieve such a string? 
+Write a function return the minimum cost of all necessary deletions
+example: given S="abccbd" and c= [1,2,3,4,5], the function should return 3, you can delete the first "c" to get 'abcbd'
+give s = 'aaaa' and c=[3,4,5,6], should return 12. you need to delete  all but one letter 'a'. 
 */
 
-function solution4(S, C) {
+function minDeleteCost(S, C) {
 
     let minCostSum = 0 
     for (i = 0; i < S.length; i ++) {
@@ -527,7 +536,6 @@ function solution4(S, C) {
             // must remove the match char from string and its cost array
             if (S[i] === S[j]) {
                  
-
             }
         }
         // add the cost to the sum
