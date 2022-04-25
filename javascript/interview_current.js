@@ -434,24 +434,33 @@ each element of array A is an integer within the range [−1,000,000..1,000,000]
 
 */
 
-const missingMin = function(a) {
-    let missingNumber = 0
+const missingMinValue = function(a) {
+    let minValue;
+    let currentMin = 0;
 
     for (i = 0; i < a.length - 1; i ++) {
-        if (a[i + 1] - a[i] > 1 && a[i] + 1 < missingNumber ) {
-            missingNumber = a[i] + 1
+        if ((Math.abs(a[i + 1] - a[i])) > 1 ) {
+            //need to figure out the small one between 2 els. 
+            currentMin = a[i] + 1; 
+        }
+        // if  the intitial minValue is null, assign the currentMin
+        if(!minValue) { minValue = currentMin}
+        //compare the currentMin and minValue
+        if(minValue > currentMin) {
+            minVale = currentMin;
         }
     }
-    // change above to compare the nextNum with the currentNum
-    // if the next el greater than current el more than 1, missingNumber = current + 1
-    // need another compare between the missingNumber itself. 
-    // the first compare need to allow the first missingNUmber over write the 0? 
 
-    return missingNumber < 0 ? 1 : missingNumber
+    // if the next el greater than current el more than 1, minValue = current + 1
+
+    // need another compare between the minValue itself. 
+
+    return minValue < 0 ? 1 : minValue
 }
-console.log(missingMin([1,1,2,4,6,9]))
-console.log(missingMin([1,2,3,4]))
-console.log(missingMin([-1,-2,-3,-4]))
+console.log(missingMinValue([1,1,2,4,6,9]))
+console.log(missingMinValue([1,2,3,4]))
+console.log(missingMinValue([-1,-2,-3,-4]))
+console.log(missingMinValue([6,2,4,10]))
 
 /*
 
