@@ -6,82 +6,70 @@ For example:
 getLength('foo') should return 3
 getLength('hello') should return 5
 
-const getLength = function(str) {
-    return str.length;
-}
+const getLength = (str) => { return str.length}
 console.log(getLength('hello'))
 */
 
 
 /* 
+2
 Create a function named concatenate which takes two strings as arguments and returns a single string composed of those two strings without spaces.
 For example:
 concatenate('foo','bar') should return 'foobar'
 concatenate('hello','world') should return 'helloworld'
 
-const concatenate = function(str1, str2) {
-    return str1.concat(str2)
-}
+const concatenate = (str1, str2) => str1.concat(str2)
 
 console.log(concatenate('hello','world'))
 */
 
 /*
+3
 Create a function named difference which takes two integers as arguments and returns the absolute value of the diff erence.
 For example:
 difference(1, 2) should return 1
 difference(-5, 5) should return 10
 
 const difference = function(int1, int2) {
-    let result = Math.abs(int1 - int2); 
-    return result;
+    return Math.abs(int2 - int1); 
 }
 console.log(difference(-5, 5))
 */
 
 /* 
+4
 Create a function named isOdd which accepts an integer as an argument and returns true if the value is odd. An odd integer is not wholly divisible by two.
 For example:
 isOdd(4) should return false
 isOdd(5) should return true
 
-const isOdd = function(int) {
-    if(int % 2 === 0) {
-        return true; 
-    }else {
-        return false;
-    }
-}
-console.log(isOdd(5))
+const isOdd = (int) => (int % 2 === 0) ? true : false
+console.log(isOdd(6))
 */
 
 /*
+5
 Create a function named addTwo which takes an array of integers as an argument and returns an array where each value has been incremented by two.
 For example:
 addTwo([1, 2, 3]) should return [3, 4, 5]
 addTwo([0, 0]) should return [2, 2]
 
-const addTwo = function(arr) {
-    let newArr = arr.map(el => el + 2)
-    return newArr;
-}
+const addTwo = (arr) => arr.map(el => el + 2)
 
-console.log(addTwo([1, 2, 3, 0, 0]))
+console.log(addTwo([1, 2, 3, 0, 2]))
 */
 
 /*
+6
 Create a function named convertHexadecimal which takes as an argument a string representing a hexadecimal integer (base-16) and returns a decimal integer (base-10).
 For example:
+
 convertHexadecimal('10') should return 16
 convertHexadecimal('af') should return 175
+const convertHexadecimal = function(str) { return parseInt(str, 16); }
 
-const convertHexadecimal = function(str) {
-    return parseInt(str, 16);
-}
-
-console.log(convertHexadecimal('10'))
+console.log(convertHexadecimal('af'))
 */
-
 
 /*
 7
@@ -91,12 +79,7 @@ onlyTruthy([false, true, true]) should return [true, true]
 onlyTruthy([0, 1, '', 'a']) should return [1, 'a']
 
 const onlyTruthy = function(arr) {
-    let result = arr.filter(el => {
-        if (el) {
-            return el;
-        }
-    })
-    return result;
+    return arr.filter(el => el ? el : false)
 }
 
 console.log(onlyTruthy([0, 1, '', 'a', false, true]))
@@ -104,16 +87,16 @@ console.log(onlyTruthy([0, 1, '', 'a', false, true]))
 
 
 /*
+8
 Create a function named sum which takes as an argument a non-empty array of integers and returns the sum of those integers.
 For example:
 sum([1, 2, 3]) should return 6
 sum([0, 4, 4, 4]) should return 12
 
 const sum = function(arr) {
-    let result = arr.reduce((acc, el) => {
+    return arr.reduce((acc, el) => {
         return acc += el; 
     })
-    return result; 
 }
 console.log(sum([0, 4, 4, 4, 4]))
 */
@@ -126,17 +109,17 @@ removeVowels('Hello World') should return 'Hll Wrld'
 removeVowels('FOOBAR') should return 'FBR'
 
 const removeVowels = function(str) {
-    let newStr = str.replace(/[a,e,i,o,u]/ig, '')
     // a callback also worked
     let newStr2 = str.replace(/[A,E,I,O,U]/ig, function(char) {
-        return char = '';
+        return char = '';       //without return , will got undefined inside the chars returned
     })
     console.log(newStr2)
-    return newStr
+    
+    return str.replace(/[a,e,i,o,u]/ig, '')
 }
 console.log(removeVowels('Hel lo World'))
+console.log(removeVowels('foo bar'))
 */
-
 
 /*
 10
@@ -144,23 +127,29 @@ Create a function removeDuplicates which takes a non-empty array as a value and 
 For example:
 removeDuplicates([0, 0, 1, 2, 2]) should return [0, 1, 2]
 removeDuplicates(['a', 'a', 'a']) should return ['a']
-
 const removeDuplicates = function(arr) {
     // if the el include in previous acc, do not do anything 
-    let newArr = arr.reduce((acc, el) => {
-        if(!acc.includes(el)) {
-            acc.push(el)
-            return acc;
+    // return arr.reduce((acc, el) => {
+    //     if(!acc.includes(el)) {
+    //         acc.push(el)
+    //         return acc;
+    //     }
+    //     return acc; 
+    // }, [])
+
+    return arr.filter((el, pos) => {
+        if(arr.indexOf(el) === pos) {
+            return el
         }
-        return acc; 
-    }, [])
-    return newArr; 
+    })
+
 }
-console.log(removeDuplicates(['a', 'a', 'a', 'b', 'c']))
+console.log(removeDuplicates(['a', 'a', 'a', 'b', 'c','c']))
 */
 
 
 /* 
+11
 Create a function named join which takes two arrays as argument and returns a single array consisting of all the values of those two arrays.
 For example:
 join([0, 1], [1, 2]) should return [0, 1, 1, 2]
@@ -174,6 +163,7 @@ console.log(join(['a', 'b'], ['c']))
 
 
 /* 
+12
 Create a function named getLast which takes a non-empty array of unspecified length and returns the last element of the array.
 For example:
 getLast([1, 2, 3]) should return 3
@@ -185,7 +175,6 @@ const getLast = function(arr) {
 console.log(getLast([9, 7, 5, 6]))
 */
 
-
 /* 
 13
 Create a function named reverse which takes a non-empty array as an argument and returns a reversed array
@@ -195,19 +184,18 @@ reverse([1, 2, 3]) should return [3, 2, 1]
 reverse([1, 0]) 2 should return [0, 1]
 
 const reverse = function(arr) {
-    let newArr = arr.reduce((acc, el) => {
+    return  arr.reduce((acc, el) => {
         acc.unshift(el)
         return acc; 
     }, [])
-    return newArr; 
 }
 
-console.log(reverse([1, 2, 3]))
-
+console.log(reverse([1, 2, 3, 4]))
 */
 
 
 /* 
+14
  Created a function named toArray which takes an unspecified number of arguments and returns an array with those arguments as values.
 For example:
 toArray(1, 2, 3) should return [1, 2, 3]
@@ -216,6 +204,11 @@ toArray('a') should return ['a']
 const toArray = function(...args) {
     return args; 
 }
+const toArray2 = function() {
+    return Array.from(arguments); 
+}
+console.log(toArray("abd", 1,2,3, "def"))
+console.log(toArray2("abd", 1,2,3, "def"))
 */
 
 /*
@@ -225,42 +218,44 @@ allGreaterThanThree(1, 3, 5) should return false
 allGreaterThanThree(4, 6) should return true
 
 const allGreaterThanThree = function(...args) {
-    let res = args.every(el => {
-        return el > 3
-    })
-    return res
-}
+     return args.every(el => el > 3)
+    }
+console.log(allGreaterThanThree(1,3,5))
+console.log(allGreaterThanThree(4,5))
+
 */
 
 /* 
+16
 Create a function named anyGreaterThanThree which accepts an unspecified number of integer arguments and returns true if any passed argument is greater than 3.
 For example:
 anyGreaterThanThree(2, 3) should return false
 anyGreaterThanThree10(2, 3, 4) should return true
-*/
+
 const anyGreaterThanThree10 = function(...args) {
     let res = false;
     args.forEach(el => {
         if(el > 3) { 
             res = true
         }})
-
-    // every method
+        
+    return res
+    // make a negative every method
     // let res2 = args.every(el => {
     //     el <= 3
     // })
     // return !res2
-    return res
 }
+*/
 
 /* 
 17
 Create a function named getValues which takes an object and returns an array of the enumerable property values of the object.
+// (An enumerable property in JavaScript means that a property can be viewed if it is iterated using the for…in loop or Object.keys() method.)
+
 For example:
 getValues({ a: 1, b: 2}) should return [1, 2]
 getValues({ c: 'foo' }) should return ['foo']
-*/
-// An enumerable property in JavaScript means that a property can be viewed if it is iterated using the for…in loop or Object.keys() method.
 
 const getValues = function(obj) {
     // let result = [];
@@ -270,53 +265,63 @@ const getValues = function(obj) {
     let result = Object.values(obj)
     return result;
 }
+*/
 
 /* 
 18 
 Create a function named arity which takes a function as an argument and returns the number of defined arguments the function accepts.
+
 For example:
 If,
-const add = (a, b) => a + b
-const addOne = (a) => a + 1
 Then,
 arity(add) should return 2
 arity(addOne) should return 1
-*/
+const add1 = (a, b) => a + b
+const addOne1 = (a) => a + 1
 
 const arify = function(fn) {
     return fn.length
 }
 
+console.log(arify(add1))
+console.log(arify(addOne1))
+*/
+
 /*
+19
 Create a function called functionalize which takes a value and returns a function, which when executed, returns that value.
 For example:
 functionalize('a')() should return 'a'
-functionalize(false)() should return false
-*/
 
 function functionalize(val) {
     // let newFun = () =>  {
-    //     console.log(val)
     //     return val
     // }
 
     // non arrow function
     //shadowing - make 2 varaibles the same name 
-    const newFun = function() { 
+    return function() { 
         return val
     }
-    return newFun;
 }
+
+console.log(functionalize('a')())
+console.log(functionalize(false)())
+functionalize(false)() should return false
+*/
 
 /* 
 20
 Create a function named compose which accepts an unspecified number of single-argument functions as arguments and returns a function which executes those functions from left to right.
 For example:
 If,
-should return 8.
+const addOne = (a) => a + 1
+const mulitiplyByTwn = (b) => b * 2
 
-*/
+compose(addOne, multiplyByTwo), should return 8.
+
 const addOne = (a) => a + 1;
+const addTwo = (a) => a + 2;
 const multiplyByTwo = (b) => b * 2;
 
 const compose = (...fns) => (val) => {
@@ -326,19 +331,21 @@ const compose = (...fns) => (val) => {
     return result
 }
 
-// console.log(compose(addOne, multiplyByTwo)(3)) 
+console.log(compose(addOne, multiplyByTwo)(3)) 
+console.log(compose(addTwo, multiplyByTwo)(3)) 
+*/
 
 /*
+21
 Create a function named setDefault which takes an argument of any value and returns a function, which when passed a truthy argument, returns that truthy argument, and when passed a falsy argument, returns the original argument passed to setDefault
 .
 For example:
 setDefault(72)(true) should return true
 setDefault('foobar')(false) should return 'foobar'
 
-
-const setDefault = (defaultV) => (val) => {
-    return  function innerFn() {
-        if (val === false) {
+const setDefault = (defaultV) => {
+    return  function innerFn(truthyArg) {
+        if (truthyArg === false) {
             return defaultV;
         } else {
             return true;
@@ -346,18 +353,56 @@ const setDefault = (defaultV) => (val) => {
     }
 }
 
-console.log(setDefault(72)(true)()); 
-console.log(setDefault('foobar')(false)()); 
+console.log(setDefault(72)(true)); 
+console.log(setDefault('foobar')(false)); 
 
 */
 
 /*
-22
+22 - need debugging 
 Create a function named safelyTraverse which takes an object as the first parameter and an array of strings as the second parameter. The function should return the value found after treating each string as a key traversing the object. If the path does not exist, the function should return undefined.
 For example:
 safelyTraverse({ first: { second: 2 } }, ['first', 'second']) should return 2
 safelyTraverse({}, ['a', 'b']) should return undefined
 */
+
+// loop througth the string array
+// if the obj(el) are all false return undefined. 
+
+// if one obj(el) is true, return the value till the last key pair. 
+const safelyTraverse = (obj, arr) => {
+    // let currentVal; 
+    // if (typeof(obj[arr[0]]) === 'undefined') {
+    //     currentVal = undefined  //base case
+    // } else if (typeof(obj[arr[0]]) === 'number') {
+    //     currentVal = obj[arr[0]]  //base case
+    // }  else if (typeof(obj[arr[0]]) === 'object') {
+    //     currentVal = obj[arr[0]]
+    //     debugger;
+    //     safelyTraverse(obj[arr[0]], arr.slice(1))
+    // }
+    // return currentVal;
+    
+    // try a for in loop for the object traversing 
+    // use the arry for of loop, using the object key inside to get the value. 
+    // need a condition to decide if the loop need to end 
+    let currentObj = undefined;
+    for(el of arr) {
+       // if  obj[el] is an object, use current object keep traversing 
+        if (typeof(obj[el] === 'object')) {
+            currentObj = obj[el]
+        }
+        // if currentObj is a number, return the number 
+        if (typeof[obj[el]] === 'number') {
+            currentObj = obj[el]
+        }
+    }
+    return currentObj;
+}
+
+// console.log(safelyTraverse({ first: { second: 2 } }, ['first', 'second']))
+// console.log(safelyTraverse({}, ['a', 'b']))
+
 
 
 /*
@@ -384,39 +429,63 @@ console.log(throwOn2(3))
 console.log(throwOn2(2))
 */
 
-
 /*
 24
 Create a function named promisifyValue which takes an argument of any type and returns a Promise which resolves to that value.
 For example:
 await promisify(2) should return 2
 await promisify(3).then(val => val + 1) should return 4
-*/
 
 const promisifyValue = function(val) {
-    let myPromise = new Promise(function(res, err) {
+    return new Promise(function(res, rej) {
         if(val) {
-            res(2);
+            res(val);
         } else {
-            err("There is an error")
+            rej(Error("no input value"))
         }
     })
 }
 
+console.log(promisifyValue(2))  //return the promise not the value
+console.log(promisifyValue(3).then(val => val + 1))
+*/
 
 /*
 25 
 Create a function named promisifyFunction which takes a synchronous function
-fn with an unspecifi ed argument signature as an argument and returns a function with the same argument signature that returns a promise which resolves to the output of fn with passed arguments.
+fn with an unspecified argument signature as an argument and returns a function with the same argument signature that returns a promise which resolves to the output of fn with passed arguments.
 For example:
 If,
 const add = (a, b) => a + b
-const multiplyByTwo = (c) => c * 2
+const multiplyBy2 = (c) => c * 2
 Then,
 await promisifyFunction(add)(1, 1) should return 2
 await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 */
 
+// the function need to take in a function first, then take in the arguments. 
+// the first part is an async function, return a promise. 
+
+const add = (a, b) => a + b; 
+const multiplyBy2 = (c) => c * 2
+
+async function promisifyFunction(fn) {
+    let myPromise = new Promise((res, rej) => {
+        if(fn) {
+            res(fn)
+        } else {
+            rej(Error("no valid function"))
+        }
+    })
+    return myPromise
+    // debugger
+    // await myPromise()  
+    // return fn
+}
+
+// console.log(promisifyFunction(add)(1, 1))
+
+//=================
 /*
 sample question. Write a function:
 function solution(A); that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
@@ -542,7 +611,7 @@ console.log(firstCharType('2fadfsfafas'))
 
 /*
 4.
-want to the minimul cost to remove duplicate
+want to the minimal cost to remove duplicate
 You are given a string S. Deletion of the K-th letter of S costs C(K). after deleting a litter, the costs of deleting other letters do not change. For example, for S='ab' and C=[1,3], after deleting 'a', deletion of 'b' will still cost 3. 
 You want to delete some letters from S to obtain a string without two identical letters next to each other. What is the minimum total cost of deletions to achieve such a string? 
 Write a function return the minimum cost of all necessary deletions
@@ -574,9 +643,84 @@ function minDeleteCost(S, C) {
         // add the cost to the sum
         minCostSum += currentCharSumCost - currentCharMaxCost
     }
-
     return minCostSum; 
-
 }
 
+/*
+code test with Drizly 
+*/
 
+/*
+sample 
+// You are given a two-digit integer n. Return the sum of its digits.
+// convert the number to string, split the string into chars, iterate the string with for loop, add them up during the iteration. 
+For n = 29, the output should be
+solution(n) = 11.
+*/
+
+/*
+1
+Given an array of integers a, calculate how many numbers in the array are equal to the arithmatic mean of their immediate neighbors. a[i] = (a[i+1] + a[i-1]) / 2. If a[i - 1] or a[i + 1] no exists, they should be considered equal to 0. 
+
+example: a [2,4,6,6,3], the output should be 3. 
+
+*/
+function arithMeanMatch(a) {
+    let counter = 0
+    for (i = 0; i < a.length; i++) {
+        let current = a[i]
+        let previous = a[i - 1] || 0
+        let next = a[i + 1] || 0
+        
+        if((previous + next)/2 === current){
+            counter ++
+        }
+    }
+    return counter
+}
+
+console.log(arithMeanMatch([2,4,6,6,3]))
+
+/*
+2
+a string s split into the minimum possible number of increasing substrings. it is case sensitive. b is next for a, but C is not next for b. return an array of these substrings. 
+example "ABCDEFFDEfghCBA"
+the last edge case with a single char string is not passed. 
+
+
+*/
+
+function minIncreasingSubStr(s) {
+    let currentIndex = 0; 
+    let previousIndex = 0; 
+    let newStrArr = [];
+
+    for (i = 0; i < s.length; i ++) {
+
+        if(s[i + 1].charCodeAt() - s[i].charCodeAt() === 1 ) {
+            previousIndex = previousIndex
+            if(i + 1 === s.length - 1) { 
+                // need an edge case for the last char 
+                // need to track iteration, if i + 1 reach the last index. I need to break it with conditions. 
+                // one conditon is the last char is increasing . it is increasing here. just need to break, no need run the next. 
+                newStrArr.push(s.slice(previousIndex, i + 2))
+                break
+                 }
+        } else {
+            currentIndex = i
+            //need a condition for the last char. which is an individul char. just push the last char. 
+            newStrArr.push(s.slice(previousIndex, currentIndex + 1))
+            previousIndex = currentIndex + 1
+            if(i + 1 === s.length - 1) { 
+                // newStrArr.push(s[i])
+                newStrArr.push(s[i+1])
+                break
+                 }
+        }
+    }
+    return newStrArr
+}
+
+// console.log(minIncreasingSubStr('ABCDEFFDEfghCBA'))
+// console.log(minIncreasingSubStr('TuVwXYZ'))
+// console.log(sminIncreasingSubStr('T'))
