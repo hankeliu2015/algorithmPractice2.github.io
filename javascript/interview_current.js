@@ -469,7 +469,7 @@ await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 const add = (a, b) => a + b; 
 const multiplyBy2 = (c) => c * 2
 
-async function promisifyFunction(fn) {
+function promisifyFunction(fn) {
     let myPromise = new Promise((res, rej) => {
         if(fn) {
             res(fn)
@@ -478,12 +478,15 @@ async function promisifyFunction(fn) {
         }
     })
     return myPromise
+    // return myPromise.then(res => res)
+    // return myPromise.then(res => res(...args))
     // debugger
     // await myPromise()  
     // return fn
 }
 
-// console.log(promisifyFunction(add)(1, 1))
+console.log(promisifyFunction(add)(1, 1))
+console.log(promisifyFunction(multiplyBy2)(3))
 
 //=================
 /*
@@ -687,9 +690,6 @@ a string s split into the minimum possible number of increasing substrings. it i
 example "ABCDEFFDEfghCBA"
 the last edge case with a single char string is not passed. 
 
-
-*/
-
 function minIncreasingSubStr(s) {
     let previousIndex = 0; 
     let newStrArr = [];
@@ -729,3 +729,10 @@ console.log(minIncreasingSubStr('ABCDEFFDEfghCBA'))
 console.log(minIncreasingSubStr('TuVwXYZ'))
 console.log(minIncreasingSubStr('ZA'))
 console.log(minIncreasingSubStr('T'))
+
+*/
+
+/*
+hackerRank challenge 
+Binary tree 
+*/
