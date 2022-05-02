@@ -647,7 +647,7 @@ function minDeleteCost(S, C) {
 }
 
 /*
-code test with Drizly 
+code test with Drissly 
 */
 
 /*
@@ -664,7 +664,6 @@ Given an array of integers a, calculate how many numbers in the array are equal 
 
 example: a [2,4,6,6,3], the output should be 3. 
 
-*/
 function arithMeanMatch(a) {
     let counter = 0
     for (i = 0; i < a.length; i++) {
@@ -680,6 +679,7 @@ function arithMeanMatch(a) {
 }
 
 console.log(arithMeanMatch([2,4,6,6,3]))
+*/
 
 /*
 2
@@ -691,28 +691,32 @@ the last edge case with a single char string is not passed.
 */
 
 function minIncreasingSubStr(s) {
-    let currentIndex = 0; 
     let previousIndex = 0; 
     let newStrArr = [];
 
     for (i = 0; i < s.length; i ++) {
-
+        if (s.length === 1) {
+            newStrArr.push(s[0])
+            break
+        }
         if(s[i + 1].charCodeAt() - s[i].charCodeAt() === 1 ) {
-            previousIndex = previousIndex
+            //if the next char is increasing, previouseIndex no need to change
+            previousIndex = previousIndex   
+            
+            // edge case condition for the last char 
             if(i + 1 === s.length - 1) { 
-                // need an edge case for the last char 
-                // need to track iteration, if i + 1 reach the last index. I need to break it with conditions. 
-                // one conditon is the last char is increasing . it is increasing here. just need to break, no need run the next. 
-                newStrArr.push(s.slice(previousIndex, i + 2))
+                
+                // if i + 1 reach the last index. break the loop. 
+                // one conditon is if  the last char is part of previous increasing .  no need run the next loop. 
+                newStrArr.push(s.slice(previousIndex))   // the last char index can skip
                 break
                  }
         } else {
-            currentIndex = i
-            //need a condition for the last char. which is an individul char. just push the last char. 
-            newStrArr.push(s.slice(previousIndex, currentIndex + 1))
-            previousIndex = currentIndex + 1
+            // when the increasing stopped. slice the string, push the substring to the newStrArr. 
+            newStrArr.push(s.slice(previousIndex, i + 1))
+            previousIndex = i + 1
+            //edge case condition for the last char. when the last char is not part of any increasing. just push the last char to the newStrArr
             if(i + 1 === s.length - 1) { 
-                // newStrArr.push(s[i])
                 newStrArr.push(s[i+1])
                 break
                  }
@@ -721,6 +725,7 @@ function minIncreasingSubStr(s) {
     return newStrArr
 }
 
-// console.log(minIncreasingSubStr('ABCDEFFDEfghCBA'))
-// console.log(minIncreasingSubStr('TuVwXYZ'))
-// console.log(sminIncreasingSubStr('T'))
+console.log(minIncreasingSubStr('ABCDEFFDEfghCBA'))
+console.log(minIncreasingSubStr('TuVwXYZ'))
+console.log(minIncreasingSubStr('ZA'))
+console.log(minIncreasingSubStr('T'))
