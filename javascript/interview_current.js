@@ -469,25 +469,61 @@ await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 const add = (a, b) => a + b; 
 const multiplyBy2 = (c) => c * 2
 
-function promisifyFunction(fn) {
-    let myPromise = new Promise((res, rej) => {
+function myPromise(fn) {
+    return new Promise((res, rej) => {
         if(fn) {
             res(fn)
         } else {
             rej(Error("no valid function"))
         }
     })
-    return myPromise
-    // return myPromise.then(res => res)
-    // return myPromise.then(res => res(...args))
-    // debugger
-    // await myPromise()  
-    // return fn
 }
 
-console.log(promisifyFunction(add)(1, 1))
-console.log(promisifyFunction(multiplyBy2)(3))
+async function promisifyFunction(fn, ...args) {
+    let result = await myPromise(fn)
+    return result(args)
+}
+// console.log(promisifyFunction(add)(1,1))
 
+/*
+await review 
+*/
+
+function resolveAfter2Seconds(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 2000);
+    });
+  }
+
+async function f1() {
+    var x = await resolveAfter2Seconds(10);
+    console.log(x); // 10
+}
+
+console.log(f1())
+
+async function f2() {
+    const thenable = {
+      then: function(resolve, _reject) {
+        resolve('resolved!')
+      }
+    };
+    console.log(await thenable); // resolved!
+  }
+  
+f2()
+
+async function f3() {
+    var y = await 20;
+    console.log(y); // 20
+  }
+  
+  f3();
+
+// console.log(promisifyFunction(add).then(fn => fn(1, 1)))
+// console.log(promisifyFunction(multiplyBy2).then(fn=> fn(3)).then(val=>val +1))
 //=================
 /*
 sample question. Write a function:
@@ -649,6 +685,7 @@ function minDeleteCost(S, C) {
     return minCostSum; 
 }
 
+
 /*
 code test with Drissly 
 */
@@ -732,7 +769,3 @@ console.log(minIncreasingSubStr('T'))
 
 */
 
-/*
-hackerRank challenge 
-Binary tree 
-*/

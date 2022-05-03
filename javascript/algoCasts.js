@@ -17,12 +17,12 @@ console.log(reverseStr('abcdefgh'))
 
 /* 
 2. Palindromes 
-
-*/
 const palindromes = function(str) {
+    //method 1 - reduce
     // let newStr = str.split('').reduce((acc, el) => el + acc)
     // return newStr === str
 
+    // method 2 loop
     //set the index backward 
     // let result = false
     // for (i = 0; i < str.length; i ++) {
@@ -35,31 +35,34 @@ const palindromes = function(str) {
     // }
     // return result
 
+    // method 3 every method
     //convert to array and use every method. 
     // return str.split('').every((el, index) => {
     //     return el === str[str.length - 1 - index];
     // })
 }
 
+// method 4 - recursive solution 
 const getFirst = (str) => str.slice(0,1)
 const getLast = (str) => str.slice(-1)
 const chopFirstLast = (str) => str.slice(1, -1)
-// if first and last are equal
-// pass the chopped string into recursive function until there is nothing left 
-// base case is when str length is one or 0 
+// if first and last are equal pass the chopped string into recursive function until there is nothing left 
+// base case is when str length is one or 0 or there is an unequal between first and last 
 
 const palindromes2 = function(str) {
     if (str.length === 1 || str.length === 0) {
         return true
-    } else if (getFirst(str) === getLast(str)) {
-        return palindromes2(chopFirstLast(str))
-    } else if (getFirst(str) !== getLast(str)) {
+    } 
+    if (getFirst(str) !== getLast(str)) {
         return false;
     }
+    return palindromes2(chopFirstLast(str))     // without return will show undefined. 
 }
 
-console.log(palindromes2("abbabba"))
-console.log(palindromes2("abbcbba"))
-console.log(palindromes2("aaab"))
-console.log(palindromes2("a"))
-console.log(palindromes2(""))
+// console.log(palindromes2("abbabba"))
+// console.log(palindromes2("abbcbba"))
+// console.log(palindromes2("aaab"))
+// console.log(palindromes2("a"))
+// console.log(palindromes2(""))
+*/
+
