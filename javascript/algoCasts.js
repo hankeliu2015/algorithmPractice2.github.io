@@ -81,8 +81,6 @@ console.log(reverseInteger(-123456))
 /* 
 MaxChar Problem 
 // convert to array and use key value pair to count each one. 
-*/
-
 const maxChar = function(str) {
     // loop throught the chars to create the key/value object
     // get obj key/value pair which has max value
@@ -125,3 +123,64 @@ const maxChar = function(str) {
 
 }
 console.log(maxChar('aaaaaaaabbccccddddd'))
+*/
+
+/* 
+fizzbuzz
+const fizbuz = function(n) {
+    // divide by 3 is fiz and divid by 5 is buz, divid by both is fizbuz
+    let result 
+    if(n % 3 === 0&& n % 5 === 0) {
+        return 'fizzbuzz'
+    }else if (n % 3 === 0 && n % 5 !== 0) {
+        return 'fizz'
+    }else if (n % 3 !== 0 && n % 5 === 0) {
+        return 'buzz'
+    }
+    return n 
+}
+
+console.log(fizbuz(15))
+console.log(fizbuz(10))
+console.log(fizbuz(6))
+console.log(fizbuz(2))
+*/ 
+
+
+/*
+// Given an array and chunk size, divide the array into many subarrays
+// where each subarray is of length size
+// --- Examples
+// chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+// chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+
+const chunk = function(arr, size) {
+
+    let newArr = []
+    let lastChunk
+
+    // for(let i = 0; i < arr.length; i +=size ) {
+    //     if ((arr.length - i) <= size) {
+    //         lastChunk = arr.slice(i, arr.length)
+    //         newArr.push(lastChunk)
+    //         break 
+    //     } else {
+    //         newArr.push(arr.slice(i, i + size))
+    //     }
+    // }
+
+    // method 2 while loop
+    // use while loop, as long as the index is less than arr length keep slice from the arr
+    let index = 0
+    while(index < arr.length) {
+        newArr.push(arr.slice(index, index + size))
+        index += size 
+    }
+
+    return newArr
+}
+
+console.log(chunk([1, 2, 3, 4], 2))
+console.log(chunk([1, 2, 3, 4, 5, 6, 7], 2))
+*/
+
