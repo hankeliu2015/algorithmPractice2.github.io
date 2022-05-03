@@ -487,7 +487,6 @@ async function promisifyFunction(fn, ...args) {
 
 /*
 await review 
-*/
 
 function resolveAfter2Seconds(x) {
     return new Promise(resolve => {
@@ -521,6 +520,7 @@ async function f3() {
   }
   
   f3();
+*/
 
 // console.log(promisifyFunction(add).then(fn => fn(1, 1)))
 // console.log(promisifyFunction(multiplyBy2).then(fn=> fn(3)).then(val=>val +1))
