@@ -127,7 +127,7 @@ console.log(maxChar('aaaaaaaabbccccddddd'))
 
 /* 
 fizzbuzz
-const fizbuz = function(n) {
+const fizzbuzz = function(n) {
     // divide by 3 is fiz and divid by 5 is buz, divid by both is fizbuz
     let result 
     if(n % 3 === 0&& n % 5 === 0) {
@@ -144,6 +144,24 @@ console.log(fizbuz(15))
 console.log(fizbuz(10))
 console.log(fizbuz(6))
 console.log(fizbuz(2))
+
+// another one with different output requirements
+const fizzbuzz = function(n) {
+    // add a loop from 1 to n
+    for(let i = 1; i <= n; i ++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz')
+        }else if (i % 3 === 0 && i % 5 !== 0) {
+            console.log('Fizz')
+        }else if (i % 3 !== 0 && i % 5 === 0) {
+            console.log('Buzz')
+        }else {
+            console.log(i)
+        }
+    }
+}
+
+console.log(fizzbuzz(15))
 */ 
 
 
@@ -182,5 +200,200 @@ const chunk = function(arr, size) {
 
 console.log(chunk([1, 2, 3, 4], 2))
 console.log(chunk([1, 2, 3, 4, 5, 6, 7], 2))
+*/
+
+/* 
+anagrams 
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces or punctuation.  Consider capital letters to be the same as lower case
+// --- Examples
+//   anagrams('rail safety', 'fairy tales') --> True
+//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+//   anagrams('Hi there', 'Bye there') --> False
+
+const anagram = function(str1, str2) {
+    // filter the strings to remove none chars 
+    let newStr1 = str1.replace(/\W/, '').toLowerCase()
+    let newStr2 = str2.replace(/[^\w]/g, '').toLowerCase()
+
+    // create a dictionary helper function
+    const dictionary = function(str) {
+        return str.split('').reduce((acc, el) => {
+            // acc[el] = acc[el] ? (acc[el] + 1) : 1
+            acc[el] = acc[el] + 1 ||  1
+            return acc
+        }, {})
+    }
+    // create a object for chars for both strings
+    let obj1 = dictionary(newStr1), obj2 = dictionary(newStr2)
+
+    // compare both dics key length. then, compare the values.
+    if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+        return false
+    } else {
+        // compare each key value with for in loop 
+        let valueComp = true; 
+        for(let key in obj1) {
+            if(obj1[key] !== obj2[key]) {
+                valueComp = false;
+            }
+        }
+        return valueComp
+    }
+}
+
+console.log(anagram('a b', 'b a'))
+console.log(anagram('a B', 'b A'))
+console.log(anagram('a B c', 'b A'))
+console.log(anagram('rail safety', 'fairy tales'))
+console.log(anagram('Hi there', 'Bye there'))
+*/
+
+/*
+capitalization 
+// Write a function that accepts a string.  The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+const capitalization = function(str) {
+    // split the string into phases, each word first char set with toUpperCase()
+    let arr = str.split(' ')
+    // loop through each word el to set uppper case for the first char
+    let newArr = arr.map((el) => {
+        return el[0].toUpperCase() + el.slice(1)
+    })
+    // combine the array into a string with space
+    return newArr.join(' ')
+}
+
+console.log(capitalization('a short notice'))
+console.log(capitalization('a very very short notice'))
+*/
+
+/* 
+print steps
+// Write a function that accepts a positive number N.
+// The function should console log a step shape
+// with N levels using the # character.  Make sure the
+// step has spaces on the right hand side!
+// --- Examples
+//   steps(2)
+//       '# '
+//       '##'
+//   steps(3)
+//       '#  '
+//       '## '
+//       '###'
+//   steps(4)
+//       '#   '
+//       '##  '
+//       '### '
+//       '####'
+
+const steps = function(n) {
+    // there is a numer, there will be a row
+    // 2 will be 2 rows
+    // column is increament from 1 to n. 
+    // iteration on the row 
+    // each row, print i times of #
+    // print multi times of the char? repeat()
+    // for(i = 0; i < n; i ++) {
+    //     console.log("#".repeat(i + 1) + '.'.repeat(n-i))
+    // }
+
+    // not allow repeat method 
+    // concat a string for each row, ### + ... 
+    // need a loop for column and an outter loop for the rows 
+    
+    for (let i = 0; i < n; i ++) {
+        //the inner loop create a string of # and dots
+        let steps = ''
+        for (let j = 0; j < n; j ++) {
+            // if j less equal than i, step is #. 
+            // else step is dot
+            if ( j <= i) {
+                steps = steps.concat('#')
+            } else {
+                steps = steps.concat('.')
+            }
+        }
+        // print out the steps just created
+        console.log(steps)
+    }
+}
+console.log(steps(4))
+*/
+
+
+/* 
+recursive solution for above
+
+const steps = function(n, row = 0, stair = '') {
+    //base case is at row equal to n. return to end the function 
+    if (row === n) {
+        return 
+    }
+    // steps.length equal to n is the end of row
+    if (stair.length === n) {
+        console.log(stair)
+        return steps(n, row + 1)
+    }
+    // on the same row 
+    if(stair.length <= row) {
+        stair.concat('#')
+    } else {
+        stair.concat('.')
+    }
+    steps(n, row, stair)
+}
+// console.log(steps(8))
+*/
+
+/*
+Pyramid steps - skip
+*/
+/*
+vowels
+*/
+/*
+spiral matrix
+*/
+
+/*
+Fibonacci series
+[1,2,3,5,8,13,21]
+
+const fib = function(n) {
+    // create a loop, n times to get the values 
+    let result = []
+    for (i = 1; i <= n; i ++) {
+        // this is a test from 0 not from 1. 
+        // need conditions for 1 and 2. 
+        if(i === 1 || i === 2) {
+            result.push(i)
+        } else {
+            result.push(result[i - 2] + result[i - 3])  // i start from 1 not 0. 
+        }
+    }
+    return result
+
+    // recursive method 
+    // if(n < 2) {
+    //     return n
+    // }
+    // return fib(n-1) + fib(n - 2)
+}
+
+console.log(fib(6))
+*/
+
+/* 
+skipped node and linkedlist 
+*/
+
+/* 
+binary search tree 
 */
 

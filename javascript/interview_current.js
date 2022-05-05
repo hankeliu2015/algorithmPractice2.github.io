@@ -463,8 +463,8 @@ await promisifyFunction(add)(1, 1) should return 2
 await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 */
 
-// the function need to take in a function first, then take in the arguments. 
-// the first part is an async function, return a promise. 
+
+// how to chain the arguments ? 
 
 const add = (a, b) => a + b; 
 const multiplyBy2 = (c) => c * 2
@@ -479,10 +479,12 @@ function myPromise(fn) {
     })
 }
 
-async function promisifyFunction(fn, ...args) {
-    let result = await myPromise(fn)
-    return result(args)
+function promisifyFunction(fn, ...args) {
+    return myPromise(fn).then(res => res)
 }
+
+// console.log(promisifyFunction(add)(1,1))
+// console.log(promisifyFunction(multiplyBy2)(3).then(val => val +1))
 // console.log(promisifyFunction(add)(1,1))
 
 /*
@@ -768,4 +770,78 @@ console.log(minIncreasingSubStr('ZA'))
 console.log(minIncreasingSubStr('T'))
 
 */
+
+/*
+Optimal UI Test
+3. count duplicated eleements [1,3,3,4,4,4,4] return 2
+
+const countDup = function (arr) {
+    //loop over the array and compare each el with occurance
+    // delare a charObj 
+    // filter out the charObj value greater than 1
+    let counter = 0
+    let charObj = arr.reduce((acc, el) => {
+        acc[el] = acc[el] + 1 || 1
+        if (acc[el] === 2) { counter = counter + 1 }    // no need loop though the charObj again 
+        return acc
+    }, {})
+
+    // for(let key in charObj) {
+    //     if (charObj[key] > 1) {
+    //         counter ++
+    //     }
+    // }
+    return counter
+}
+
+console.log(countDup([1,3,3,4,4,4,5,5,6]))
+*/
+
+
+/*
+2.
+output 
+Open: 4116.34
+High: 4195.01
+Low: 4115.35
+Close: 4183.73
+
+async function getStockInformation(date) {
+    // write your code here
+    // API endpoint: https://jsonmock.hackerrank.com/api/stocks?date=<date>
+
+    // need a fetch request, with the date as a variable. the date format is not clean
+    // need a fetch request and return a promise 
+    let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`)
+    
+    if (!response) {
+        throw new Error("Request error: ${response.status")
+    }
+
+    let stockDataset = await response.json()
+    let dataObj = stockDataset.data[0]
+
+    let result = {Open: 0, High: 0, Low: 0, Close:0 }
+    result.Open = dataObj.open
+    result.High = dataObj.high
+    result.Low = dataObj.low
+    result.Close = dataObj.close
+    for(let key in result) {
+        console.log(`${key}: ${result[key]}`)
+    }
+    let printResult = `
+        Open: ${result.Open}
+        High: ${result.High}
+        High: ${result.Low}
+        High: ${result.Close}
+    
+    `
+    console.log(result)
+    return printResult 
+
+}
+
+console.log(getStockInformation('5-January-2000'))
+*/
+
 
