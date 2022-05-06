@@ -445,10 +445,22 @@ const promisifyValue = function(val) {
         }
     })
 }
+*/
+async function promisifyValue(val) {
+    let myPromise = new Promise(function(res, rej) {
+        if(val) {
+            res(val);
+        } else {
+            rej(Error("no input value"))
+        }
+    })
+
+    let data = await myPromise
+    return data;
+}
 
 console.log(promisifyValue(2))  //return the promise not the value
 console.log(promisifyValue(3).then(val => val + 1))
-*/
 
 /*
 25 
@@ -800,35 +812,79 @@ console.log(countDup([1,3,3,4,4,4,5,5,6]))
 
 /*
 2.
-output 
+
+the five reset api contains info about a stocks 
+given a data in the format d-mmmm-yyyy, you have to makea  GET call to the given API to get the stock info for this date. 
+
+API endpoint: https://jsonmock.hackerrank.com/api/stocks?date=<date>
+example: https://jsonmock.hackerrank.com/api/stocks?date=5-January-2000 
+note: the date passed to the url must not have any leading zeros.
+
+the response is a json with the following 5 fields
+
+page: the current page of the results
+per_page: the max number of the resultes returned per page
+total: the total number of the results. 
+data: either an empty array or an array with single object containing the stock record with the following schema: date, open, high, low, close 
+
+example: 
+{
+    'date': "5-January-2000", 
+    'open': 5265.99, 
+    'high': 5464.35, 
+    'low': 5184.48, 
+    'close': 5357
+}
+
+note: page 1 is the default page returned on teh API hit. no further page hits are required. 
+
+function description: 
+returns: 
+a promise that resolved with the stock record object; in the case of an empty array result, the promise resolves with an empty object. 
+
+YOu implementation of the funciton will be tested by a stubbed code on the server input files. each input file contains a date parameter for the functions call. the function getStockInformation will be called with this parameter, and the result of their execution will be printed to the standard output by the provided code. 
+The stubbed code prints the open, high, low, and close values of the stock as returned by API. In case the function resolves the promise with an empty object, the subbed code prints 'No Results Founds'. 
+
+sample input:
+5-January-2000
+
+sample output:  
 Open: 4116.34
 High: 4195.01
 Low: 4115.35
 Close: 4183.73
 
-async function getStockInformation(date) {
-    // write your code here
-    // API endpoint: https://jsonmock.hackerrank.com/api/stocks?date=<date>
+the output prints the open, high, low and close values of the stock from the API. 
 
-    // need a fetch request, with the date as a variable. the date format is not clean
-    // need a fetch request and return a promise 
+
+async function getStockInformation(date) {
+
     let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`)
     
     if (!response) {
         throw new Error("Request error: ${response.status")
     }
 
-    let stockDataset = await response.json()
-    let dataObj = stockDataset.data[0]
+    let currentStockRes = await response.json()
+    let dataObj = currentStockRes.data[0]
+    if (dataObj === []) {
+        throw new Error('No Results Founds')
+    }
 
-    let result = {Open: 0, High: 0, Low: 0, Close:0 }
+    // I might need an array for the output result. 
+    let result = {'Open': 0, 'High': 0, 'Low': 0, 'Close':0 }
+
     result.Open = dataObj.open
     result.High = dataObj.high
     result.Low = dataObj.low
     result.Close = dataObj.close
+
     for(let key in result) {
+        let firstCharUpper = key.charAt(0).toUpperCase() + key.slice(1)
+        // assign the value to the resultObject
         console.log(`${key}: ${result[key]}`)
     }
+
     let printResult = `
         Open: ${result.Open}
         High: ${result.High}
@@ -836,7 +892,7 @@ async function getStockInformation(date) {
         High: ${result.Close}
     
     `
-    console.log(result)
+    // console.log(result)
     return printResult 
 
 }
@@ -844,4 +900,19 @@ async function getStockInformation(date) {
 console.log(getStockInformation('5-January-2000'))
 */
 
+/*
+Drizly pair-up interview
 
+stores
+orders
+products 
+
+*/
+
+const getTopProductsForStore = function() {
+    // find top selling products for a store
+    // iterate the store, find the store need to the products it selling
+    // filter the products with the max order
+
+
+}
