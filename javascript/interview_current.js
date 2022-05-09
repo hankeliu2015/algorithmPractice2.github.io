@@ -866,7 +866,6 @@ Close: 4183.73
 
 the output prints the open, high, low and close values of the stock from the API. 
 
-
 async function getStockInformation(date) {
 
     let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`)
@@ -921,13 +920,14 @@ getTopProductsForStore(1)
 return: 
 {productId: 201, type: "beer', name: "Same Adams Boston Lager}
 
-*/
 const stores = [{storeId: 1}, {storeId: 2}, {storeId: 3}]
 const orders = [
     {orderId: 100, storeId: 1, productId: 201}, 
-    {orderId: 101, storeId: 2, productId: 201}, 
+    {orderId: 101, storeId: 2, productId: 202}, 
     {orderId: 102, storeId: 1, productId: 202}, 
-    {orderId: 103, storeId: 1, productId: 201}
+    {orderId: 103, storeId: 1, productId: 201},
+    {orderId: 104, storeId: 3, productId: 203},
+    {orderId: 105, storeId: 3, productId: 203}
 ]; 
 const products = [
     {productId: 201, productType: 'beer', name: 'Sam Adams Boston Lager'}, 
@@ -936,28 +936,35 @@ const products = [
 ]
 
 const getTopProductsForStore = function(id) {
-    // got a store id 
     // find all the products ordered from that store
-    // find all the orders first
-    let allOrdersFromStore = orders.filter(el => el.storeId === id)
-    // create the orderObj , key is the prodId and value is the order occurred
     let ordersObj = {}
-    allOrdersFromStore.forEach(el => {
+    let maxProdId = 0   // declare it as a number. 
+    let maxVal = 0
+    
+    //filter out all products sold from one store
+    //create a map object for each product sold
+    // find the max value of the product id 
+    orders.filter(el => el.storeId === id).forEach(el => {
         ordersObj[el.productId] = ordersObj[el] + 1 || 1
+        if(maxVal < ordersObj[el.productId]) {
+            maxProdId = el.productId 
+            maxVal = ordersObj[el.productIdy]
+        }
     })
 
     // get the prodId with the maxValue from the ordersObj
-    let maxProdId
-    let maxVal = 0
-    for(let key in ordersObj) {
-        if(maxVal < ordersObj[key]) {
-            maxProdId = key 
-            maxVal = ordersObj[key]
-        }
-    }
-    return products.filter(el => el.productId === parseInt(maxProdId))[0]
+    // for(let key in ordersObj) {
+    //     if(maxVal < ordersObj[key]) {
+    //         maxProdId = key 
+    //         maxVal = ordersObj[key]
+    //     }
+    // }
+
+    // return products.filter(el => el.productId === parseInt(maxProdId))[0]
+    return products.filter(el => el.productId === maxProdId)[0]
 
 }
 console.log(getTopProductsForStore(1))
-// console.log(getTopProductsForStore(2))
-// console.log(getTopProductsForStore(3))
+console.log(getTopProductsForStore(2))
+console.log(getTopProductsForStore(3))
+*/
