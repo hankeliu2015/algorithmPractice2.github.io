@@ -449,6 +449,7 @@ const promisifyValue = function(val) {
 async function promisifyValue(val) {
     let myPromise = new Promise(function(res, rej) {
         if(val) {
+            console.log(val)
             res(val);
         } else {
             rej(Error("no input value"))
@@ -456,16 +457,17 @@ async function promisifyValue(val) {
     })
 
     let data = await myPromise
-    return data;
+    return data
 }
 
-console.log(promisifyValue(2))  //return the promise not the value
-console.log(promisifyValue(3).then(val => val + 1))
+// console.log(promisifyValue(2))  //return the promise not the value
+// console.log(promisifyValue(3).then(val => val + 1))
 
 /*
 25 
-Create a function named promisifyFunction which takes a synchronous function
-fn with an unspecified argument signature as an argument and returns a function with the same argument signature that returns a promise which resolves to the output of fn with passed arguments.
+Create a function named promisifyFunction which takes a synchronous functionfn with
+ an unspecified argument signature as an argument and returns a function with the same argument
+  signature that returns a promise which resolves to the output of fn with passed arguments.
 For example:
 If,
 const add = (a, b) => a + b
@@ -475,29 +477,37 @@ await promisifyFunction(add)(1, 1) should return 2
 await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 */
 
-
-// how to chain the arguments ? 
-
 const add = (a, b) => a + b; 
 const multiplyBy2 = (c) => c * 2
 
-function myPromise(fn) {
-    return new Promise((res, rej) => {
-        if(fn) {
-            res(fn)
-        } else {
-            rej(Error("no valid function"))
-        }
-    })
+function takeInFn(fn) {
+    return fn
 }
 
-function promisifyFunction(fn, ...args) {
-    return myPromise(fn).then(res => res)
+async function promisifyFunction(fn) {
+    // take in an function
+    // return this fun which could take in ...args
+    // need await promise somewhere. 
+    const myPromise = function(fn) {
+        return new Promise((res, rej) => {
+            if(fn) {
+                res(fn)
+            } else {
+                rej(Error("no valid function"))
+            }
+        })
+    }
+
+    let result = await myPromise
+    return result                   //only return the function, not invoke it. 
 }
+
+
 
 // console.log(promisifyFunction(add)(1,1))
 // console.log(promisifyFunction(multiplyBy2)(3).then(val => val +1))
-// console.log(promisifyFunction(add)(1,1))
+// console.log(takeInFn(add)(1,1))
+// console.log(takeInFn(multiplyBy2)(3).then(val => val +1))
 
 /*
 await review 
@@ -903,16 +913,51 @@ console.log(getStockInformation('5-January-2000'))
 /*
 Drizly pair-up interview
 
-stores
-orders
-products 
+function getTopProductsForStore
+get a list of stores, a list of orders for various stores, and a list of products sold, return the top selling product for a given store 
+storeId - the uniqure store identifier 
+example: 
+getTopProductsForStore(1) 
+return: 
+{productId: 201, type: "beer', name: "Same Adams Boston Lager}
 
 */
+const stores = [{storeId: 1}, {storeId: 2}, {storeId: 3}]
+const orders = [
+    {orderId: 100, storeId: 1, productId: 201}, 
+    {orderId: 101, storeId: 2, productId: 201}, 
+    {orderId: 102, storeId: 1, productId: 202}, 
+    {orderId: 103, storeId: 1, productId: 201}
+]; 
+const products = [
+    {productId: 201, productType: 'beer', name: 'Sam Adams Boston Lager'}, 
+    {productId: 202, productType: 'wine', name: 'Barefoot Pinot Grigio'}, 
+    {productId: 203, productType: 'liquor', name: 'Titos Vodas'}, 
+]
 
-const getTopProductsForStore = function() {
-    // find top selling products for a store
-    // iterate the store, find the store need to the products it selling
-    // filter the products with the max order
+const getTopProductsForStore = function(id) {
+    // got a store id 
+    // find all the products ordered from that store
+    // find all the orders first
+    let allOrdersFromStore = orders.filter(el => el.storeId === id)
+    // create the orderObj , key is the prodId and value is the order occurred
+    let ordersObj = {}
+    allOrdersFromStore.forEach(el => {
+        ordersObj[el.productId] = ordersObj[el] + 1 || 1
+    })
 
+    // get the prodId with the maxValue from the ordersObj
+    let maxProdId
+    let maxVal = 0
+    for(let key in ordersObj) {
+        if(maxVal < ordersObj[key]) {
+            maxProdId = key 
+            maxVal = ordersObj[key]
+        }
+    }
+    return products.filter(el => el.productId === parseInt(maxProdId))[0]
 
 }
+console.log(getTopProductsForStore(1))
+// console.log(getTopProductsForStore(2))
+// console.log(getTopProductsForStore(3))
