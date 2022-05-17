@@ -475,29 +475,19 @@ const multiplyBy2 = (c) => c * 2
 Then,
 await promisifyFunction(add)(1, 1) should return 2
 await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
-*/
-
 const add = (a, b) => a + b; 
 const multiplyBy2 = (c) => c * 2
 
-function takeInFn(fn) {
-    return fn
-}
-
 function promisifyFunction(fn) {
-    // take in an function
-    // return this fun which could take in ...args
-    // need await promise somewhere. 
     return function(...args) {
         return Promise.resolve(fn(...args)) 
     }
 }
 
-
 console.log(promisifyFunction(add)(1,1))
 console.log(promisifyFunction(multiplyBy2)(3).then(val => val +1))
-// console.log(takeInFn(add)(1,1))
-// console.log(takeInFn(multiplyBy2)(3).then(val => val +1))
+*/
+
 
 /*
 await review 
