@@ -484,28 +484,18 @@ function takeInFn(fn) {
     return fn
 }
 
-async function promisifyFunction(fn) {
+function promisifyFunction(fn) {
     // take in an function
     // return this fun which could take in ...args
     // need await promise somewhere. 
-    const myPromise = function(fn) {
-        return new Promise((res, rej) => {
-            if(fn) {
-                res(fn)
-            } else {
-                rej(Error("no valid function"))
-            }
-        })
+    return function(...args) {
+        return Promise.resolve(fn(...args)) 
     }
-
-    let result = await myPromise
-    return result                   //only return the function, not invoke it. 
 }
 
 
-
-// console.log(promisifyFunction(add)(1,1))
-// console.log(promisifyFunction(multiplyBy2)(3).then(val => val +1))
+console.log(promisifyFunction(add)(1,1))
+console.log(promisifyFunction(multiplyBy2)(3).then(val => val +1))
 // console.log(takeInFn(add)(1,1))
 // console.log(takeInFn(multiplyBy2)(3).then(val => val +1))
 
