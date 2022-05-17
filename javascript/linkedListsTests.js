@@ -83,6 +83,7 @@ function deleteNode(llist, position) {
   return llist; 
 }
 
+
 function reversePrint(llist) {
 
   // if llist is null or llist.next is null 
@@ -106,6 +107,7 @@ function reversePrint(llist) {
   }
 }
 
+/*
 function reverse(head) {
   if (head === null || head.next === null) {
     return head
@@ -115,3 +117,5 @@ function reverse(head) {
   head.next = null; 
   return remaining; 
 }
+
+*/
