@@ -796,15 +796,14 @@ console.log(minIncreasingSubStr('T'))
 /*
 Optimal UI Test
 3. count duplicated eleements [1,3,3,4,4,4,4] return 2
-
 const countDup = function (arr) {
     //loop over the array and compare each el with occurance
     // delare a charObj 
     // filter out the charObj value greater than 1
     let counter = 0
-    let charObj = arr.reduce((acc, el) => {
+    arr.reduce((acc, el) => {
         acc[el] = acc[el] + 1 || 1
-        if (acc[el] === 2) { counter = counter + 1 }    // no need loop though the charObj again 
+        if (acc[el] === 2) { counter = counter + 1 }    // 2 or more all count as duplicate 
         return acc
     }, {})
 
@@ -852,7 +851,7 @@ function description:
 returns: 
 a promise that resolved with the stock record object; in the case of an empty array result, the promise resolves with an empty object. 
 
-YOu implementation of the funciton will be tested by a stubbed code on the server input files. each input file contains a date parameter for the functions call. the function getStockInformation will be called with this parameter, and the result of their execution will be printed to the standard output by the provided code. 
+You implementation of the funciton will be tested by a stubbed code on the server input files. each input file contains a date parameter for the functions call. the function getStockInformation will be called with this parameter, and the result of their execution will be printed to the standard output by the provided code. 
 The stubbed code prints the open, high, low, and close values of the stock as returned by API. In case the function resolves the promise with an empty object, the subbed code prints 'No Results Founds'. 
 
 sample input:
@@ -866,50 +865,74 @@ Close: 4183.73
 
 the output prints the open, high, low and close values of the stock from the API. 
 
+*/
 async function getStockInformation(date) {
 
     let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`)
     
     if (!response) {
-        throw new Error("Request error: ${response.status")
+        throw new Error('Request error: ${response.status')
     }
+    // need an error message for empty object. 
 
     let currentStockRes = await response.json()
     let dataObj = currentStockRes.data[0]
     if (dataObj === []) {
         throw new Error('No Results Founds')
     }
-
-    // I might need an array for the output result. 
-    let result = {'Open': 0, 'High': 0, 'Low': 0, 'Close':0 }
-
-    result.Open = dataObj.open
-    result.High = dataObj.high
-    result.Low = dataObj.low
-    result.Close = dataObj.close
-
-    for(let key in result) {
-        let firstCharUpper = key.charAt(0).toUpperCase() + key.slice(1)
-        // assign the value to the resultObject
-        console.log(`${key}: ${result[key]}`)
-    }
-
-    let printResult = `
-        Open: ${result.Open}
-        High: ${result.High}
-        High: ${result.Low}
-        High: ${result.Close}
+    // console.log(dataObj)
+    let newDataObj = dataObj
+    delete newDataObj['date']
+    // use Object.keys and reduce to change the key char to caps
     
-    `
-    // console.log(result)
-    return printResult 
+    let capsKeyObj = Object.keys(newDataObj).reduce((acc, key) => {
+        let capsKey = key.charAt(0).toUpperCase() + key.substring(1)
+        let capsValue = newDataObj[key]
+        acc[capsKey] = capsValue
+        return acc 
+    }, {})
 
+    console.log(capsKeyObj)
+    return capsKeyObj
 }
 
-console.log(getStockInformation('5-January-2000'))
+// console.log(getStockInformation('5-January-2000'))
+
+/*
+Optimal pairing interview 
+given a list of items and their correct prices, compare they prices to those entered when each iterm was sold. determine the number of errors in selling prices. 
+
+const products = ['eggs', 'milk', 'cheese']
+const productPrices = [2.89, 3.29, 5.79]
+const productSold = ['eggs', 'eggs', 'cheese', 'milk']
+// const soldPrice = [2.89, 2.99, 5.97, 3.29]
+const soldPrice = [2.89, 2.99, 5.79, 3.29]
+
+const priceCheck = function() {
+    // create a dictionary for product and price 
+    const prodPriceObj = products.reduce((acc, el, index) => {
+        acc[el] = productPrices[index]
+        return acc
+    }, {})
+
+    console.log(prodPriceObj)
+    // compare the sold price and dict price. 
+    // if there is a none match, counter ++ 
+    // return counter 
+    let priceErrorCount = 0
+    productSold.forEach((el, index) => {
+        if(prodPriceObj[el] !== soldPrice[index] ) {
+            priceErrorCount ++
+        }
+    })
+    return priceErrorCount
+}
+
+console.log(priceCheck())
 */
 
 /*
+
 Drizly pair-up interview
 
 function getTopProductsForStore
@@ -967,4 +990,29 @@ const getTopProductsForStore = function(id) {
 console.log(getTopProductsForStore(1))
 console.log(getTopProductsForStore(2))
 console.log(getTopProductsForStore(3))
+*/
+
+/* 
+Snap Mobile Inc 
+We're building this command-line calculator for people who are comfortable with UNIX-like CLI utilities. We are starting with the basic 4 operators now but will want to eventually implement other operators and an alternate interface (such as WebSocket, file, or TCP socket). 
+
+Specifications
+The calculator should use standard input and standard output
+It should implement the four standard arithmetic operators
+The calculator should handle errors and recover gracefully
+The calculator should exit when it receives a q command or an end of input indicator (EOF / Ctrl+D)
+
+A high-level description of your solution
+Reasoning behind your technical choices, including architectural
+Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project
+How to run your code, if applicable
+Link to the hosted application, if applicable
+
+// An Interactive Command Line Application Using Node.js
+// npm init  
+// need runtime user inputs 
+
+// compose the functions, manage curry and pipe
+
+
 */
