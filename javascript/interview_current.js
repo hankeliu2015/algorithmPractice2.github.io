@@ -445,7 +445,7 @@ const promisifyValue = function(val) {
         }
     })
 }
-*/
+
 async function promisifyValue(val) {
     let myPromise = new Promise(function(res, rej) {
         if(val) {
@@ -459,9 +459,15 @@ async function promisifyValue(val) {
     let data = await myPromise
     return data
 }
+*/
+// Will's approach
 
-// console.log(promisifyValue(2))  //return the promise not the value
-// console.log(promisifyValue(3).then(val => val + 1))
+const promisifyValue = function(val) {
+    return Promise.resolve(val)
+}
+
+console.log(promisifyValue(2))  
+console.log(promisifyValue(3).then(val => val + 1))
 
 /*
 25 
