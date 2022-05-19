@@ -459,15 +459,14 @@ async function promisifyValue(val) {
     let data = await myPromise
     return data
 }
-*/
 // Will's approach
 
 const promisifyValue = function(val) {
     return Promise.resolve(val)
 }
-
 console.log(promisifyValue(2))  
 console.log(promisifyValue(3).then(val => val + 1))
+*/
 
 /*
 25 
